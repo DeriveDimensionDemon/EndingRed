@@ -11,12 +11,12 @@ header.centered-top-container {
 
 /* Hide Blogger's original logo image */
 header.centered-top-container .header-image-wrapper img {
-    display: none !important;
+    visibility: hidden !important;
 }
 
 /* Remove the empty image area */
 header.centered-top-container .header-image-wrapper {
-    display: none !important;
+    display: block !important;
 }
 
 /* Keep header contents above background */
