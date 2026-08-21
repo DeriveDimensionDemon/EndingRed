@@ -9,8 +9,7 @@
 }
 /* Hide the original Header image */
 .header-image-wrapper img {
-    visibility: hidden;
-    display: none;
+    visibility: hidden!important;
 }
 .header-widget .replaced {
     display: none;
