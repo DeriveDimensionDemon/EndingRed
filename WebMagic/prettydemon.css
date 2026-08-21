@@ -1,13 +1,30 @@
 /* <link href='https://derivedimensiondemon.github.io/EndingRed/WebMagic/prettydemon.css?v=2' rel='stylesheet'/> */
-/* Header background */
+/* Header 背景 */
 .centered-top-container {
+    position: relative !important;
+    overflow: hidden !important;
 }
-/* Hide the original Header image */
-.header-image-wrapper img {
+
+.centered-top-container .centered-top-firstline {
+    position: relative !important;
+    z-index: 1 !important;
 }
-.header-widget .replaced {
+
+/* 原本 Header 圖片 */
+.centered-top-container .header-image-wrapper img {
+    width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    display: block !important;
 }
-/* Put controls above the background */
-.search,
-.hamburger-section {
+
+/* Header 圖片容器 */
+.centered-top-container .header-image-wrapper {
+    display: block !important;
+    width: 100vw !important;
+}
+
+/* Logo 區不要限制圖片寬度 */
+.centered-top-container .blog-name {
+    width: 100% !important;
 }
