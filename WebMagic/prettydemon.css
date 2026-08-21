@@ -1,7 +1,17 @@
 /* <link href='https://derivedimensiondemon.github.io/EndingRed/WebMagic/prettydemon.css?v=2' rel='stylesheet'/> */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
 
-body {
+body,
+p,
+div,
+span,
+a,
+li,
+td,
+th,
+input,
+button,
+textarea {
     font-family: "Noto Serif TC", serif !important;
 }
 
