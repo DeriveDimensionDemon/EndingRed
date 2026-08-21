@@ -1,25 +1,22 @@
-/* Header background */
+/* <link href='https://derivedimensiondemon.github.io/EndingRed/WebMagic/prettydemon.css?v=2' rel='stylesheet'/> */
+header.centered-top-container {
+    position: relative !important;
+}
 
-.centered-top-container {
-    position: relative;
+header.centered-top-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
     background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    z-index: 0;
 }
 
-/* Hide the original Header image */
-.header-image-wrapper img {
-    visibility: hidden;
-}
-
-.header-widget .replaced {
-    display: none;
-}
-
-/* Put controls above the background */
-.search,
-.hamburger-section {
+header.centered-top-container > * {
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
