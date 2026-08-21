@@ -1,22 +1,13 @@
 /* <link href='https://derivedimensiondemon.github.io/EndingRed/WebMagic/prettydemon.css?v=2' rel='stylesheet'/> */
 /* Header background */
 .centered-top-container {
-    position: relative;
-    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 /* Hide the original Header image */
 .header-image-wrapper img {
-    /*visibility: hidden!important;*/
 }
 .header-widget .replaced {
-    display: none;
 }
 /* Put controls above the background */
 .search,
 .hamburger-section {
-    position: relative;
-    z-index: 10;
 }
