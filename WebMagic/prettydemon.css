@@ -43,24 +43,23 @@ header.centered-top-container .main_header_elements {
     z-index: 1 !important;
 }
 
-/* 首頁文章制約魔法 */
+/* === Homepage Post Preview === */
+
+/* Hide images and embedded media inside article preview */
 .homepage-post-preview img,
 .homepage-post-preview .separator,
 .homepage-post-preview iframe {
     display: none !important;
 }
 
-.homepage-post-preview {
-    max-height: 320px;
-    overflow: hidden;
-}
-
+/* Limit homepage article preview height */
 .homepage-post-preview {
     max-height: 320px;
     overflow: hidden;
     position: relative;
 }
 
+/* Fade out the bottom of the preview */
 .homepage-post-preview::after {
     content: "";
     position: absolute;
@@ -76,6 +75,39 @@ header.centered-top-container .main_header_elements {
     pointer-events: none;
 }
 
+/* Hide Blogger's homepage thumbnail */
 .post-outer-container .snippet-thumbnail {
     display: none !important;
+}
+
+/* === Homepage Background === */
+
+body {
+    background: #f6f6f6 !important;
+}
+
+/* === Homepage Article Cards === */
+
+.post-outer-container {
+    background: #ffffff !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Article content spacing */
+.post-outer-container .post-content {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+}
+
+/* Slightly soften the card edges */
+.post-outer-container {
+    border-radius: 4px !important;
+}
+
+/* Keep links and buttons above the card content */
+.post-outer-container a,
+.post-outer-container button {
+    position: relative;
+    z-index: 1;
 }
