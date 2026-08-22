@@ -32,7 +32,8 @@ header.centered-top-container .header-image-wrapper img
 }
 
 /* Remove the empty image area */
-header.centered-top-container .header-image-wrapper ,{
+header.centered-top-container .header-image-wrapper 
+, header.centered-top-placeholder .header-image-wrapper img {
     display: block !important;
 }
 
