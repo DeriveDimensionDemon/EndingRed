@@ -42,3 +42,37 @@ header.centered-top-container .main_header_elements {
     position: relative !important;
     z-index: 1 !important;
 }
+
+/* 首頁文章制約魔法 */
+.homepage-post-preview img,
+.homepage-post-preview .separator,
+.homepage-post-preview iframe {
+    display: none !important;
+}
+
+.homepage-post-preview {
+    max-height: 320px;
+    overflow: hidden;
+}
+
+.homepage-post-preview {
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.homepage-post-preview::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        #fff
+    );
+    pointer-events: none;
+}
+
