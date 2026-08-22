@@ -82,8 +82,8 @@ header.centered-top-container .main_header_elements {
 
 /* === Homepage Background === */
 
-body {
-    background: #f6f6f6 !important;
+.main_content_container {
+    background: #fefefe !important;
 }
 
 /* === Homepage Article Cards === */
@@ -91,18 +91,22 @@ body {
 .post-outer-container {
     background: #ffffff !important;
     margin-bottom: 24px !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+    margin-top: 25px !important;
+    box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #f1f1f1 !important;
 }
 
 /* Article content spacing */
 .post-outer-container .post-content {
-    padding-top: 28px !important;
-    padding-bottom: 28px !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    margin-top: 30px !important;
 }
 
 /* Slightly soften the card edges */
 .post-outer-container {
     border-radius: 4px !important;
+    margin-top: auto !important;
 }
 
 /* Keep links and buttons above the card content */
@@ -111,3 +115,4 @@ body {
     position: relative;
     z-index: 1;
 }
+
