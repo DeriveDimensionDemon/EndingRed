@@ -26,8 +26,11 @@ textarea {
    Full-width Header Background
    ========================================================= */
 
-header.centered-top-container,
-.centered-top-placeholder {
+header.centered-top-container {
+    background: none !important;
+}
+
+header.centered-top-container::before {
     position: relative !important;
 
     background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600") !important;
@@ -43,9 +46,7 @@ header.centered-top-container,
    Transparent PNG remains as a height spacer
    ========================================================= */
 
-header.centered-top-container .header-image-wrapper img,
-.centered-top-placeholder .header-image-wrapper img,
-.all-container .lapsed-header {
+header.centered-top-container .header-image-wrapper img {
     visibility: hidden !important;
 }
 
