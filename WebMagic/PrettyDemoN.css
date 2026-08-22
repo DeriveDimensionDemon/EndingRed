@@ -44,7 +44,8 @@ header.centered-top-container,
    ========================================================= */
 
 header.centered-top-container .header-image-wrapper img,
-.centered-top-placeholder .header-image-wrapper img {
+.centered-top-placeholder .header-image-wrapper img,
+.all-container .centered-top-container {
     visibility: hidden !important;
 }
 
