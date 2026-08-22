@@ -17,7 +17,7 @@ textarea {
 
 /* === Full-width Header Background === */
 
-header.centered-top-container, .centered-top-placeholder.cloned {
+header.centered-top-container, .centered-top-placeholder {
     position: relative !important;
     background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600") !important;
     background-size: cover !important;
@@ -27,12 +27,12 @@ header.centered-top-container, .centered-top-placeholder.cloned {
 
 /* Hide Blogger's original logo image */
 header.centered-top-container .header-image-wrapper img 
-,header.centered-top-container cloned .header-image-wrapper img {
+, header.centered-top-placeholder .header-image-wrapper img {
     visibility: hidden !important;
 }
 
 /* Remove the empty image area */
-header.centered-top-container .header-image-wrapper {
+header.centered-top-container .header-image-wrapper ,{
     display: block !important;
 }
 
