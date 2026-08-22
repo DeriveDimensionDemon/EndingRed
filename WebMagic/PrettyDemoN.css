@@ -26,25 +26,16 @@ textarea {
    Full-width Header Background
    ========================================================= */
 
-header.centered-top-container {
-    background: none !important;
-}
-
-header.centered-top-container::before {
-    position: relative !important;
-
-    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-}
-
-
 /* =========================================================
    Hide Blogger's original header image
    Transparent PNG remains as a height spacer
    ========================================================= */
+body {
+    background-image: url("你的背景圖") !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: 100% auto !important;
+}
 
 header.centered-top-container .header-image-wrapper img {
     visibility: hidden !important;
