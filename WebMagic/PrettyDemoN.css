@@ -26,7 +26,8 @@ header.centered-top-container, .centered-top-placeholder.cloned {
 }
 
 /* Hide Blogger's original logo image */
-header.centered-top-container .header-image-wrapper img {
+header.centered-top-container .header-image-wrapper img 
+,header.centered-top-container cloned .header-image-wrapper img {
     visibility: hidden !important;
 }
 
