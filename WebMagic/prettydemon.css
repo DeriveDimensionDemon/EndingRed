@@ -92,7 +92,9 @@ header.centered-top-container .main_header_elements {
 .post-outer-container {
     background: #ffffff !important;
     margin-bottom: 24px !important;
-    box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.06) !important;
+box-shadow:
+    0 4px 14px 0 rgba(0, 0, 0, 0.07),
+    inset 0 0 10px 0 rgba(0, 0, 0, 0.035);
     border: 1px solid #f1f1f1 !important;
 }
 
