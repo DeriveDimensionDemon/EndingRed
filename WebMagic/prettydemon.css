@@ -76,3 +76,6 @@ header.centered-top-container .main_header_elements {
     pointer-events: none;
 }
 
+.post-outer-container .snippet-thumbnail {
+    display: none !important;
+}
