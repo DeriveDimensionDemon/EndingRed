@@ -1,11 +1,5 @@
 /* <link href='https://derivedimensiondemon.github.io/EndingRed/WebMagic/prettydemon.css?v=2' rel='stylesheet'/> */
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
-
-
-/* =========================================================
-   Global Font
-   ========================================================= */
 
 body,
 p,
@@ -21,240 +15,106 @@ textarea {
     font-family: "Noto Serif TC", serif !important;
 }
 
-
-/* =========================================================
-   Header - Full Width
-   ========================================================= */
+/* === Full-width Header Background === */
 
 header.centered-top-container {
     position: relative !important;
-
-    width: 100% !important;
-    max-width: none !important;
-
-    /* IMPORTANT: give the background a real area to fill */
-    height: 180px !important;
-    min-height: 180px !important;
-
     background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600") !important;
-
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-
-    transform: none !important;
-    transition: none !important;
-
-    box-sizing: border-box !important;
 }
 
-
-/* =========================================================
-   Sticky Header
-   Force Blogger's collapsed header to remain full-size
-   ========================================================= */
-
-header.centered-top-container.sticky {
-    position: fixed !important;
-
-    left: 0 !important;
-    right: 0 !important;
-    top: 0 !important;
-
-    width: 100% !important;
-    max-width: none !important;
-
-    height: 180px !important;
-    min-height: 180px !important;
-
-    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEipTlqoOQo8iGGDoZLnep9TpZ9GLSWKCM6HwN6MO_t8cbqt4XsbotJRGZpaBXYHOgaBOaU0wUogclWDeOL6E0lYCvzQ0fjZEyml3IQdP-5xdVG6EZplG0TZQ3bfmAwpzGDH6WMUjBPN-JXeovwQen9lcsS-yHw6nOYTJyOVl7ubq5cocJ1g2xl8vqu43pw=s1600") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-
-    transform: none !important;
-    transition: none !important;
-
-    box-sizing: border-box !important;
-
-    z-index: 8 !important;
+/* Hide Blogger's original logo image */
+header.centered-top-container .header-image-wrapper img {
+    visibility: hidden !important;
 }
 
-
-/* =========================================================
-   Restore the NORMAL header layout inside sticky state
-   ========================================================= */
-
-header.centered-top-container.sticky .centered-top {
-    width: 100% !important;
-    max-width: none !important;
-
-    height: 180px !important;
-    min-height: 180px !important;
-
-    padding-top: 40px !important;
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-
-    margin: 0 auto !important;
-
-    display: flex !important;
-    flex-wrap: wrap !important;
-
-    align-items: flex-start !important;
-
-    box-sizing: border-box !important;
-
-    transform: none !important;
-    transition: none !important;
+/* Remove the empty image area */
+header.centered-top-container .header-image-wrapper {
+    display: block !important;
 }
 
-
-/* =========================================================
-   Header inner containers
-   ========================================================= */
-
+/* Keep header contents above background */
+header.centered-top-container .centered-top,
 header.centered-top-container .centered-top-firstline,
 header.centered-top-container .main_header_elements {
-    width: 100% !important;
-    max-width: none !important;
-
     position: relative !important;
-
-    transform: none !important;
-    transition: none !important;
-
-    box-sizing: border-box !important;
-
     z-index: 1 !important;
 }
 
+/* === Homepage Post Preview === */
 
-header.centered-top-container.sticky .centered-top-firstline,
-header.centered-top-container.sticky .main_header_elements {
-    width: 100% !important;
-    max-width: none !important;
-
-    transform: none !important;
-    transition: none !important;
-}
-
-
-/* =========================================================
-   Restore normal header flex behavior
-   ========================================================= */
-
-header.centered-top-container.sticky .blog-name {
-    flex: 1 1 0 !important;
-    padding: 0 !important;
-}
-
-
-header.centered-top-container.sticky .search {
-    flex: 0 0 auto !important;
-}
-
-
-header.centered-top-container.sticky .hamburger-section {
-    flex: 0 0 auto !important;
-}
-
-
-/* =========================================================
-   Remove Blogger's original header image
-   ========================================================= */
-
-header.centered-top-container .header-image-wrapper img {
-    display: none !important;
-}
-
-
-header.centered-top-container .header-image-wrapper {
-    display: none !important;
-}
-
-
-/* =========================================================
-   Homepage Post Preview
-   ========================================================= */
-
+/* Hide images and embedded media inside article preview */
 .homepage-post-preview img,
 .homepage-post-preview .separator,
 .homepage-post-preview iframe {
     display: none !important;
 }
 
-
+/* Limit homepage article preview height */
 .homepage-post-preview {
     max-height: 320px;
     overflow: hidden;
     position: relative;
 }
 
-
+/* Fade out the bottom of the preview */
 .homepage-post-preview::after {
     content: "";
-
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-
     height: 70px;
-
     background: linear-gradient(
         to bottom,
         rgba(255,255,255,0),
         #fff
     );
-
     pointer-events: none;
 }
 
+/* Hide Blogger's homepage thumbnail */
+.post-outer-container .snippet-thumbnail {
+    display: none !important;
+}
 
-/* =========================================================
-   Homepage Background
-   ========================================================= */
+/* === Homepage Background === */
 
 .main_content_container {
     background: #fefefe !important;
     margin-top: 25px !important;
 }
 
-
-/* =========================================================
-   Homepage Article Cards
-   ========================================================= */
+/* === Homepage Article Cards === */
 
 .post-outer-container {
     background: #ffffff !important;
-
-    margin-top: 25px !important;
     margin-bottom: 24px !important;
-
+box-shadow:
+    0 4px 14px 0 rgba(0, 0, 0, 0.07),
+    inset 0 0 10px 0 rgba(0, 0, 0, 0.035);
     border: 1px solid #f1f1f1 !important;
-    border-radius: 4px !important;
-
-    box-shadow:
-        0 4px 14px 0 rgba(0, 0, 0, 0.07),
-        inset 0 0 10px 0 rgba(0, 0, 0, 0.035) !important;
 }
 
-
+/* Article content spacing */
 .post-outer-container .post-content {
     padding: 18px !important;
-
     box-sizing: border-box !important;
-
     margin-top: 30px !important;
 }
 
+/* Slightly soften the card edges */
+.post-outer-container {
+    border-radius: 4px !important;
+    margin-top: auto !important;
+}
 
-/* Keep links and buttons above card content */
+/* Keep links and buttons above the card content */
 .post-outer-container a,
 .post-outer-container button {
     position: relative;
     z-index: 1;
 }
+
