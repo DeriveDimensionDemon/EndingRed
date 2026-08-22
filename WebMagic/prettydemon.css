@@ -49,8 +49,7 @@ header.centered-top-container .main_header_elements {
 .homepage-post-preview img,
 .homepage-post-preview .separator,
 .homepage-post-preview iframe {
-    visibility: hidden !important;
-    opacity: 0 !important;
+    display: none !important;
 }
 
 /* Limit homepage article preview height */
@@ -77,16 +76,15 @@ header.centered-top-container .main_header_elements {
 }
 
 /* Hide Blogger's homepage thumbnail */
-.post-outer-container .snippet-thumbnail,
-.post-outer-container .snippet-thumbnail-img {
-    visibility: hidden !important;
-    opacity: 0 !important;
+.post-outer-container .snippet-thumbnail {
+    display: none !important;
 }
 
 /* === Homepage Background === */
 
 .main_content_container {
     background: #fefefe !important;
+    margin-top: 25px !important;
 }
 
 /* === Homepage Article Cards === */
@@ -94,13 +92,7 @@ header.centered-top-container .main_header_elements {
 .post-outer-container {
     background: #ffffff !important;
     margin-bottom: 24px !important;
-    margin-top: 25px !important;
-
-    /* Outer shadow + inner shadow */
-    box-shadow:
-        0 4px 14px 0 rgba(0, 0, 0, 0.07),
-        inset 0 0 10px 0 rgba(0, 0, 0, 0.035) !important;
-
+    box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.06) !important;
     border: 1px solid #f1f1f1 !important;
 }
 
@@ -123,3 +115,4 @@ header.centered-top-container .main_header_elements {
     position: relative;
     z-index: 1;
 }
+
