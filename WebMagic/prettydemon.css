@@ -49,7 +49,8 @@ header.centered-top-container .main_header_elements {
 .homepage-post-preview img,
 .homepage-post-preview .separator,
 .homepage-post-preview iframe {
-    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 /* Limit homepage article preview height */
@@ -76,8 +77,10 @@ header.centered-top-container .main_header_elements {
 }
 
 /* Hide Blogger's homepage thumbnail */
-.post-outer-container .snippet-thumbnail {
-    display: none !important;
+.post-outer-container .snippet-thumbnail,
+.post-outer-container .snippet-thumbnail-img {
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 /* === Homepage Background === */
@@ -92,7 +95,12 @@ header.centered-top-container .main_header_elements {
     background: #ffffff !important;
     margin-bottom: 24px !important;
     margin-top: 25px !important;
-    box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.06) !important;
+
+    /* Outer shadow + inner shadow */
+    box-shadow:
+        0 4px 14px 0 rgba(0, 0, 0, 0.07),
+        inset 0 0 10px 0 rgba(0, 0, 0, 0.035) !important;
+
     border: 1px solid #f1f1f1 !important;
 }
 
@@ -115,4 +123,3 @@ header.centered-top-container .main_header_elements {
     position: relative;
     z-index: 1;
 }
-
