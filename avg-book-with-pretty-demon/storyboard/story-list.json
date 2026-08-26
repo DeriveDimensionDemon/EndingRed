@@ -1,0 +1,16 @@
+{
+  "stories": [
+    {
+      "id": "red-studywithyou-ow",
+      "title": "紅『Study with you』手工劇本",
+      "author": "Original Writing",
+      "file": "story-red-studywithyou-ow.json"
+    },
+    {
+      "id": "red-studywithyou-ai",
+      "title": "紅『Study with you』AI改寫",
+      "author": "AI Version",
+      "file": "story-red-studywithyou-ai.json"
+    }
+  ]
+}
