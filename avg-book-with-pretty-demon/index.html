@@ -640,6 +640,15 @@ async function loadJson(url){
   return response.json();
 }
 
+function clearError(){
+  errorBox.hidden = true;
+  errorBox.textContent = "";
+}
+
+async function loadColorBox(){
+  colorBox = await loadJson("storyboard/color-box.json");
+}
+
 
 function loadSave(){
   try{
@@ -752,6 +761,7 @@ async function loadStoryList(){
   storyList = await response.json();
 
   const stories = Array.isArray(storyList.stories) ? storyList.stories : [];
+  clearError();
   renderStoryMenu(stories);
 }
 
@@ -788,6 +798,10 @@ async function startSelectedStory(story){
     if(!response.ok) throw new Error(`無法載入劇本：${story.file}（${response.status}）`);
     story = await response.json();
 
+    if(!Array.isArray(story.flows) || !story.ending){
+      throw new Error(`劇本格式不完整：${story.file || selectedStory.file}`);
+    }
+
     currentStory = story;
     totalScore = 0;
     currentFlowId = 1;
@@ -806,29 +820,7 @@ function returnToStoryMenu(){
   scene.hidden = true;
   storyMenu.hidden = false;
   selectedStory = null;
-}
-
-async function loadGame(){
-  try{
-    [story, colorBox] = await Promise.all([
-      loadJson(STORY_URL),
-      loadJson(COLOR_BOX_URL)
-    ]);
-
-    if(!Array.isArray(story.flows) || !story.ending){
-      throw new Error("storyboard.json 格式不完整。");
-    }
-
-    scene.hidden = false;
-    startGame();
-
-  }catch(error){
-    showError(
-      "無法讀取 AVG BOOK 資料。\n\n" +
-      "請確認 storyboard/story-red-studywithyou.json 與 storyboard/color-box.json 都已上傳。\n\n" +
-      error.message
-    );
-  }
+  clearError();
 }
 
 function getFlow(flowId){
