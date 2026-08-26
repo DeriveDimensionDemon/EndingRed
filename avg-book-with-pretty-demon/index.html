@@ -547,6 +547,25 @@ body.story-menu-open #ui-toggle{
     box-shadow:0 8px 40px rgba(0,0,0,.5);
   }
 }
+
+/* Story-list accordion */
+.story-work {
+  width: 100%;
+}
+.story-version {
+  margin-left: 30px;
+  width: calc(100% - 30px);
+}
+.story-version .story-choice-title {
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .story-version {
+    margin-left: 18px;
+    width: calc(100% - 18px);
+  }
+}
+
 </style>
 </head>
 
@@ -791,6 +810,73 @@ function closeGalleryViewer(){
 
 let storyList = null;
 let selectedStory = null;
+let expandedStoryId = null;
+
+function isValidStoryEntry(storyEntry){
+  return !!(storyEntry && storyEntry.id && storyEntry.title);
+}
+function validVersionEntry(version){
+  return !!(version && version.id && version.title && version.file);
+}
+
+function renderStoryMenu(stories){
+  storyMenuList.innerHTML = "";
+  const validStories = Array.isArray(stories) ? stories.filter(isValidStoryEntry) : [];
+  if(validStories.length === 0){
+    showError("story-list.json 沒有可載入的劇本。");
+    return;
+  }
+
+  validStories.forEach((storyEntry)=>{
+    const isOpen = expandedStoryId === storyEntry.id;
+    const workButton = document.createElement("button");
+    workButton.type = "button";
+    workButton.className = "story-choice story-work";
+
+    const workTitle = document.createElement("span");
+    workTitle.className = "story-choice-title";
+    workTitle.textContent = `${storyEntry.title}　　　　　　　　　${isOpen ? "▼" : "◀"}`;
+    workButton.appendChild(workTitle);
+
+    workButton.addEventListener("click",(event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      expandedStoryId = isOpen ? null : storyEntry.id;
+      renderStoryMenu(validStories);
+    });
+    storyMenuList.appendChild(workButton);
+
+    if(!isOpen) return;
+
+    const versions = Array.isArray(storyEntry.versions)
+      ? storyEntry.versions.filter(validVersionEntry)
+      : [];
+
+    versions.forEach((versionEntry)=>{
+      const versionButton = document.createElement("button");
+      versionButton.type = "button";
+      versionButton.className = "story-choice story-version";
+
+      const title = document.createElement("span");
+      title.className = "story-choice-title";
+      title.textContent = versionEntry.title;
+
+      const description = document.createElement("span");
+      description.className = "story-choice-author";
+      description.textContent = versionEntry.description || "";
+
+      versionButton.append(title, description);
+      versionButton.addEventListener("click", async (event)=>{
+        event.preventDefault();
+        event.stopPropagation();
+        await startSelectedStory(storyEntry, versionEntry);
+      });
+      storyMenuList.appendChild(versionButton);
+    });
+  });
+
+  storyMenu.hidden = false;
+}
 
 async function loadStoryList(){
   document.body.classList.add("story-menu-open");
@@ -799,72 +885,51 @@ async function loadStoryList(){
   const response = await fetch("storyboard/story-list.json", {cache:"no-store"});
   if(!response.ok) throw new Error(`無法載入 story-list.json（${response.status}）`);
   storyList = await response.json();
-
   const stories = Array.isArray(storyList.stories) ? storyList.stories : [];
   clearError();
   renderStoryMenu(stories);
 }
 
-function renderStoryMenu(stories){
-  storyMenuList.innerHTML = "";
-
-  if(stories.length === 0){
-    showError("story-list.json 沒有可載入的劇本。");
-    return;
-  }
-
-  stories.forEach((story)=>{
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "story-choice";
-    button.innerHTML = `
-      <span class="story-choice-title">${escapeHtml(story.title || story.id || "未命名劇本")}</span>
-      ${story.author ? `<span class="story-choice-author">${escapeHtml(story.author)}</span>` : ""}
-    `;
-    button.addEventListener("click", async (event)=>{
-      event.preventDefault();
-      event.stopPropagation();
-      await startSelectedStory(story);
-    });
-    storyMenuList.appendChild(button);
-  });
-
-  storyMenu.hidden = false;
-}
-
-async function startSelectedStory(storyEntry){
-  selectedStory = storyEntry;
-  storyMenu.hidden = true;
+async function startSelectedStory(storyEntry, versionEntry){
+  selectedStory = {story:storyEntry, version:versionEntry};
   clearError();
 
   try{
-    const response = await fetch(`storyboard/${storyEntry.file}`, {cache:"no-store"});
-    if(!response.ok) throw new Error(`無法載入劇本：${storyEntry.file}（${response.status}）`);
-
-    const loadedStory = await response.json();
-
-    if(!Array.isArray(loadedStory.flows) || !loadedStory.ending){
-      throw new Error(`劇本格式不完整：${storyEntry.file}`);
+    const response = await fetch(
+      `storyboard/${storyEntry.id}/${versionEntry.file}`,
+      {cache:"no-store"}
+    );
+    if(!response.ok){
+      throw new Error(`無法載入劇本：${versionEntry.file}（${response.status}）`);
     }
 
-    // This is the actual story object used by getFlow() and renderFlow().
+    const loadedStory = await response.json();
+    if(!Array.isArray(loadedStory.flows) || !loadedStory.ending){
+      throw new Error(`劇本格式不完整：${versionEntry.file}`);
+    }
+
     story = loadedStory;
     currentStory = loadedStory;
-
     totalScore = 0;
     currentFlowId = 1;
     currentCg = DEFAULT_CG;
     currentSpeaker = "紅";
+
     ending.style.display = "none";
     document.body.classList.remove("ui-hidden");
     document.body.classList.remove("story-menu-open");
     sceneImage.src = DEFAULT_CG;
 
-    // Load presentation data, but never let it block the selected story.
+    sessionStorage.setItem("avgBookSelectedStory", JSON.stringify({
+      storyId:storyEntry.id,
+      versionId:versionEntry.id,
+      storyTitle:storyEntry.title,
+      versionTitle:versionEntry.title,
+      file:`storyboard/${storyEntry.id}/${versionEntry.file}`
+    }));
+
     await loadColorBox();
     applySpeakerColor(currentSpeaker);
-
-    // The menu is hidden only after the story is ready to render.
     scene.hidden = false;
     renderFlow();
   }catch(error){
@@ -881,7 +946,14 @@ function returnToStoryMenu(){
   scene.hidden = true;
   storyMenu.hidden = false;
   selectedStory = null;
+  expandedStoryId = null;
   clearError();
+
+  const stories = storyList && Array.isArray(storyList.stories)
+    ? storyList.stories
+    : [];
+
+  renderStoryMenu(stories);
 }
 
 function getFlow(flowId){
@@ -1179,5 +1251,6 @@ document.getElementById("ui-toggle").addEventListener("click",()=>{
 
 loadStoryList().catch(error=>showError(error.message || "劇本清單載入失敗。"));
 </script>
+
 </body>
 </html>
