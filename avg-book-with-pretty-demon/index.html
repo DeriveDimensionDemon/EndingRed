@@ -821,7 +821,11 @@ function validVersionEntry(version){
 
 function renderStoryMenu(stories){
   storyMenuList.innerHTML = "";
-  const validStories = Array.isArray(stories) ? stories.filter(isValidStoryEntry) : [];
+
+  const validStories = Array.isArray(stories)
+    ? stories.filter(isValidStoryEntry)
+    : [];
+
   if(validStories.length === 0){
     showError("story-list.json 沒有可載入的劇本。");
     return;
@@ -829,13 +833,22 @@ function renderStoryMenu(stories){
 
   validStories.forEach((storyEntry)=>{
     const isOpen = expandedStoryId === storyEntry.id;
+
     const workButton = document.createElement("button");
     workButton.type = "button";
     workButton.className = "story-choice story-work";
 
     const workTitle = document.createElement("span");
     workTitle.className = "story-choice-title";
-    workTitle.textContent = `${storyEntry.title}　　　　　　　　　${isOpen ? "▼" : "◀"}`;
+
+    const workName = document.createElement("span");
+    workName.textContent = storyEntry.title;
+
+    const arrow = document.createElement("span");
+    arrow.className = "story-arrow";
+    arrow.textContent = isOpen ? "▼" : "◀";
+
+    workTitle.append(workName, arrow);
     workButton.appendChild(workTitle);
 
     workButton.addEventListener("click",(event)=>{
@@ -844,6 +857,7 @@ function renderStoryMenu(stories){
       expandedStoryId = isOpen ? null : storyEntry.id;
       renderStoryMenu(validStories);
     });
+
     storyMenuList.appendChild(workButton);
 
     if(!isOpen) return;
@@ -866,11 +880,13 @@ function renderStoryMenu(stories){
       description.textContent = versionEntry.description || "";
 
       versionButton.append(title, description);
+
       versionButton.addEventListener("click", async (event)=>{
         event.preventDefault();
         event.stopPropagation();
         await startSelectedStory(storyEntry, versionEntry);
       });
+
       storyMenuList.appendChild(versionButton);
     });
   });
@@ -885,7 +901,14 @@ async function loadStoryList(){
   const response = await fetch("storyboard/story-list.json", {cache:"no-store"});
   if(!response.ok) throw new Error(`無法載入 story-list.json（${response.status}）`);
   storyList = await response.json();
-  const stories = Array.isArray(storyList.stories) ? storyList.stories : [];
+  const stories = Array.isArray(storyList.stories)
+    ? storyList.stories.filter(isValidStoryEntry)
+    : [];
+
+  if(expandedStoryId === null && stories.length > 0){
+    expandedStoryId = stories[0].id;
+  }
+
   clearError();
   renderStoryMenu(stories);
 }
@@ -893,6 +916,9 @@ async function loadStoryList(){
 async function startSelectedStory(storyEntry, versionEntry){
   selectedStory = {story:storyEntry, version:versionEntry};
   clearError();
+
+  const oldLoadError = document.getElementById("story-load-error");
+  if(oldLoadError) oldLoadError.remove();
 
   try{
     const response = await fetch(
@@ -935,8 +961,20 @@ async function startSelectedStory(storyEntry, versionEntry){
   }catch(error){
     storyMenu.hidden = false;
     document.body.classList.add("story-menu-open");
-    errorBox.hidden = false;
-    errorBox.textContent = error.message || "劇本載入失敗。";
+
+    let loadError = document.getElementById("story-load-error");
+    if(!loadError){
+      loadError = document.createElement("div");
+      loadError.id = "story-load-error";
+      loadError.style.cssText =
+        "width:min(100%,360px);margin-top:6px;padding:10px 14px;" +
+        "border:1px solid rgba(255,255,255,.22);border-radius:8px;" +
+        "background:rgba(182,37,14,.16);color:#ddd;font-size:12px;" +
+        "line-height:1.6;text-align:left;";
+      storyMenu.appendChild(loadError);
+    }
+
+    loadError.textContent = error.message || "劇本載入失敗。";
   }
 }
 
