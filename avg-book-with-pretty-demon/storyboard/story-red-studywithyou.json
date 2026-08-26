@@ -524,18 +524,18 @@
     "evaluations": [
       {
         "min-score": 0,
-        "max-score": 8,
+        "max-score": 9,
         "grade": "現在可以滾了",
         "demon-message": "「門在那邊，祝妳走時撞到玻璃上。」"
       },
       {
-        "min-score": 9,
-        "max-score": 17,
+        "min-score": 10,
+        "max-score": 18,
         "grade": "岌岌可危",
         "demon-message": "「我一定要回去問蒼，這是怎麼回事。...」"
       },
       {
-        "min-score": 18,
+        "min-score": 19,
         "max-score": 27,
         "grade": "還可以吧",
         "demon-message": "「妳...明天還考慮過來嗎？」"
