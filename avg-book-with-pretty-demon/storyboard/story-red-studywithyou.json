@@ -6,13 +6,13 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "請進...\n哦？妳就是今天來幫忙的小壞蛋嗎？"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "「請多指教。」",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -20,7 +20,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🧐"
             }
           ],
           "next": 2
@@ -63,13 +63,13 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "話說在前面，我們可是維度惡魔，並不是什麼好惹的對象，妳還是罩子得放亮點，別混水摸魚。"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "「那麼，摸胸部可以嗎？」",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -77,7 +77,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "😠"
             }
           ],
           "next": 3
@@ -120,7 +120,7 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "妳似乎聽到紅的喃喃自語：「這隻小壞蛋誰引薦的，怎麼那麼...嘖。"
       },
 
       "choices": [
@@ -177,12 +177,12 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「好了，別在那發呆，去倒杯開水給我」\n「呼，口真渴...。」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "不小心撒在紅身上。",
           "score": 0,
           "events": [
             {
@@ -197,7 +197,7 @@
           "next": 5
         },
         {
-          "player-move": "",
+          "player-move": "紅伸出手接的時候，水杯掉在地上了",
           "score": 0,
           "events": [
             {
@@ -234,12 +234,12 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「哎？！這簡直！快去拿東西來擦乾淨！」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "抹布扔到地上，用腳踩著擦。",
           "score": 0,
           "events": [
             {
@@ -254,7 +254,7 @@
           "next": 6
         },
         {
-          "player-move": "",
+          "player-move": "拿起她桌上的文件來吸乾。",
           "score": 0,
           "events": [
             {
@@ -269,7 +269,7 @@
           "next": 6
         },
         {
-          "player-move": "",
+          "player-move": "跪在地上，細心的擦。",
           "score": 0,
           "events": [
             {
@@ -291,12 +291,12 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「我看妳真的很不擅長在這打工。」\n「乾脆中午就回去吧。」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "「請再給我一次機會！」",
           "score": 0,
           "events": [
             {
@@ -311,7 +311,7 @@
           "next": 7
         },
         {
-          "player-move": "",
+          "player-move": "「因為不是來打工，是來看妳的。」",
           "score": 0,
           "events": [
             {
@@ -326,7 +326,7 @@
           "next": 7
         },
         {
-          "player-move": "",
+          "player-move": "「我願意無償工作來換！」",
           "score": 0,
           "events": [
             {
@@ -348,12 +348,12 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「倒是說句人話。哼。...」\n（紅心想：這小壞蛋笨手笨腳的，但我記得，她的資料介紹人不是寫著蒼嗎？），對了，妳認識蒼？"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "「認識，以前被她拯救過。」",
           "score": 0,
           "events": [
             {
@@ -368,7 +368,7 @@
           "next": 8
         },
         {
-          "player-move": "",
+          "player-move": "「認識，她比妳還漂亮呢。」",
           "score": 0,
           "events": [
             {
@@ -383,7 +383,7 @@
           "next": 8
         },
         {
-          "player-move": "",
+          "player-move": "「什麼蒼？我的心裡、眼裡只有妳。」",
           "score": 0,
           "events": [
             {
@@ -405,12 +405,12 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「蒼這傢伙...今晚回去我肯定找她算帳。」\n「好了，這份出勤單填一填，妳可以準備下班了。」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "在上面塗鴉。",
           "score": 0,
           "events": [
             {
@@ -425,7 +425,7 @@
           "next": 9
         },
         {
-          "player-move": "",
+          "player-move": "非常嚴謹的每欄都好好填寫。",
           "score": 0,
           "events": [
             {
@@ -440,7 +440,7 @@
           "next": 9
         },
         {
-          "player-move": "",
+          "player-move": "「太麻煩了，妳幫我填吧？」",
           "score": 0,
           "events": [
             {
@@ -462,13 +462,13 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": ""
+        "text": "「...........」\n她看了看妳填寫的資料，吁了口氣，隨意扔在一旁。"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "「對我評價很高對吧？」",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -476,14 +476,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "😒"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "「已經愛上我了？」",
+          "score": 3,
           "events": [
             {
               "type": "cg",
@@ -491,14 +491,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🙄"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "「謝謝您今天的指教！」",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -506,7 +506,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🥱"
             }
           ],
           "next": null
@@ -518,27 +518,27 @@
   "ending": {
     "demon-message": {
       "speaker": "紅",
-      "text": ""
+      "text": "「好了，我順便打好了妳的分數。」\n「只能說，我對妳的感想是---」"
     },
 
     "evaluations": [
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "grade": "現在可以滾了",
+        "demon-message": "「門在那邊，祝妳走時撞到玻璃上。」"
       },
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "grade": "普普通通",
+        "demon-message": "「我一定要回去問蒼，這是怎麼回事。...」"
       },
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "grade": "還不錯嘛",
+        "demon-message": "「妳...明天還考慮過來嗎？」"
       }
     ]
   }
