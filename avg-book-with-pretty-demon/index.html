@@ -450,6 +450,60 @@ body.ui-hidden #ending{
   text-decoration:underline;
 }
 
+
+#story-menu{
+  position:absolute;
+  inset:0;
+  z-index:50;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:28px 22px;
+  background:#111;
+  text-align:center;
+}
+#story-menu-title{
+  font-size:clamp(20px,5vw,28px);
+  font-weight:800;
+  letter-spacing:.03em;
+}
+#story-menu-subtitle{
+  font-size:12px;
+  letter-spacing:.18em;
+  opacity:.58;
+  margin-bottom:10px;
+}
+#story-menu-list{
+  width:min(100%,360px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.story-choice{
+  width:100%;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:13px 15px;
+  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
+  cursor:pointer;
+  text-align:left;
+}
+.story-choice-title{
+  display:block;
+  font-size:16px;
+  font-weight:700;
+}
+.story-choice-author{
+  display:block;
+  margin-top:3px;
+  font-size:12px;
+  opacity:.62;
+}
+
 #error{
   padding:30px 20px;
   text-align:center;
@@ -468,6 +522,12 @@ body.ui-hidden #ending{
 
 <body>
 <main id="game">
+  <section id="story-menu" aria-label="劇本選單">
+    <div id="story-menu-title">AVG BOOK WITH PRETTY DEMON</div>
+    <div id="story-menu-subtitle">SELECT STORY</div>
+    <div id="story-menu-list"></div>
+  </section>
+
   <button id="ui-toggle" type="button">UI</button>
   <div id="scene">
     <img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
@@ -483,11 +543,7 @@ body.ui-hidden #ending{
 
     <section id="ending">
       <div id="ending-card">
-        <div id="ending-text">
-          <div id="ending-label">妳的評價</div>
-          <div id="ending-grade">A</div>
-          <div id="ending-message"></div>
-        </div>
+        <div id="ending-text"></div>
         <div id="ending-actions">
           <button id="gallery-open" type="button">CG 畫廊</button>
           <button id="restart" type="button">重新開始</button>
@@ -547,6 +603,8 @@ const emojiLayer = document.getElementById("emoji-layer");
 const flash = document.getElementById("flash");
 const ending = document.getElementById("ending");
 const endingText = document.getElementById("ending-text");
+const storyMenu = document.getElementById("story-menu");
+const storyMenuList = document.getElementById("story-menu-list");
 const restartButton = document.getElementById("restart");
 const galleryOpen = document.getElementById("gallery-open");
 const gallery = document.getElementById("gallery");
@@ -561,6 +619,7 @@ const uiToggle = document.getElementById("ui-toggle");
 const errorBox = document.getElementById("error");
 
 let story = null;
+let currentStory = null;
 let colorBox = {};
 let currentFlowId = 1;
 let totalScore = 0;
@@ -681,6 +740,72 @@ function closeGalleryViewer(){
   } else {
     uiToggle.style.display = "none";
   }
+}
+
+
+let storyList = null;
+let selectedStory = null;
+
+async function loadStoryList(){
+  const response = await fetch("storyboard/story-list.json", {cache:"no-store"});
+  if(!response.ok) throw new Error(`無法載入 story-list.json（${response.status}）`);
+  storyList = await response.json();
+
+  const stories = Array.isArray(storyList.stories) ? storyList.stories : [];
+  renderStoryMenu(stories);
+}
+
+function renderStoryMenu(stories){
+  storyMenuList.innerHTML = "";
+
+  if(stories.length === 0){
+    showError("story-list.json 沒有可載入的劇本。");
+    return;
+  }
+
+  stories.forEach((story)=>{
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "story-choice";
+    button.innerHTML = `
+      <span class="story-choice-title">${escapeHtml(story.title || story.id || "未命名劇本")}</span>
+      ${story.author ? `<span class="story-choice-author">${escapeHtml(story.author)}</span>` : ""}
+    `;
+    button.addEventListener("click",()=>startSelectedStory(story));
+    storyMenuList.appendChild(button);
+  });
+
+  storyMenu.hidden = false;
+}
+
+async function startSelectedStory(story){
+  selectedStory = story;
+  storyMenu.hidden = true;
+  clearError();
+
+  try{
+    const response = await fetch(`storyboard/${story.file}`, {cache:"no-store"});
+    if(!response.ok) throw new Error(`無法載入劇本：${story.file}（${response.status}）`);
+    story = await response.json();
+
+    currentStory = story;
+    totalScore = 0;
+    currentFlowId = 1;
+    ending.style.display = "none";
+    scene.hidden = false;
+    await loadColorBox();
+    renderFlow();
+  }catch(error){
+    storyMenu.hidden = false;
+    showError(error.message || "劇本載入失敗。");
+  }
+}
+
+function returnToStoryMenu(){
+  ending.style.display = "none";
+  scene.hidden = true;
+  storyMenu.hidden = false;
+  selectedStory = null;
 }
 
 async function loadGame(){
@@ -937,16 +1062,16 @@ function showEnding(){
   }
 
   if(!result){
-    result = evaluations[evaluations.length - 1] || {};
+    result = evaluations[evaluations.length - 1] || {"demon-message":""};
   }
 
-  // Flow 9's message and the ending evaluation are separate.
-  // The ending card must use story.ending.demon-message.
-  const endingDialogue = story.ending["demon-message"] || {};
-  const finalText = normalizeMessageText(endingDialogue.text || "");
-  const evaluationText = normalizeMessageText(result["demon-message"] || "");
+  const endingSpeaker =
+    result.speaker ||
+    (result["demon-message-speaker"]) ||
+    currentSpeaker ||
+    "紅";
 
-  applySpeakerColor(endingDialogue.speaker || "紅");
+  applySpeakerColor(endingSpeaker);
 
   const grade = String(
     result.grade ||
@@ -955,20 +1080,14 @@ function showEnding(){
     "D"
   );
 
-  const endingTextElement = document.getElementById("ending-text");
-  const endingGrade = document.getElementById("ending-grade");
-  const endingMessage = document.getElementById("ending-message");
-
-  endingTextElement.innerHTML = `
-    <div id="ending-label">妳的評價</div>
-    <div id="ending-grade">${escapeHtml(grade)}</div>
-    <div id="ending-message">${escapeHtml(finalText)}\n\n${escapeHtml(evaluationText)}</div>
-  `;
+  endingText.innerHTML =
+    `${escapeHtml(normalizeMessageText(result["demon-message"] || ""))}` +
+    `<br><br>妳的評價 <span id="ending-grade">${escapeHtml(grade)}</span>`;
 
   ending.style.display = "flex";
 }
 
-restartButton.addEventListener("click",startGame);
+restartButton.addEventListener("click", returnToStoryMenu);
 
 galleryOpen.addEventListener("click",openGallery);
 galleryClose.addEventListener("click",closeGallery);
@@ -993,6 +1112,8 @@ document.getElementById("ui-toggle").addEventListener("click",()=>{
 });
 
 loadGame();
+
+loadStoryList().catch(error=>showError(error.message || "劇本清單載入失敗。"));
 </script>
 </body>
 </html>
