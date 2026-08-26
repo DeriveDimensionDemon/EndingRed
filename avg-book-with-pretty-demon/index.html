@@ -223,39 +223,19 @@ body.ui-hidden #ending{
 }
 
 #ending-text{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  gap:8px;
-  margin-bottom:18px;
-}
-
-#ending-label{
-  font-size:clamp(15px,3.2vw,18px);
-  line-height:1.4;
-  font-weight:600;
-  color:rgba(255,255,255,.92);
+  white-space:pre-wrap;
+  line-height:1.75;
+  font-size:clamp(17px,4vw,25px);
+  margin-bottom:15px;
 }
 
 #ending-grade{
-  display:block;
-  font-size:clamp(42px,10vw,58px);
-  line-height:1.05;
+  display:inline-block;
+  margin-left:8px;
+  font-size:47px;
+  line-height:1;
   font-weight:900;
-  color:#fff;
-  margin:0;
-}
-
-#ending-message{
-  width:100%;
-  white-space:pre-wrap;
-  line-height:1.8;
-  font-size:clamp(16px,3.8vw,22px);
-  font-weight:600;
-  color:rgba(255,255,255,.96);
-  margin-top:4px;
+  vertical-align:-7px;
 }
 
 #ending-actions{
@@ -567,8 +547,6 @@ const emojiLayer = document.getElementById("emoji-layer");
 const flash = document.getElementById("flash");
 const ending = document.getElementById("ending");
 const endingText = document.getElementById("ending-text");
-const endingGrade = document.getElementById("ending-grade");
-const endingMessage = document.getElementById("ending-message");
 const restartButton = document.getElementById("restart");
 const galleryOpen = document.getElementById("gallery-open");
 const gallery = document.getElementById("gallery");
@@ -959,16 +937,16 @@ function showEnding(){
   }
 
   if(!result){
-    result = evaluations[evaluations.length - 1] || {"demon-message":""};
+    result = evaluations[evaluations.length - 1] || {};
   }
 
-  const endingSpeaker =
-    result.speaker ||
-    (result["demon-message-speaker"]) ||
-    currentSpeaker ||
-    "紅";
+  // Flow 9's message and the ending evaluation are separate.
+  // The ending card must use story.ending.demon-message.
+  const endingDialogue = story.ending["demon-message"] || {};
+  const finalText = normalizeMessageText(endingDialogue.text || "");
+  const evaluationText = normalizeMessageText(result["demon-message"] || "");
 
-  applySpeakerColor(endingSpeaker);
+  applySpeakerColor(endingDialogue.speaker || "紅");
 
   const grade = String(
     result.grade ||
@@ -977,8 +955,15 @@ function showEnding(){
     "D"
   );
 
-  endingGrade.textContent = grade;
-  endingMessage.textContent = normalizeMessageText(result["demon-message"] || "");
+  const endingTextElement = document.getElementById("ending-text");
+  const endingGrade = document.getElementById("ending-grade");
+  const endingMessage = document.getElementById("ending-message");
+
+  endingTextElement.innerHTML = `
+    <div id="ending-label">妳的評價</div>
+    <div id="ending-grade">${escapeHtml(grade)}</div>
+    <div id="ending-message">${escapeHtml(finalText)}\n\n${escapeHtml(evaluationText)}</div>
+  `;
 
   ending.style.display = "flex";
 }
