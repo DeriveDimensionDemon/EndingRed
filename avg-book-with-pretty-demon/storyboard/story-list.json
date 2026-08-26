@@ -7,10 +7,10 @@
       "file": "story-red-studywithyou-ow.json"
     },
     {
-      "id": "red-studywithyou-ai",
+      "id": "red-studywithyou-ai1",
       "title": "紅『Study with you』手工劇本＋AI潤飾",
       "author": "前項純手工劇本的AI改寫。",
-      "file": "story-red-studywithyou-ai.json"
+      "file": "story-red-studywithyou-ai1.json"
     },
     {
       "id": "red-studywithyou-ai2",
@@ -22,7 +22,7 @@
       "id": "red-studywithyou-ai3",
       "title": "紅『Study with you』AI劇本 生日籌辦篇",
       "author": "建議主題題材方向給AI後，由AI獨力撰寫",
-      "file": "story-red-studywithyou-ai2.json"
+      "file": "story-red-studywithyou-ai3.json"
     }
   ]
 }
