@@ -3,19 +3,25 @@
     {
       "id": "red-studywithyou-ow",
       "title": "紅『Study with you』手工劇本",
-      "author": "Original Writing",
+      "author": "純手工劇本，無AI參與撰寫。",
       "file": "story-red-studywithyou-ow.json"
     },
     {
       "id": "red-studywithyou-ai",
-      "title": "紅『Study with you』AI潤飾",
-      "author": "AI Version",
+      "title": "紅『Study with you』手工劇本＋AI潤飾",
+      "author": "前項純手工劇本的AI改寫。",
       "file": "story-red-studywithyou-ai.json"
     },
     {
       "id": "red-studywithyou-ai2",
-      "title": "紅『Study with you』AI變奏",
-      "author": "AI FREESTYLE Version",
+      "title": "紅『Study with you』AI劇本 相親顧問篇",
+      "author": "建議AI主題方向後，AI獨力撰寫",
+      "file": "story-red-studywithyou-ai2.json"
+    }
+    {
+      "id": "red-studywithyou-ai3",
+      "title": "紅『Study with you』AI劇本 生日籌辦篇",
+      "author": "建議主題題材方向給AI後，由AI獨力撰寫",
       "file": "story-red-studywithyou-ai2.json"
     }
   ]
