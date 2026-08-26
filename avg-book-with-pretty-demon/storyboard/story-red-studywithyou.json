@@ -12,7 +12,7 @@
       "choices": [
         {
           "player-move": "「是的，請多指教。」",
-          "score": 2,
+          "score": 3,
           "events": [
             {
               "type": "cg",
@@ -27,7 +27,7 @@
         },
         {
           "player-move": "「其實，我是來求偶的。」",
-          "score": 3,
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -42,7 +42,7 @@
         },
         {
           "player-move": "「研究文件？我是來研究妳的。」",
-          "score": 1,
+          "score": 2,
           "events": [
             {
               "type": "cg",
