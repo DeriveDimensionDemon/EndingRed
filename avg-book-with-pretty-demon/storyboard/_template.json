@@ -525,16 +525,19 @@
       {
         "min-score": 0,
         "max-score": 0,
+        "grade": "",
         "demon-message": ""
       },
       {
         "min-score": 0,
         "max-score": 0,
+        "grade": "",
         "demon-message": ""
       },
       {
         "min-score": 0,
         "max-score": 0,
+        "grade": "",
         "demon-message": ""
       }
     ]
