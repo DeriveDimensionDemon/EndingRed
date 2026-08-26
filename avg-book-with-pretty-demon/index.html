@@ -756,6 +756,8 @@ let storyList = null;
 let selectedStory = null;
 
 async function loadStoryList(){
+  scene.hidden = true;
+  storyMenu.hidden = false;
   const response = await fetch("storyboard/story-list.json", {cache:"no-store"});
   if(!response.ok) throw new Error(`無法載入 story-list.json（${response.status}）`);
   storyList = await response.json();
@@ -788,26 +790,36 @@ function renderStoryMenu(stories){
   storyMenu.hidden = false;
 }
 
-async function startSelectedStory(story){
-  selectedStory = story;
+async function startSelectedStory(storyEntry){
+  selectedStory = storyEntry;
   storyMenu.hidden = true;
   clearError();
 
   try{
-    const response = await fetch(`storyboard/${story.file}`, {cache:"no-store"});
-    if(!response.ok) throw new Error(`無法載入劇本：${story.file}（${response.status}）`);
-    story = await response.json();
+    const response = await fetch(`storyboard/${storyEntry.file}`, {cache:"no-store"});
+    if(!response.ok) throw new Error(`無法載入劇本：${storyEntry.file}（${response.status}）`);
 
-    if(!Array.isArray(story.flows) || !story.ending){
-      throw new Error(`劇本格式不完整：${story.file || selectedStory.file}`);
+    const loadedStory = await response.json();
+
+    if(!Array.isArray(loadedStory.flows) || !loadedStory.ending){
+      throw new Error(`劇本格式不完整：${storyEntry.file}`);
     }
 
-    currentStory = story;
+    // This is the actual story object used by getFlow() and renderFlow().
+    story = loadedStory;
+    currentStory = loadedStory;
+
     totalScore = 0;
     currentFlowId = 1;
+    currentCg = DEFAULT_CG;
+    currentSpeaker = "紅";
     ending.style.display = "none";
+    document.body.classList.remove("ui-hidden");
     scene.hidden = false;
+    sceneImage.src = DEFAULT_CG;
+
     await loadColorBox();
+    applySpeakerColor(currentSpeaker);
     renderFlow();
   }catch(error){
     storyMenu.hidden = false;
@@ -1102,8 +1114,6 @@ document.addEventListener("keydown",(event)=>{
 document.getElementById("ui-toggle").addEventListener("click",()=>{
   document.body.classList.toggle("ui-hidden");
 });
-
-loadGame();
 
 loadStoryList().catch(error=>showError(error.message || "劇本清單載入失敗。"));
 </script>
