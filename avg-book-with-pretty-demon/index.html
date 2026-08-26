@@ -27,14 +27,16 @@ body{
   display:flex;
   justify-content:center;
   overflow-x:hidden;
+  min-height:100vh;
 }
 
 #game{
+  --scene-height:min(100vh,calc(100vw * 16 / 9),800px);
   position:relative;
   width:min(100vw,450px,calc(100vh * 9 / 16));
-  height:min(100vh,calc(100vw * 16 / 9),800px);
-  aspect-ratio:9 / 16;
-  overflow:hidden;
+  height:auto;
+  aspect-ratio:auto;
+  overflow:visible;
   background:#111;
   flex:0 0 auto;
 }
@@ -250,7 +252,12 @@ body.ui-hidden #ending{
 
 #gallery{
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:var(--scene-height);
+  max-height:var(--scene-height);
+  min-height:0;
   z-index:60;
   display:none;
   flex-direction:column;
@@ -318,7 +325,11 @@ body.ui-hidden #ending{
 
 #gallery-viewer{
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:var(--scene-height);
+  max-height:var(--scene-height);
   z-index:200;
   display:none;
   flex-direction:column;
@@ -388,9 +399,8 @@ body.ui-hidden #ending{
 </head>
 
 <body>
-<button id="ui-toggle" type="button">UI</button>
-
 <main id="game">
+  <button id="ui-toggle" type="button">UI</button>
   <div id="scene">
     <img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
     <div id="flash"></div>
@@ -507,6 +517,7 @@ function openGallery(){
     const img = document.createElement("img");
     img.src = `img/${filename}`;
     img.alt = `CG ${index + 1}`;
+    item.appendChild(img);
     item.addEventListener("click",()=>openGalleryViewer(filename));
     galleryGrid.appendChild(item);
   });
