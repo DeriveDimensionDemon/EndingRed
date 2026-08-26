@@ -566,6 +566,7 @@ body.story-menu-open #ui-toggle{
   }
 }
 
+.story-arrow{white-space:pre;}
 </style>
 </head>
 
@@ -843,7 +844,7 @@ function renderStoryMenu(stories){
 
     const arrow = document.createElement("span");
     arrow.className = "story-arrow";
-    arrow.textContent = isOpen ? "▼ " : "➤ ";
+    arrow.textContent = isOpen ? "▼　" : "➤　";
 
     const workName = document.createElement("span");
     workName.textContent = storyEntry.title;
