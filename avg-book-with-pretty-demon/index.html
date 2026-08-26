@@ -70,20 +70,6 @@ body{
   z-index:10;
 }
 
-#dialogue-box::after{
-  content:"";
-  position:absolute;
-  right:-9px;
-  top:50%;
-  width:18px;
-  height:18px;
-  background:rgb(255 255 255 / 74%);
-  border-top:1px solid rgba(255,255,255,.65);
-  border-right:1px solid rgba(255,255,255,.65);
-  transform:translateY(-50%) rotate(45deg);
-  backdrop-filter:blur(5px);
-  z-index:0;
-}
 
 #speaker{
   display:none;
@@ -94,7 +80,7 @@ body{
   z-index:1;
   white-space:pre-wrap;
   line-height:2;
-  font-size:clamp(14px,3.4vw,21px);
+  font-size:clamp(13px,3vw,18px);
   font-weight:600;
   color:#575757;
 }
@@ -235,14 +221,139 @@ body.ui-hidden #choices{
   vertical-align:-7px;
 }
 
-#restart{
+#ending-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+#restart,#gallery-open{
   border:1px solid rgba(255,255,255,.55);
   border-radius:8px;
   background:rgba(255,255,255,.12);
   color:#fff;
   padding:9px 18px;
+  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+#gallery{
+  position:absolute;
+  inset:0;
+  z-index:60;
+  display:none;
+  flex-direction:column;
+  background:rgba(10,10,10,.96);
+  padding:18px 14px;
+  overflow:auto;
+}
+
+#gallery-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+#gallery-title{
+  font-size:22px;
+  font-weight:700;
+}
+
+#gallery-close{
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:8px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  padding:7px 12px;
   font-size:16px;
   cursor:pointer;
+}
+
+#gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.gallery-item{
+  position:relative;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:9px;
+  overflow:hidden;
+  background:#191919;
+  cursor:pointer;
+}
+
+.gallery-item img{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+}
+
+.gallery-item span{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:6px 8px;
+  background:rgba(0,0,0,.55);
+  font-size:13px;
+  text-align:center;
+}
+
+#gallery-viewer{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  background:rgba(0,0,0,.92);
+}
+
+#gallery-viewer img{
+  max-width:96vw;
+  max-height:94vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:5px;
+}
+
+#gallery-viewer-close{
+  position:fixed;
+  top:14px;
+  right:14px;
+  z-index:201;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+#gallery-download{
+  position:fixed;
+  right:64px;
+  top:18px;
+  z-index:201;
+  color:#fff;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:8px;
+  background:rgba(0,0,0,.55);
+  padding:7px 11px;
+  font-size:14px;
 }
 
 #loading,#error{
@@ -284,7 +395,10 @@ body.ui-hidden #choices{
     <section id="ending">
       <div id="ending-card">
         <div id="ending-text"></div>
-        <button id="restart" type="button">重新開始</button>
+        <div id="ending-actions">
+          <button id="gallery-open" type="button">CG 畫廊</button>
+          <button id="restart" type="button">重新開始</button>
+        </div>
       </div>
     </section>
   </div>
@@ -300,6 +414,13 @@ const COLOR_BOX_URL = "storyboard/color-box.json";
 const DEFAULT_CG = "img/ddd-avg-red-cg1_s.jpg";
 const DEFAULT_COLOR = "rgb(182 37 14 / 18%)";
 
+const GALLERY_IMAGES = [
+  "ddd-avg-red-cg1.jpg",
+  "ddd-avg-red-cg2.jpg",
+  "ddd-avg-red-cg3.jpg",
+  "ddd-avg-red-cg4.jpg"
+];
+
 const scene = document.getElementById("scene");
 const sceneImage = document.getElementById("scene-image");
 const speaker = document.getElementById("speaker");
@@ -310,6 +431,14 @@ const flash = document.getElementById("flash");
 const ending = document.getElementById("ending");
 const endingText = document.getElementById("ending-text");
 const restartButton = document.getElementById("restart");
+const galleryOpen = document.getElementById("gallery-open");
+const gallery = document.getElementById("gallery");
+const galleryClose = document.getElementById("gallery-close");
+const galleryGrid = document.getElementById("gallery-grid");
+const galleryViewer = document.getElementById("gallery-viewer");
+const galleryViewerImage = document.getElementById("gallery-viewer-image");
+const galleryViewerClose = document.getElementById("gallery-viewer-close");
+const galleryDownload = document.getElementById("gallery-download");
 const loading = document.getElementById("loading");
 const errorBox = document.getElementById("error");
 
@@ -331,6 +460,51 @@ async function loadJson(url){
   const response = await fetch(url, {cache:"no-store"});
   if(!response.ok) throw new Error(`${url} → HTTP ${response.status}`);
   return response.json();
+}
+
+
+function openGallery(){
+  galleryGrid.innerHTML = "";
+
+  GALLERY_IMAGES.forEach((filename,index)=>{
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = "gallery-item";
+    item.setAttribute("aria-label",`CG ${index + 1}`);
+
+    const img = document.createElement("img");
+    img.src = `img/${filename}`;
+    img.alt = `CG ${index + 1}`;
+
+    const label = document.createElement("span");
+    label.textContent = `CG ${index + 1}`;
+
+    item.appendChild(img);
+    item.appendChild(label);
+    item.addEventListener("click",()=>openGalleryViewer(filename));
+    galleryGrid.appendChild(item);
+  });
+
+  gallery.style.display = "flex";
+}
+
+function closeGallery(){
+  gallery.style.display = "none";
+  closeGalleryViewer();
+}
+
+function openGalleryViewer(filename){
+  const path = `img/${filename}`;
+  galleryViewerImage.src = path;
+  galleryViewerImage.alt = filename;
+  galleryDownload.href = path;
+  galleryDownload.download = filename;
+  galleryViewer.style.display = "flex";
+}
+
+function closeGalleryViewer(){
+  galleryViewer.style.display = "none";
+  galleryViewerImage.src = "";
 }
 
 async function loadGame(){
@@ -568,6 +742,23 @@ function showEnding(){
 }
 
 restartButton.addEventListener("click",startGame);
+
+galleryOpen.addEventListener("click",openGallery);
+galleryClose.addEventListener("click",closeGallery);
+galleryViewerClose.addEventListener("click",closeGalleryViewer);
+
+galleryViewer.addEventListener("click",(event)=>{
+  if(event.target === galleryViewer){
+    closeGalleryViewer();
+  }
+});
+
+document.addEventListener("keydown",(event)=>{
+  if(event.key === "Escape"){
+    closeGalleryViewer();
+    if(gallery.style.display === "flex") closeGallery();
+  }
+});
 
 document.getElementById("ui-toggle").addEventListener("click",()=>{
   document.body.classList.toggle("ui-hidden");
