@@ -656,7 +656,14 @@ function clearError(){
 }
 
 async function loadColorBox(){
-  colorBox = await loadJson("storyboard/color-box.json");
+  try{
+    colorBox = await loadJson("storyboard/color-box.json");
+  }catch(error){
+    // Color-box is presentation data, not a prerequisite for loading a story.
+    // Keep the default choice color if the optional file is unavailable.
+    console.warn("color-box.json 無法載入，改用預設選項顏色：", error);
+    colorBox = {};
+  }
 }
 
 
@@ -831,15 +838,20 @@ async function startSelectedStory(storyEntry){
     ending.style.display = "none";
     document.body.classList.remove("ui-hidden");
     document.body.classList.remove("story-menu-open");
-    scene.hidden = false;
     sceneImage.src = DEFAULT_CG;
 
+    // Load presentation data, but never let it block the selected story.
     await loadColorBox();
     applySpeakerColor(currentSpeaker);
+
+    // The menu is hidden only after the story is ready to render.
+    scene.hidden = false;
     renderFlow();
   }catch(error){
     storyMenu.hidden = false;
-    showError(error.message || "劇本載入失敗。");
+    document.body.classList.add("story-menu-open");
+    errorBox.hidden = false;
+    errorBox.textContent = error.message || "劇本載入失敗。";
   }
 }
 
