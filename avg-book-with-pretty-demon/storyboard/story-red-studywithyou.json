@@ -1,1013 +1,545 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<!-- AVG BOOK WITH PRETTY DEMON -->
-<title>AVG BOOK WITH PRETTY DEMON</title>
-
-<!-- Noto Serif TC / 思源宋體 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  padding:0;
-  background:#111;
-  color:#fff;
-  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
-}
-
-html,body{
-  width:100%;
-  height:100%;
-  margin:0;
-  overflow:hidden;
-}
-
-body{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100dvh;
-}
-
-#game{
-  position:relative;
-  width:min(100vw,450px,calc(100dvh * 9 / 16));
-  height:min(100dvh,calc(100vw * 16 / 9),800px);
-  aspect-ratio:9 / 16;
-  overflow:hidden;
-  background:#111;
-  flex:0 0 auto;
-}
-
-#scene{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  background:#222;
-  overflow:hidden;
-}
-
-#scene-image{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-#dialogue-box{
-  position:absolute;
-  top:3.5%;
-  left:4%;
-  width:45%;
-  max-height:70%;
-  overflow:auto;
-  padding:14px 16px;
-  background:rgb(255 255 255 / 74%);
-  color:#575757;
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:10px;
-  backdrop-filter:blur(5px);
-  z-index:10;
-}
-
-
-#speaker{
-  display:none;
-}
-
-#message{
-  position:relative;
-  z-index:1;
-  white-space:pre-wrap;
-  line-height:2;
-  font-size:clamp(15px,3.5vw,18px);
-  font-weight:600;
-  color:#575757;
-}
-
-#choices{
-  position:absolute;
-  left:4%;
-  right:4%;
-  bottom:4%;
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-  z-index:20;
-}
-
-#choices.typing-lock{
-  opacity:0;
-  pointer-events:none;
-}
-
-.choice{
-  width:100%;
-  min-height:46px;
-  padding:10px 14px;
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:9px;
-  background:var(--choice-bg,rgb(182 37 14 / 18%));
-  color:#fff;
-  text-align:left;
-  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
-  font-size:clamp(14px,3.5vw,21px);
-  font-weight:600;
-  cursor:pointer;
-  backdrop-filter:blur(3px);
-  box-shadow:0 2px 8px rgba(0,0,0,.28);
-}
-
-.choice:active{
-  transform:scale(.985);
-  filter:brightness(1.18);
-}
-
-#emoji-layer{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:30;
-}
-
-.demon-emoji{
-  position:absolute;
-  left:50%;
-  top:50%;
-  font-size:clamp(90px,25vw,190px);
-  line-height:1;
-  opacity:0;
-  transform:translate(-50%,-50%) scale(.8);
-  animation:demonEmojiPop 1.44s ease-out forwards;
-  filter:drop-shadow(0 5px 8px rgba(0,0,0,.35));
-}
-
-@keyframes demonEmojiPop{
-  0%{opacity:0;transform:translate(-50%,-50%) scale(.8)}
-  22%{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(1.2)}
-}
-
-#flash{
-  position:absolute;
-  inset:0;
-  z-index:25;
-  pointer-events:none;
-  background:#fff;
-  opacity:0;
-}
-
-#flash.cg-flash{
-  animation:cgFlash .36s ease-out forwards;
-}
-
-@keyframes cgFlash{
-  0%{opacity:0}
-  30%{opacity:.55}
-  100%{opacity:0}
-}
-
-#ui-toggle{
-  position:absolute;
-  right:10px;
-  top:10px;
-  z-index:100;
-  border:1px solid rgba(255,255,255,.35);
-  border-radius:7px;
-  background:rgba(0,0,0,.58);
-  color:#fff;
-  padding:6px 9px;
-  font-size:12px;
-  cursor:pointer;
-}
-
-body.ui-hidden #dialogue-box,
-body.ui-hidden #choices,
-body.ui-hidden #ending{
-  opacity:0;
-  pointer-events:none;
-}
-
-#ending{
-  position:absolute;
-  inset:0;
-  z-index:40;
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  padding:4%;
-  background:rgba(0,0,0,.18);
-}
-
-#ending-card{
-  width:100%;
-  margin-bottom:3%;
-  padding:18px;
-  background:var(--choice-bg,rgb(182 37 14 / 18%));
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:10px;
-  text-align:center;
-  backdrop-filter:blur(3px);
-  box-shadow:0 2px 8px rgba(0,0,0,.28);
-}
-
-#ending-text{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  gap:8px;
-  margin-bottom:18px;
-}
-
-#ending-label{
-  font-size:clamp(15px,3.2vw,18px);
-  line-height:1.4;
-  font-weight:600;
-  color:rgba(255,255,255,.92);
-}
-
-#ending-grade{
-  display:block;
-  font-size:clamp(42px,10vw,58px);
-  line-height:1.05;
-  font-weight:900;
-  color:#fff;
-  margin:0;
-}
-
-#ending-message{
-  width:100%;
-  white-space:pre-wrap;
-  line-height:1.8;
-  font-size:clamp(16px,3.8vw,22px);
-  font-weight:600;
-  color:rgba(255,255,255,.96);
-  margin-top:4px;
-}
-
-#ending-actions{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-#restart,#gallery-open,#gallery-reset{
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:8px;
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  padding:9px 18px;
-  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-#gallery{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  max-height:100%;
-  min-height:0;
-  z-index:60;
-  display:none;
-  flex-direction:column;
-  background:rgba(10,10,10,.96);
-  padding:18px 14px;
-  overflow:hidden;
-}
-
-#gallery-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:14px;
-}
-
-#gallery-title{
-  font-size:22px;
-  font-weight:700;
-}
-
-#gallery-header-actions{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-#gallery-close,#gallery-reset{
-  border:1px solid rgba(255,255,255,.4);
-  border-radius:8px;
-  background:rgba(255,255,255,.08);
-  color:#fff;
-  padding:7px 12px;
-  font-size:16px;
-  cursor:pointer;
-}
-
-#gallery-grid{
-  position:absolute;
-  left:14px;
-  right:14px;
-  top:72px;
-  bottom:7%;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  grid-template-rows:repeat(2,minmax(0,1fr));
-  gap:12px;
-  align-items:stretch;
-  justify-items:stretch;
-  overflow:hidden;
-}
-
-.gallery-item{
-  appearance:none;
-  -webkit-appearance:none;
-  display:block;
-  width:100%;
-  height:100%;
-  min-width:0;
-  min-height:0;
-  margin:0;
-  padding:0;
-  position:relative;
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:9px;
-  overflow:hidden;
-  background:#191919;
-  color:inherit;
-  cursor:pointer;
-}
-
-.gallery-item.locked{
-  aspect-ratio:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:rgba(255,255,255,.48);
-  background:rgba(255,255,255,.035);
-  cursor:default;
-}
-
-.gallery-item.locked span{
-  font-size:14px;
-  line-height:1.8;
-  text-align:center;
-}
-
-.gallery-item.locked small{
-  font-size:11px;
-}
-
-.gallery-item img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-
-#gallery-viewer{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  max-height:100%;
-  z-index:200;
-  display:none;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  padding:58px 10px 10px;
-  background:rgba(0,0,0,.96);
-  overflow:hidden;
-}
-
-#gallery-viewer img{
-  position:relative;
-  z-index:202;
-  display:block;
-  flex:0 1 auto;
-  max-width:100%;
-  max-height:calc(100% - 72px);
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  border-radius:0;
-}
-
-#gallery-viewer-close{
-  position:absolute;
-  top:12px;
-  right:12px;
-  z-index:204;
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:50%;
-  width:40px;
-  height:40px;
-  background:rgba(0,0,0,.55);
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-}
-
-#gallery-download{
-  position:absolute;
-  left:12px;
-  top:13px;
-  z-index:204;
-  color:#fff;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:8px;
-  background:rgba(0,0,0,.55);
-  padding:7px 11px;
-  font-size:14px;
-}
-
-#site-footer{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:1.1%;
-  z-index:90;
-  height:auto;
-  padding:0 8px;
-  text-align:center;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:8px;
-  line-height:1.2;
-  font-weight:400;
-  color:rgba(255,255,255,.72);
-  text-shadow:0 1px 3px rgba(0,0,0,.75);
-  pointer-events:auto;
-}
-
-#site-footer a{
-  color:rgba(255,255,255,.82);
-  text-decoration:none;
-}
-
-#site-footer a:hover{
-  text-decoration:underline;
-}
-
-#error{
-  padding:30px 20px;
-  text-align:center;
-  line-height:1.7;
-  color:#ffb0b0;
-}
-
-@media(min-width:721px){
-  #game{
-    margin:0;
-    box-shadow:0 8px 40px rgba(0,0,0,.5);
-  }
-}
-</style>
-</head>
-
-<body>
-<main id="game">
-  <button id="ui-toggle" type="button">UI</button>
-  <div id="scene">
-    <img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
-    <div id="flash"></div>
-    <div id="emoji-layer"></div>
-
-    <section id="dialogue-box">
-      <div id="speaker"></div>
-      <div id="message"></div>
-    </section>
-
-    <section id="choices"></section>
-
-    <section id="ending">
-      <div id="ending-card">
-        <div id="ending-text">
-          <div id="ending-label">妳的評價</div>
-          <div id="ending-grade">A</div>
-          <div id="ending-message"></div>
-        </div>
-        <div id="ending-actions">
-          <button id="gallery-open" type="button">CG 畫廊</button>
-          <button id="restart" type="button">重新開始</button>
-        </div>
-      </div>
-    </section>
-  <footer id="site-footer">
-    © 2026 Derive Dimension Demon ·
-    <a href="https://derivedimensiondemon.wordpress.com/" target="_blank" rel="noopener">Official Website</a>
-    ｜<a href="https://derivedimensiondemon.wordpress.com/terms/" target="_blank" rel="noopener">Terms</a>
-  </footer>
-  </div>
-
-  <section id="gallery" aria-label="CG 畫廊">
-    <div id="gallery-header">
-      <div id="gallery-title">CG 畫廊</div>
-      <div id="gallery-header-actions">
-        <button id="gallery-reset" type="button">重置</button>
-        <button id="gallery-close" type="button">關閉</button>
-      </div>
-    </div>
-    <div id="gallery-grid"></div>
-  </section>
-
-  <div id="gallery-viewer" aria-label="CG 預覽">
-    <button id="gallery-viewer-close" type="button" aria-label="關閉">×</button>
-    <a id="gallery-download" href="#" download>下載 CG</a>
-    <img id="gallery-viewer-image" src="" alt="">
-  </div>
-
-  <div id="error" hidden></div>
-
-</main>
-
-<script>
-"use strict";
-
-const STORY_URL = "storyboard/story-red-studywithyou.json";
-const COLOR_BOX_URL = "storyboard/color-box.json";
-const DEFAULT_CG = "img/ddd-avg-red-cg1_s.jpg";
-const DEFAULT_COLOR = "rgb(182 37 14 / 18%)";
-const SAVE_KEY = "ddd-avg-book-with-pretty-demon-save-v1";
-
-const GALLERY_IMAGES = [
-  "ddd-avg-red-cg1.jpg",
-  "ddd-avg-red-cg2.jpg",
-  "ddd-avg-red-cg3.jpg",
-  "ddd-avg-red-cg4.jpg"
-];
-
-const scene = document.getElementById("scene");
-const sceneImage = document.getElementById("scene-image");
-const speaker = document.getElementById("speaker");
-const message = document.getElementById("message");
-const choicesBox = document.getElementById("choices");
-const emojiLayer = document.getElementById("emoji-layer");
-const flash = document.getElementById("flash");
-const ending = document.getElementById("ending");
-const endingText = document.getElementById("ending-text");
-const endingGrade = document.getElementById("ending-grade");
-const endingMessage = document.getElementById("ending-message");
-const restartButton = document.getElementById("restart");
-const galleryOpen = document.getElementById("gallery-open");
-const gallery = document.getElementById("gallery");
-const galleryClose = document.getElementById("gallery-close");
-const galleryReset = document.getElementById("gallery-reset");
-const galleryGrid = document.getElementById("gallery-grid");
-const galleryViewer = document.getElementById("gallery-viewer");
-const galleryViewerImage = document.getElementById("gallery-viewer-image");
-const galleryViewerClose = document.getElementById("gallery-viewer-close");
-const galleryDownload = document.getElementById("gallery-download");
-const uiToggle = document.getElementById("ui-toggle");
-const errorBox = document.getElementById("error");
-
-let story = null;
-let colorBox = {};
-let currentFlowId = 1;
-let totalScore = 0;
-let currentCg = DEFAULT_CG;
-let currentSpeaker = "紅";
-let typingTimer = null;
-let typingToken = 0;
-
-function showError(text){
-  scene.hidden = true;
-  errorBox.hidden = false;
-  errorBox.textContent = text;
-}
-
-async function loadJson(url){
-  const response = await fetch(url, {cache:"no-store"});
-  if(!response.ok) throw new Error(`${url} → HTTP ${response.status}`);
-  return response.json();
-}
-
-
-function loadSave(){
-  try{
-    const raw = localStorage.getItem(SAVE_KEY);
-    if(!raw) return {unlockedCgs:[]};
-    const data = JSON.parse(raw);
-    return {
-      unlockedCgs: Array.isArray(data.unlockedCgs) ? data.unlockedCgs : []
-    };
-  }catch{
-    return {unlockedCgs:[]};
-  }
-}
-
-function saveCgUnlock(filename){
-  const save = loadSave();
-  if(save.unlockedCgs.includes(filename)) return;
-
-  save.unlockedCgs.push(filename);
-  try{
-    localStorage.setItem(SAVE_KEY, JSON.stringify(save));
-  }catch{
-    // 若瀏覽器阻擋 localStorage，遊戲本身仍可正常繼續。
-  }
-}
-
-function resetCgProgress(){
-  const confirmed = window.confirm(
-    "※解鎖新CG時，自動以瀏覽器暫存功能存檔。\n\n" +
-    "若想重置CG解鎖進度為初始狀態，請點確認，此動作無法復原！"
-  );
-
-  if(!confirmed) return;
-
-  try{
-    localStorage.removeItem(SAVE_KEY);
-  }catch{
-    // 若瀏覽器阻擋 localStorage，忽略即可。
-  }
-
-  openGallery();
-}
-
-function isCgUnlocked(filename){
-  const save = loadSave();
-  return filename === "ddd-avg-red-cg1.jpg" || save.unlockedCgs.includes(filename);
-}
-
-function openGallery(){
-  galleryGrid.innerHTML = "";
-
-  GALLERY_IMAGES.forEach((filename,index)=>{
-    const item = document.createElement("button");
-    item.type = "button";
-    item.className = "gallery-item";
-    item.setAttribute("aria-label",`CG ${index + 1}`);
-
-    if(isCgUnlocked(filename)){
-      const img = document.createElement("img");
-      img.src = `img/${filename}`;
-      img.alt = `CG ${index + 1}`;
-      item.appendChild(img);
-      item.addEventListener("click",()=>openGalleryViewer(filename));
-    }else{
-      item.disabled = true;
-      item.classList.add("locked");
-      item.innerHTML = `<span>CG ${index + 1}<br><small>尚未解鎖</small></span>`;
+{
+  "title": "",
+  "flows": [
+    {
+      "flow-id": 1,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+
+    {
+      "flow-id": 2,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+
+    {
+      "flow-id": 3,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+
+    {
+      "flow-id": 4,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        }
+      ]
+    },
+
+    {
+      "flow-id": 5,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+
+    {
+      "flow-id": 6,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+
+    {
+      "flow-id": 7,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+
+    {
+      "flow-id": 8,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+
+    {
+      "flow-id": 9,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        }
+      ]
     }
+  ],
 
-    galleryGrid.appendChild(item);
-  });
+  "ending": {
+    "demon-message": {
+      "speaker": "紅",
+      "text": ""
+    },
 
-  gallery.style.display = "flex";
-  uiToggle.style.display = "none";
-}
-
-function closeGallery(){
-  gallery.style.display = "none";
-  closeGalleryViewer();
-  uiToggle.style.display = "";
-}
-
-function openGalleryViewer(filename){
-  const path = `img/${filename}`;
-  galleryViewerImage.src = path;
-  galleryViewerImage.alt = filename;
-  galleryDownload.href = path;
-  galleryDownload.download = filename;
-  galleryViewer.style.display = "flex";
-  uiToggle.style.display = "none";
-}
-
-function closeGalleryViewer(){
-  galleryViewer.style.display = "none";
-  galleryViewerImage.src = "";
-  if(gallery.style.display !== "flex"){
-    uiToggle.style.display = "";
-  } else {
-    uiToggle.style.display = "none";
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      },
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      },
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      }
+    ]
   }
 }
-
-async function loadGame(){
-  try{
-    [story, colorBox] = await Promise.all([
-      loadJson(STORY_URL),
-      loadJson(COLOR_BOX_URL)
-    ]);
-
-    if(!Array.isArray(story.flows) || !story.ending){
-      throw new Error("storyboard.json 格式不完整。");
-    }
-
-    scene.hidden = false;
-    startGame();
-
-  }catch(error){
-    showError(
-      "無法讀取 AVG BOOK 資料。\n\n" +
-      "請確認 storyboard/story-red-studywithyou.json 與 storyboard/color-box.json 都已上傳。\n\n" +
-      error.message
-    );
-  }
-}
-
-function getFlow(flowId){
-  return story.flows.find(flow => Number(flow["flow-id"]) === Number(flowId));
-}
-
-function normalizeMessageText(text){
-  // 劇本可以寫 \n\n，但畫面只保留一次斷行，避免對話框過度拉長。
-  return String(text || "").replace(/\n\s*\n+/g, "\n");
-}
-
-function applySpeakerColor(name){
-  currentSpeaker = name || "紅";
-  const color = colorBox[currentSpeaker] || DEFAULT_COLOR;
-
-  document.documentElement.style.setProperty("--choice-bg", color);
-}
-
-function startGame(){
-  currentFlowId = 1;
-  totalScore = 0;
-  currentCg = DEFAULT_CG;
-  currentSpeaker = "紅";
-
-  ending.style.display = "none";
-  document.body.classList.remove("ui-hidden");
-  sceneImage.src = DEFAULT_CG;
-
-  applySpeakerColor(currentSpeaker);
-  renderFlow();
-}
-
-function renderFlow(){
-  const flow = getFlow(currentFlowId);
-
-  if(!flow){
-    showError(`找不到 Flow ${currentFlowId}。`);
-    return;
-  }
-
-  const demonMessage = flow["demon-message"] || {};
-  const flowSpeaker = demonMessage.speaker || "紅";
-  const text = normalizeMessageText(demonMessage.text);
-
-  speaker.textContent = flowSpeaker;
-  applySpeakerColor(flowSpeaker);
-
-  choicesBox.innerHTML = "";
-  choicesBox.classList.add("typing-lock");
-
-  if(typingTimer){
-    clearInterval(typingTimer);
-    typingTimer = null;
-  }
-
-  const token = ++typingToken;
-  message.textContent = "";
-
-  // 細微的 AVG 打字效果；換行照劇本立即保留。
-  let index = 0;
-  const typingSpeed = 24;
-
-  typingTimer = setInterval(()=>{
-    if(token !== typingToken){
-      clearInterval(typingTimer);
-      typingTimer = null;
-      return;
-    }
-
-    message.textContent += text[index];
-    index++;
-
-    if(index >= text.length){
-      clearInterval(typingTimer);
-      typingTimer = null;
-      buildChoices(flow);
-    }
-  }, typingSpeed);
-
-  if(text.length === 0){
-    clearInterval(typingTimer);
-    typingTimer = null;
-    buildChoices(flow);
-  }
-}
-
-function buildChoices(flow){
-  choicesBox.innerHTML = "";
-
-  const choices = Array.isArray(flow.choices) ? flow.choices : [];
-
-  choices.forEach((choice,index)=>{
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "choice";
-    button.textContent = `${index + 1}. ${choice["player-move"] || ""}`;
-    button.addEventListener("click",()=>selectChoice(choice));
-    choicesBox.appendChild(button);
-  });
-
-  choicesBox.classList.remove("typing-lock");
-}
-
-function selectChoice(choice){
-  [...choicesBox.querySelectorAll("button")].forEach(btn=>{
-    btn.disabled = true;
-  });
-
-  const score = Number(choice.score);
-
-  if(Number.isFinite(score)){
-    totalScore += score;
-  }
-
-  runEvents(choice.events || [], ()=>{
-    const next = choice.next;
-
-    if(next === null || next === undefined || next === ""){
-      showEnding();
-      return;
-    }
-
-    currentFlowId = Number(next);
-    renderFlow();
-  });
-}
-
-function runEvents(events,done){
-  if(!Array.isArray(events) || events.length === 0){
-    done();
-    return;
-  }
-
-  let remaining = events.length;
-  let finished = false;
-
-  const finishOne = ()=>{
-    remaining--;
-
-    if(remaining <= 0 && !finished){
-      finished = true;
-      setTimeout(done,120);
-    }
-  };
-
-  events.forEach(event=>{
-    if(!event || !event.type){
-      finishOne();
-      return;
-    }
-
-    if(event.type === "cg"){
-      changeCg(event.image || "ddd-avg-red-cg1_s.jpg");
-      finishOne();
-      return;
-    }
-
-    if(event.type === "demon-emoji"){
-      showDemonEmoji(event.value || "");
-      finishOne();
-      return;
-    }
-
-    finishOne();
-  });
-}
-
-function changeCg(path){
-  const nextPath = path.startsWith("img/") ? path : `img/${path}`;
-
-  if(nextPath === currentCg) return;
-
-  currentCg = nextPath;
-
-  const match = nextPath.match(/(ddd-avg-red-cg[2-4])(?:_s)?\.jpg$/);
-  if(match){
-    saveCgUnlock(`${match[1]}.jpg`);
-  }
-
-  flash.classList.remove("cg-flash");
-  void flash.offsetWidth;
-  flash.classList.add("cg-flash");
-
-  sceneImage.src = currentCg;
-
-  sceneImage.onerror = ()=>{
-    sceneImage.onerror = null;
-    sceneImage.src = DEFAULT_CG;
-    currentCg = DEFAULT_CG;
-  };
-}
-
-function showDemonEmoji(value){
-  if(!value) return;
-
-  const emoji = document.createElement("div");
-  emoji.className = "demon-emoji";
-  emoji.textContent = value;
-
-  emojiLayer.appendChild(emoji);
-
-  emoji.addEventListener("animationend",()=>{
-    emoji.remove();
-  },{once:true});
-}
-
-function escapeHtml(value){
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-function showEnding(){
-  const evaluations = Array.isArray(story.ending.evaluations)
-    ? story.ending.evaluations
-    : [];
-
-  let result = null;
-
-  for(const evaluation of evaluations){
-    const min = Number(evaluation["min-score"]);
-    const max = Number(evaluation["max-score"]);
-
-    if(totalScore >= min && totalScore <= max){
-      result = evaluation;
-      break;
-    }
-  }
-
-  if(!result){
-    result = evaluations[evaluations.length - 1] || {"demon-message":""};
-  }
-
-  const endingSpeaker =
-    result.speaker ||
-    (result["demon-message-speaker"]) ||
-    currentSpeaker ||
-    "紅";
-
-  applySpeakerColor(endingSpeaker);
-
-  const grade = String(
-    result.grade ||
-    result["evaluation-grade"] ||
-    ["A","B","C","D"][evaluations.indexOf(result)] ||
-    "D"
-  );
-
-  endingGrade.textContent = grade;
-  endingMessage.textContent = normalizeMessageText(result["demon-message"] || "");
-
-  ending.style.display = "flex";
-}
-
-restartButton.addEventListener("click",startGame);
-
-galleryOpen.addEventListener("click",openGallery);
-galleryClose.addEventListener("click",closeGallery);
-galleryReset.addEventListener("click",resetCgProgress);
-galleryViewerClose.addEventListener("click",closeGalleryViewer);
-
-galleryViewer.addEventListener("click",(event)=>{
-  if(event.target === galleryViewer){
-    closeGalleryViewer();
-  }
-});
-
-document.addEventListener("keydown",(event)=>{
-  if(event.key === "Escape"){
-    closeGalleryViewer();
-    if(gallery.style.display === "flex") closeGallery();
-  }
-});
-
-document.getElementById("ui-toggle").addEventListener("click",()=>{
-  document.body.classList.toggle("ui-hidden");
-});
-
-loadGame();
-</script>
-</body>
-</html>
