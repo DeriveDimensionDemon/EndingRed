@@ -223,19 +223,31 @@ body.ui-hidden #ending{
 }
 
 #ending-text{
-  white-space:pre-wrap;
   line-height:1.75;
   font-size:clamp(17px,4vw,25px);
   margin-bottom:15px;
+  text-align:center;
+}
+
+#ending-label{
+  display:block;
+  font-size:clamp(18px,4vw,25px);
+  margin-bottom:2px;
 }
 
 #ending-grade{
-  display:inline-block;
-  margin-left:8px;
-  font-size:47px;
+  display:block;
+  margin:0 0 14px;
+  font-size:clamp(52px,12vw,72px);
   line-height:1;
   font-weight:900;
-  vertical-align:-7px;
+}
+
+#ending-message{
+  display:block;
+  white-space:pre-wrap;
+  line-height:1.75;
+  font-size:clamp(17px,4vw,25px);
 }
 
 #ending-actions{
@@ -1121,9 +1133,22 @@ function showEnding(){
     "D"
   );
 
+  // The ending card has its own demon-message, separate from Flow 9.
+  // The evaluation entry's demon-message is the grade-specific reaction.
+  const endingMessage = normalizeMessageText(
+    story.ending["demon-message"]?.text ||
+    story.ending["demon-message"] ||
+    ""
+  );
+
+  const gradeMessage = normalizeMessageText(
+    result["demon-message"] || ""
+  );
+
   endingText.innerHTML =
-    `${escapeHtml(normalizeMessageText(result["demon-message"] || ""))}` +
-    `<br><br>妳的評價 <span id="ending-grade">${escapeHtml(grade)}</span>`;
+    `<span id="ending-label">妳的評價</span>` +
+    `<span id="ending-grade">${escapeHtml(grade)}</span>` +
+    `<span id="ending-message">${escapeHtml(gradeMessage || endingMessage)}</span>`;
 
   ending.style.display = "flex";
 }
