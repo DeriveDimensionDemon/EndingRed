@@ -3,174 +3,533 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- AVG BOOK WITH PRETTY DEMON -->
 <title>AVG BOOK WITH PRETTY DEMON</title>
+
+<!-- Noto Serif TC / 思源宋體 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#111;color:#fff;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif}
-body{display:flex;justify-content:center;overflow-x:hidden}
-#game{position:relative;width:min(100vw,720px);min-height:100vh;overflow:hidden;background:#111}
-#scene{position:relative;width:100%;aspect-ratio:9/16;background:#222;overflow:hidden}
-#scene-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-#dialogue-box{position:absolute;top:3.5%;left:4%;width:58%;max-height:29%;overflow:auto;padding:14px 16px;background:rgba(15,15,20,.78);border:1px solid rgba(255,255,255,.45);border-radius:10px;backdrop-filter:blur(4px);z-index:10}
-#speaker{font-weight:700;font-size:clamp(14px,3.5vw,22px);margin-bottom:7px}
-#message{white-space:pre-wrap;line-height:1.65;font-size:clamp(14px,3.4vw,21px)}
-#choices{position:absolute;left:4%;right:4%;bottom:4%;display:flex;flex-direction:column;gap:9px;z-index:20}
-.choice{width:100%;min-height:46px;padding:10px 14px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(15,15,20,.84);color:#fff;text-align:left;font-size:clamp(14px,3.5vw,21px);cursor:pointer}
-.choice:active{transform:scale(.985);background:rgba(80,80,90,.92)}
-#emoji-layer{position:absolute;inset:0;pointer-events:none;z-index:30;display:flex;align-items:center;justify-content:center}
-.demon-emoji{font-size:clamp(90px,25vw,190px);line-height:1;opacity:0;transform:scale(.8);animation:demonEmojiPop .72s ease-out forwards;filter:drop-shadow(0 5px 8px rgba(0,0,0,.35))}
-@keyframes demonEmojiPop{0%{opacity:0;transform:scale(.8)}32%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.2)}}
-#flash{position:absolute;inset:0;z-index:25;pointer-events:none;background:#fff;opacity:0}
-#flash.cg-flash{animation:cgFlash .36s ease-out forwards}
-@keyframes cgFlash{0%{opacity:0}30%{opacity:.55}100%{opacity:0}}
-#ui-toggle{position:fixed;right:10px;top:10px;z-index:100;border:1px solid rgba(255,255,255,.35);border-radius:7px;background:rgba(0,0,0,.58);color:#fff;padding:6px 9px;font-size:12px;cursor:pointer}
-body.ui-hidden #dialogue-box,body.ui-hidden #choices{opacity:0;pointer-events:none}
-#ending{position:absolute;inset:0;z-index:40;display:none;align-items:flex-end;justify-content:center;padding:4%;background:rgba(0,0,0,.18)}
-#ending-card{width:100%;margin-bottom:3%;padding:18px;background:rgba(12,12,16,.88);border:1px solid rgba(255,255,255,.45);border-radius:10px;text-align:center}
-#ending-text{white-space:pre-wrap;line-height:1.75;font-size:clamp(17px,4vw,25px);margin-bottom:15px}
-#restart{border:1px solid rgba(255,255,255,.55);border-radius:8px;background:rgba(255,255,255,.12);color:#fff;padding:9px 18px;font-size:16px;cursor:pointer}
-#loading,#error{padding:30px 20px;text-align:center;line-height:1.7}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#111;
+  color:#fff;
+  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
+}
+
+body{
+  display:flex;
+  justify-content:center;
+  overflow-x:hidden;
+}
+
+#game{
+  position:relative;
+  width:min(100vw,720px);
+  min-height:100vh;
+  overflow:hidden;
+  background:#111;
+}
+
+#scene{
+  position:relative;
+  width:100%;
+  aspect-ratio:9/16;
+  background:#222;
+  overflow:hidden;
+}
+
+#scene-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+#dialogue-box{
+  position:absolute;
+  top:3.5%;
+  left:4%;
+  width:58%;
+  max-height:29%;
+  overflow:auto;
+  padding:14px 16px;
+  background:rgb(255 255 255 / 74%);
+  color:#242424;
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:10px;
+  backdrop-filter:blur(5px);
+  z-index:10;
+}
+
+#speaker{
+  font-weight:700;
+  font-size:clamp(14px,3.5vw,22px);
+  margin-bottom:7px;
+}
+
+#message{
+  white-space:pre-wrap;
+  line-height:2;
+  font-size:clamp(14px,3.4vw,21px);
+}
+
+#choices{
+  position:absolute;
+  left:4%;
+  right:4%;
+  bottom:4%;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  z-index:20;
+}
+
+.choice{
+  width:100%;
+  min-height:46px;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:9px;
+  background:var(--choice-bg,rgb(182 37 14 / 18%));
+  color:#fff;
+  text-align:left;
+  font-size:clamp(14px,3.5vw,21px);
+  cursor:pointer;
+  backdrop-filter:blur(3px);
+  box-shadow:0 2px 8px rgba(0,0,0,.28);
+}
+
+.choice:active{
+  transform:scale(.985);
+  filter:brightness(1.18);
+}
+
+#emoji-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:30;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.demon-emoji{
+  font-size:clamp(90px,25vw,190px);
+  line-height:1;
+  opacity:0;
+  transform:scale(.8);
+  animation:demonEmojiPop 1.44s ease-out forwards;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.35));
+}
+
+@keyframes demonEmojiPop{
+  0%{opacity:0;transform:scale(.8)}
+  22%{opacity:1;transform:scale(1)}
+  100%{opacity:0;transform:scale(1.2)}
+}
+
+#flash{
+  position:absolute;
+  inset:0;
+  z-index:25;
+  pointer-events:none;
+  background:#fff;
+  opacity:0;
+}
+
+#flash.cg-flash{
+  animation:cgFlash .36s ease-out forwards;
+}
+
+@keyframes cgFlash{
+  0%{opacity:0}
+  30%{opacity:.55}
+  100%{opacity:0}
+}
+
+#ui-toggle{
+  position:fixed;
+  right:10px;
+  top:10px;
+  z-index:100;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:7px;
+  background:rgba(0,0,0,.58);
+  color:#fff;
+  padding:6px 9px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+body.ui-hidden #dialogue-box,
+body.ui-hidden #choices{
+  opacity:0;
+  pointer-events:none;
+}
+
+#ending{
+  position:absolute;
+  inset:0;
+  z-index:40;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  padding:4%;
+  background:rgba(0,0,0,.18);
+}
+
+#ending-card{
+  width:100%;
+  margin-bottom:3%;
+  padding:18px;
+  background:var(--choice-bg,rgb(182 37 14 / 18%));
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:10px;
+  text-align:center;
+  backdrop-filter:blur(3px);
+  box-shadow:0 2px 8px rgba(0,0,0,.28);
+}
+
+#ending-text{
+  white-space:pre-wrap;
+  line-height:1.75;
+  font-size:clamp(17px,4vw,25px);
+  margin-bottom:15px;
+}
+
+#restart{
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:8px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  padding:9px 18px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+#loading,#error{
+  padding:30px 20px;
+  text-align:center;
+  line-height:1.7;
+}
+
 #error{color:#ffb0b0}
-@media(min-width:721px){#game{min-height:auto;margin:20px 0;box-shadow:0 8px 40px rgba(0,0,0,.5)}}
+
+@media(min-width:721px){
+  #game{
+    min-height:auto;
+    margin:20px 0;
+    box-shadow:0 8px 40px rgba(0,0,0,.5);
+  }
+}
 </style>
 </head>
+
 <body>
 <button id="ui-toggle" type="button">UI</button>
+
 <main id="game">
-<div id="loading">AVG BOOK<br>Loading...</div>
-<div id="scene" hidden>
-<img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
-<div id="flash"></div>
-<div id="emoji-layer"></div>
-<section id="dialogue-box"><div id="speaker"></div><div id="message"></div></section>
-<section id="choices"></section>
-<section id="ending"><div id="ending-card"><div id="ending-text"></div><button id="restart" type="button">重新開始</button></div></section>
-</div>
-<div id="error" hidden></div>
+  <div id="loading">AVG BOOK<br>Loading...</div>
+
+  <div id="scene" hidden>
+    <img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
+    <div id="flash"></div>
+    <div id="emoji-layer"></div>
+
+    <section id="dialogue-box">
+      <div id="speaker"></div>
+      <div id="message"></div>
+    </section>
+
+    <section id="choices"></section>
+
+    <section id="ending">
+      <div id="ending-card">
+        <div id="ending-text"></div>
+        <button id="restart" type="button">重新開始</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="error" hidden></div>
 </main>
+
 <script>
 "use strict";
 
-const STORY_URL="storyboard/story-red-studywithyou.json";
-const DEFAULT_CG="img/ddd-avg-red-cg1_s.jpg";
+const STORY_URL = "storyboard/story-red-studywithyou.json";
+const COLOR_BOX_URL = "storyboard/color-box.json";
+const DEFAULT_CG = "img/ddd-avg-red-cg1_s.jpg";
+const DEFAULT_COLOR = "rgb(182 37 14 / 18%)";
 
-const scene=document.getElementById("scene");
-const sceneImage=document.getElementById("scene-image");
-const speaker=document.getElementById("speaker");
-const message=document.getElementById("message");
-const choicesBox=document.getElementById("choices");
-const emojiLayer=document.getElementById("emoji-layer");
-const flash=document.getElementById("flash");
-const ending=document.getElementById("ending");
-const endingText=document.getElementById("ending-text");
-const restartButton=document.getElementById("restart");
-const loading=document.getElementById("loading");
-const errorBox=document.getElementById("error");
+const scene = document.getElementById("scene");
+const sceneImage = document.getElementById("scene-image");
+const speaker = document.getElementById("speaker");
+const message = document.getElementById("message");
+const choicesBox = document.getElementById("choices");
+const emojiLayer = document.getElementById("emoji-layer");
+const flash = document.getElementById("flash");
+const ending = document.getElementById("ending");
+const endingText = document.getElementById("ending-text");
+const restartButton = document.getElementById("restart");
+const loading = document.getElementById("loading");
+const errorBox = document.getElementById("error");
 
-let story=null,currentFlowId=1,totalScore=0,currentCg=DEFAULT_CG;
+let story = null;
+let colorBox = {};
+let currentFlowId = 1;
+let totalScore = 0;
+let currentCg = DEFAULT_CG;
+let currentSpeaker = "紅";
 
 function showError(text){
-  loading.hidden=true; scene.hidden=true; errorBox.hidden=false; errorBox.textContent=text;
+  loading.hidden = true;
+  scene.hidden = true;
+  errorBox.hidden = false;
+  errorBox.textContent = text;
 }
 
-async function loadStory(){
+async function loadJson(url){
+  const response = await fetch(url, {cache:"no-store"});
+  if(!response.ok) throw new Error(`${url} → HTTP ${response.status}`);
+  return response.json();
+}
+
+async function loadGame(){
   try{
-    const response=await fetch(STORY_URL,{cache:"no-store"});
-    if(!response.ok) throw new Error("HTTP "+response.status);
-    story=await response.json();
-    if(!Array.isArray(story.flows)||!story.ending) throw new Error("storyboard.json 格式不完整。");
-    loading.hidden=true; scene.hidden=false; startGame();
+    [story, colorBox] = await Promise.all([
+      loadJson(STORY_URL),
+      loadJson(COLOR_BOX_URL)
+    ]);
+
+    if(!Array.isArray(story.flows) || !story.ending){
+      throw new Error("storyboard.json 格式不完整。");
+    }
+
+    loading.hidden = true;
+    scene.hidden = false;
+    startGame();
+
   }catch(error){
-    showError("無法讀取 storyboard/story-red-studywithyou.json。\n\n如果直接雙擊 index.html，瀏覽器可能會阻擋 fetch。請放到 GitHub Pages 或本機 HTTP Server 再測試。\n\n"+error.message);
+    showError(
+      "無法讀取 AVG BOOK 資料。\n\n" +
+      "請確認 storyboard/story-red-studywithyou.json 與 storyboard/color-box.json 都已上傳。\n\n" +
+      error.message
+    );
   }
 }
 
 function getFlow(flowId){
-  return story.flows.find(flow=>Number(flow["flow-id"])===Number(flowId));
+  return story.flows.find(flow => Number(flow["flow-id"]) === Number(flowId));
+}
+
+function normalizeMessageText(text){
+  // 劇本可以寫 \n\n，但畫面只保留一次斷行，避免對話框過度拉長。
+  return String(text || "").replace(/\n\s*\n+/g, "\n");
+}
+
+function applySpeakerColor(name){
+  currentSpeaker = name || "紅";
+  const color = colorBox[currentSpeaker] || DEFAULT_COLOR;
+
+  document.documentElement.style.setProperty("--choice-bg", color);
 }
 
 function startGame(){
-  currentFlowId=1; totalScore=0; currentCg=DEFAULT_CG;
-  ending.style.display="none";
+  currentFlowId = 1;
+  totalScore = 0;
+  currentCg = DEFAULT_CG;
+  currentSpeaker = "紅";
+
+  ending.style.display = "none";
   document.body.classList.remove("ui-hidden");
-  sceneImage.src=DEFAULT_CG;
+  sceneImage.src = DEFAULT_CG;
+
+  applySpeakerColor(currentSpeaker);
   renderFlow();
 }
 
 function renderFlow(){
-  const flow=getFlow(currentFlowId);
-  if(!flow){showError("找不到 Flow "+currentFlowId+"。");return;}
-  const dm=flow["demon-message"]||{};
-  speaker.textContent=dm.speaker||"";
-  message.textContent=dm.text||"";
-  choicesBox.innerHTML="";
-  const choices=Array.isArray(flow.choices)?flow.choices:[];
+  const flow = getFlow(currentFlowId);
+
+  if(!flow){
+    showError(`找不到 Flow ${currentFlowId}。`);
+    return;
+  }
+
+  const demonMessage = flow["demon-message"] || {};
+  const flowSpeaker = demonMessage.speaker || "紅";
+
+  speaker.textContent = flowSpeaker;
+  message.textContent = normalizeMessageText(demonMessage.text);
+
+  applySpeakerColor(flowSpeaker);
+
+  choicesBox.innerHTML = "";
+
+  const choices = Array.isArray(flow.choices) ? flow.choices : [];
+
   choices.forEach((choice,index)=>{
-    const button=document.createElement("button");
-    button.type="button"; button.className="choice";
-    button.textContent=(index+1)+". "+(choice["player-move"]||"");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "choice";
+    button.textContent = `${index + 1}. ${choice["player-move"] || ""}`;
     button.addEventListener("click",()=>selectChoice(choice));
     choicesBox.appendChild(button);
   });
 }
 
 function selectChoice(choice){
-  [...choicesBox.querySelectorAll("button")].forEach(btn=>btn.disabled=true);
-  const score=Number(choice.score);
-  if(Number.isFinite(score)) totalScore+=score;
-  runEvents(choice.events||[],()=>{
-    const next=choice.next;
-    if(next===null||next===undefined||next===""){showEnding();return;}
-    currentFlowId=Number(next); renderFlow();
+  [...choicesBox.querySelectorAll("button")].forEach(btn=>{
+    btn.disabled = true;
+  });
+
+  const score = Number(choice.score);
+
+  if(Number.isFinite(score)){
+    totalScore += score;
+  }
+
+  runEvents(choice.events || [], ()=>{
+    const next = choice.next;
+
+    if(next === null || next === undefined || next === ""){
+      showEnding();
+      return;
+    }
+
+    currentFlowId = Number(next);
+    renderFlow();
   });
 }
 
 function runEvents(events,done){
-  if(!Array.isArray(events)||events.length===0){done();return;}
-  let remaining=events.length,finished=false;
-  const finishOne=()=>{remaining--;if(remaining<=0&&!finished){finished=true;setTimeout(done,120);}};
+  if(!Array.isArray(events) || events.length === 0){
+    done();
+    return;
+  }
+
+  let remaining = events.length;
+  let finished = false;
+
+  const finishOne = ()=>{
+    remaining--;
+
+    if(remaining <= 0 && !finished){
+      finished = true;
+      setTimeout(done,120);
+    }
+  };
+
   events.forEach(event=>{
-    if(!event||!event.type){finishOne();return;}
-    if(event.type==="cg"){
-      changeCg(event.image||"ddd-avg-red-cg1_s.jpg"); finishOne(); return;
+    if(!event || !event.type){
+      finishOne();
+      return;
     }
-    if(event.type==="demon-emoji"){
-      showDemonEmoji(event.value||""); finishOne(); return;
+
+    if(event.type === "cg"){
+      changeCg(event.image || "ddd-avg-red-cg1_s.jpg");
+      finishOne();
+      return;
     }
+
+    if(event.type === "demon-emoji"){
+      showDemonEmoji(event.value || "");
+      finishOne();
+      return;
+    }
+
     finishOne();
   });
 }
 
 function changeCg(path){
-  if(path===currentCg)return;
-  currentCg=path.startsWith("img/")?path:"img/"+path;
-  flash.classList.remove("cg-flash"); void flash.offsetWidth; flash.classList.add("cg-flash");
-  sceneImage.src=currentCg;
-  sceneImage.onerror=()=>{sceneImage.onerror=null;sceneImage.src=DEFAULT_CG;currentCg=DEFAULT_CG;};
+  const nextPath = path.startsWith("img/") ? path : `img/${path}`;
+
+  if(nextPath === currentCg) return;
+
+  currentCg = nextPath;
+
+  flash.classList.remove("cg-flash");
+  void flash.offsetWidth;
+  flash.classList.add("cg-flash");
+
+  sceneImage.src = currentCg;
+
+  sceneImage.onerror = ()=>{
+    sceneImage.onerror = null;
+    sceneImage.src = DEFAULT_CG;
+    currentCg = DEFAULT_CG;
+  };
 }
 
 function showDemonEmoji(value){
-  if(!value)return;
-  const emoji=document.createElement("div");
-  emoji.className="demon-emoji"; emoji.textContent=value; emojiLayer.appendChild(emoji);
-  emoji.addEventListener("animationend",()=>emoji.remove(),{once:true});
+  if(!value) return;
+
+  const emoji = document.createElement("div");
+  emoji.className = "demon-emoji";
+  emoji.textContent = value;
+
+  emojiLayer.appendChild(emoji);
+
+  emoji.addEventListener("animationend",()=>{
+    emoji.remove();
+  },{once:true});
 }
 
 function showEnding(){
-  const evaluations=Array.isArray(story.ending.evaluations)?story.ending.evaluations:[];
-  let result=null;
+  const evaluations = Array.isArray(story.ending.evaluations)
+    ? story.ending.evaluations
+    : [];
+
+  let result = null;
+
   for(const evaluation of evaluations){
-    const min=Number(evaluation["min-score"]),max=Number(evaluation["max-score"]);
-    if(totalScore>=min&&totalScore<=max){result=evaluation;break;}
+    const min = Number(evaluation["min-score"]);
+    const max = Number(evaluation["max-score"]);
+
+    if(totalScore >= min && totalScore <= max){
+      result = evaluation;
+      break;
+    }
   }
-  if(!result) result=evaluations[evaluations.length-1]||{"demon-message":""};
-  endingText.textContent=(result["demon-message"]||"")+"\n\n[Score: "+totalScore+"]";
-  ending.style.display="flex";
+
+  if(!result){
+    result = evaluations[evaluations.length - 1] || {"demon-message":""};
+  }
+
+  const endingSpeaker =
+    result.speaker ||
+    (result["demon-message-speaker"]) ||
+    currentSpeaker ||
+    "紅";
+
+  applySpeakerColor(endingSpeaker);
+
+  endingText.textContent =
+    normalizeMessageText(result["demon-message"] || "") +
+    `\n\n[Score: ${totalScore}]`;
+
+  ending.style.display = "flex";
 }
 
 restartButton.addEventListener("click",startGame);
-document.getElementById("ui-toggle").addEventListener("click",()=>document.body.classList.toggle("ui-hidden"));
-loadStory();
+
+document.getElementById("ui-toggle").addEventListener("click",()=>{
+  document.body.classList.toggle("ui-hidden");
+});
+
+loadGame();
 </script>
 </body>
 </html>
