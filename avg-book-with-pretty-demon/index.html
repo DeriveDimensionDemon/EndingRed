@@ -455,7 +455,7 @@ body.ui-hidden #ending{
   pointer-events:auto;
   position:absolute;
   inset:0;
-  z-index:50;
+  z-index:1000;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -464,6 +464,12 @@ body.ui-hidden #ending{
   padding:28px 22px;
   background:#111;
   text-align:center;
+}
+body.story-menu-open #scene{
+  pointer-events:none;
+}
+body.story-menu-open #ui-toggle{
+  pointer-events:none;
 }
 #story-menu-title{
   font-size:clamp(20px,5vw,28px);
@@ -760,6 +766,7 @@ let storyList = null;
 let selectedStory = null;
 
 async function loadStoryList(){
+  document.body.classList.add("story-menu-open");
   scene.hidden = true;
   storyMenu.hidden = false;
   const response = await fetch("storyboard/story-list.json", {cache:"no-store"});
@@ -787,7 +794,11 @@ function renderStoryMenu(stories){
       <span class="story-choice-title">${escapeHtml(story.title || story.id || "未命名劇本")}</span>
       ${story.author ? `<span class="story-choice-author">${escapeHtml(story.author)}</span>` : ""}
     `;
-    button.addEventListener("click",(event)=>{ event.preventDefault(); event.stopPropagation(); startSelectedStory(story); });
+    button.addEventListener("click", async (event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      await startSelectedStory(story);
+    });
     storyMenuList.appendChild(button);
   });
 
@@ -819,6 +830,7 @@ async function startSelectedStory(storyEntry){
     currentSpeaker = "紅";
     ending.style.display = "none";
     document.body.classList.remove("ui-hidden");
+    document.body.classList.remove("story-menu-open");
     scene.hidden = false;
     sceneImage.src = DEFAULT_CG;
 
@@ -833,6 +845,7 @@ async function startSelectedStory(storyEntry){
 
 function returnToStoryMenu(){
   ending.style.display = "none";
+  document.body.classList.add("story-menu-open");
   scene.hidden = true;
   storyMenu.hidden = false;
   selectedStory = null;
