@@ -63,7 +63,7 @@
 
       "demon-message": {
         "speaker": "紅",
-        "text": "(對妳似乎存有戒心)\n「話說在前面，我可是維度惡魔，並不是什麼好惹的對象，妳還是罩子得放亮點，別混水摸魚。」"
+        "text": "(對妳似乎存有戒心)「什麼可疑的傢伙？...」\n「喏！話說在前面，我可是維度惡魔，並不是什麼好惹的對象，妳還是罩子得放亮點，別混水摸魚。」"
       },
 
       "choices": [
@@ -107,7 +107,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😮‍💨"
+              "value": "🥱"
             }
           ],
           "next": 3
@@ -149,7 +149,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😲"
+              "value": "❓"
             }
           ],
           "next": 4
@@ -164,7 +164,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😠"
+              "value": "👿"
             }
           ],
           "next": 4
@@ -191,7 +191,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😠"
+              "value": "🌩️"
             }
           ],
           "next": 5
@@ -206,7 +206,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "🫨"
+              "value": "😠"
             }
           ],
           "next": 5
@@ -221,7 +221,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😣"
+              "value": "🫨"
             }
           ],
           "next": 5
@@ -263,7 +263,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "👿"
+              "value": "😠"
             }
           ],
           "next": 6
@@ -320,13 +320,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": "🤔"
+              "value": "😒"
             }
           ],
           "next": 7
         },
         {
-          "player-move": "「我願意無償工作來換！」",
+          "player-move": "「我願意無償賣命工作來換！」",
           "score": 3,
           "events": [
             {
@@ -362,7 +362,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "🤔"
+              "value": "❓"
             }
           ],
           "next": 8
@@ -377,7 +377,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😠"
+              "value": "👿"
             }
           ],
           "next": 8
@@ -434,7 +434,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😤"
+              "value": "🥱"
             }
           ],
           "next": 9
@@ -449,7 +449,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": "😒"
+              "value": "🌩️"
             }
           ],
           "next": 9
