@@ -356,13 +356,12 @@ body.ui-hidden #choices{
   font-size:14px;
 }
 
-#loading,#error{
+#error{
   padding:30px 20px;
   text-align:center;
   line-height:1.7;
+  color:#ffb0b0;
 }
-
-#error{color:#ffb0b0}
 
 @media(min-width:721px){
   #game{
@@ -378,9 +377,7 @@ body.ui-hidden #choices{
 <button id="ui-toggle" type="button">UI</button>
 
 <main id="game">
-  <div id="loading">AVG BOOK<br>Loading...</div>
-
-  <div id="scene" hidden>
+  <div id="scene">
     <img id="scene-image" src="img/ddd-avg-red-cg1_s.jpg" alt="">
     <div id="flash"></div>
     <div id="emoji-layer"></div>
@@ -401,6 +398,20 @@ body.ui-hidden #choices{
         </div>
       </div>
     </section>
+  </div>
+
+  <section id="gallery" aria-label="CG 畫廊">
+    <div id="gallery-header">
+      <div id="gallery-title">CG 畫廊</div>
+      <button id="gallery-close" type="button">關閉</button>
+    </div>
+    <div id="gallery-grid"></div>
+  </section>
+
+  <div id="gallery-viewer" aria-label="CG 預覽">
+    <button id="gallery-viewer-close" type="button" aria-label="關閉">×</button>
+    <a id="gallery-download" href="#" download>下載 CG</a>
+    <img id="gallery-viewer-image" src="" alt="">
   </div>
 
   <div id="error" hidden></div>
@@ -439,7 +450,6 @@ const galleryViewer = document.getElementById("gallery-viewer");
 const galleryViewerImage = document.getElementById("gallery-viewer-image");
 const galleryViewerClose = document.getElementById("gallery-viewer-close");
 const galleryDownload = document.getElementById("gallery-download");
-const loading = document.getElementById("loading");
 const errorBox = document.getElementById("error");
 
 let story = null;
@@ -450,7 +460,6 @@ let currentCg = DEFAULT_CG;
 let currentSpeaker = "紅";
 
 function showError(text){
-  loading.hidden = true;
   scene.hidden = true;
   errorBox.hidden = false;
   errorBox.textContent = text;
@@ -518,7 +527,6 @@ async function loadGame(){
       throw new Error("storyboard.json 格式不完整。");
     }
 
-    loading.hidden = true;
     scene.hidden = false;
     startGame();
 
