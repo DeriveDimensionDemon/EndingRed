@@ -270,8 +270,7 @@ body.ui-hidden #ending{
   flex-direction:column;
   background:rgba(10,10,10,.96);
   padding:18px 14px;
-  overflow-y:auto;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
 #gallery-header{
@@ -322,6 +321,26 @@ body.ui-hidden #ending{
   cursor:pointer;
 }
 
+.gallery-item.locked{
+  aspect-ratio:9/16;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.48);
+  background:rgba(255,255,255,.035);
+  cursor:default;
+}
+
+.gallery-item.locked span{
+  font-size:14px;
+  line-height:1.8;
+  text-align:center;
+}
+
+.gallery-item.locked small{
+  font-size:11px;
+}
+
 .gallery-item img{
   display:block;
   width:100%;
@@ -353,7 +372,7 @@ body.ui-hidden #ending{
   display:block;
   flex:0 1 auto;
   max-width:100%;
-  max-height:calc(100vh - 72px);
+  max-height:calc(100% - 72px);
   width:auto;
   height:auto;
   object-fit:contain;
@@ -387,6 +406,33 @@ body.ui-hidden #ending{
   background:rgba(0,0,0,.55);
   padding:7px 11px;
   font-size:14px;
+}
+
+#site-footer{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:1.1%;
+  z-index:90;
+  height:auto;
+  padding:0 8px;
+  text-align:center;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:8px;
+  line-height:1.2;
+  font-weight:400;
+  color:rgba(255,255,255,.72);
+  text-shadow:0 1px 3px rgba(0,0,0,.75);
+  pointer-events:auto;
+}
+
+#site-footer a{
+  color:rgba(255,255,255,.82);
+  text-decoration:none;
+}
+
+#site-footer a:hover{
+  text-decoration:underline;
 }
 
 #error{
@@ -461,6 +507,7 @@ const STORY_URL = "storyboard/story-red-studywithyou.json";
 const COLOR_BOX_URL = "storyboard/color-box.json";
 const DEFAULT_CG = "img/ddd-avg-red-cg1_s.jpg";
 const DEFAULT_COLOR = "rgb(182 37 14 / 18%)";
+const SAVE_KEY = "ddd-avg-book-with-pretty-demon-save-v1";
 
 const GALLERY_IMAGES = [
   "ddd-avg-red-cg1.jpg",
@@ -512,6 +559,36 @@ async function loadJson(url){
 }
 
 
+function loadSave(){
+  try{
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return {unlockedCgs:[]};
+    const data = JSON.parse(raw);
+    return {
+      unlockedCgs: Array.isArray(data.unlockedCgs) ? data.unlockedCgs : []
+    };
+  }catch{
+    return {unlockedCgs:[]};
+  }
+}
+
+function saveCgUnlock(filename){
+  const save = loadSave();
+  if(save.unlockedCgs.includes(filename)) return;
+
+  save.unlockedCgs.push(filename);
+  try{
+    localStorage.setItem(SAVE_KEY, JSON.stringify(save));
+  }catch{
+    // 若瀏覽器阻擋 localStorage，遊戲本身仍可正常繼續。
+  }
+}
+
+function isCgUnlocked(filename){
+  const save = loadSave();
+  return filename === "ddd-avg-red-cg1.jpg" || save.unlockedCgs.includes(filename);
+}
+
 function openGallery(){
   galleryGrid.innerHTML = "";
 
@@ -521,11 +598,18 @@ function openGallery(){
     item.className = "gallery-item";
     item.setAttribute("aria-label",`CG ${index + 1}`);
 
-    const img = document.createElement("img");
-    img.src = `img/${filename}`;
-    img.alt = `CG ${index + 1}`;
-    item.appendChild(img);
-    item.addEventListener("click",()=>openGalleryViewer(filename));
+    if(isCgUnlocked(filename)){
+      const img = document.createElement("img");
+      img.src = `img/${filename}`;
+      img.alt = `CG ${index + 1}`;
+      item.appendChild(img);
+      item.addEventListener("click",()=>openGalleryViewer(filename));
+    }else{
+      item.disabled = true;
+      item.classList.add("locked");
+      item.innerHTML = `<span>CG ${index + 1}<br><small>尚未解鎖</small></span>`;
+    }
+
     galleryGrid.appendChild(item);
   });
 
@@ -753,6 +837,11 @@ function changeCg(path){
   if(nextPath === currentCg) return;
 
   currentCg = nextPath;
+
+  const match = nextPath.match(/(ddd-avg-red-cg[2-4])(?:_s)?\.jpg$/);
+  if(match){
+    saveCgUnlock(`${match[1]}.jpg`);
+  }
 
   flash.classList.remove("cg-flash");
   void flash.offsetWidth;
