@@ -841,14 +841,14 @@ function renderStoryMenu(stories){
     const workTitle = document.createElement("span");
     workTitle.className = "story-choice-title";
 
-    const workName = document.createElement("span");
-    workName.textContent = storyEntry.title;
-
     const arrow = document.createElement("span");
     arrow.className = "story-arrow";
     arrow.textContent = isOpen ? "▼" : "◀";
 
-    workTitle.append(workName, arrow);
+    const workName = document.createElement("span");
+    workName.textContent = storyEntry.title;
+
+    workTitle.append(arrow, workName);
     workButton.appendChild(workTitle);
 
     workButton.addEventListener("click",(event)=>{
@@ -922,7 +922,7 @@ async function startSelectedStory(storyEntry, versionEntry){
 
   try{
     const response = await fetch(
-      `storyboard/${storyEntry.id}/${versionEntry.file}`,
+      `storyboard/story-${storyEntry.id}/${versionEntry.file}`,
       {cache:"no-store"}
     );
     if(!response.ok){
@@ -951,7 +951,7 @@ async function startSelectedStory(storyEntry, versionEntry){
       versionId:versionEntry.id,
       storyTitle:storyEntry.title,
       versionTitle:versionEntry.title,
-      file:`storyboard/${storyEntry.id}/${versionEntry.file}`
+      file:`storyboard/story-${storyEntry.id}/${versionEntry.file}`
     }));
 
     await loadColorBox();
