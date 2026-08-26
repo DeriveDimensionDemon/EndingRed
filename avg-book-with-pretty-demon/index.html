@@ -452,6 +452,7 @@ body.ui-hidden #ending{
 
 
 #story-menu{
+  pointer-events:auto;
   position:absolute;
   inset:0;
   z-index:50;
@@ -482,6 +483,9 @@ body.ui-hidden #ending{
   gap:10px;
 }
 .story-choice{
+  position:relative;
+  z-index:2;
+  pointer-events:auto;
   width:100%;
   border:1px solid rgba(255,255,255,.28);
   border-radius:10px;
@@ -783,7 +787,7 @@ function renderStoryMenu(stories){
       <span class="story-choice-title">${escapeHtml(story.title || story.id || "未命名劇本")}</span>
       ${story.author ? `<span class="story-choice-author">${escapeHtml(story.author)}</span>` : ""}
     `;
-    button.addEventListener("click",()=>startSelectedStory(story));
+    button.addEventListener("click",(event)=>{ event.preventDefault(); event.stopPropagation(); startSelectedStory(story); });
     storyMenuList.appendChild(button);
   });
 
