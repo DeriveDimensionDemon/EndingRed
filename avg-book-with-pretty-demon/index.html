@@ -59,27 +59,44 @@ body{
   top:3.5%;
   left:4%;
   width:58%;
-  max-height:29%;
+  max-height:58%;
   overflow:auto;
   padding:14px 16px;
   background:rgb(255 255 255 / 74%);
-  color:#242424;
+  color:#575757;
   border:1px solid rgba(255,255,255,.65);
   border-radius:10px;
   backdrop-filter:blur(5px);
   z-index:10;
 }
 
+#dialogue-box::after{
+  content:"";
+  position:absolute;
+  left:26px;
+  bottom:-10px;
+  width:18px;
+  height:18px;
+  background:rgb(255 255 255 / 74%);
+  border-right:1px solid rgba(255,255,255,.65);
+  border-bottom:1px solid rgba(255,255,255,.65);
+  transform:rotate(45deg);
+  backdrop-filter:blur(5px);
+  z-index:0;
+}
+
 #speaker{
-  font-weight:700;
-  font-size:clamp(14px,3.5vw,22px);
-  margin-bottom:7px;
+  display:none;
 }
 
 #message{
+  position:relative;
+  z-index:1;
   white-space:pre-wrap;
   line-height:2;
   font-size:clamp(14px,3.4vw,21px);
+  font-weight:600;
+  color:#575757;
 }
 
 #choices{
@@ -102,7 +119,9 @@ body{
   background:var(--choice-bg,rgb(182 37 14 / 18%));
   color:#fff;
   text-align:left;
+  font-family:"Noto Serif TC","Noto Serif CJK TC","Noto Serif","PMingLiU","Microsoft JhengHei",serif;
   font-size:clamp(14px,3.5vw,21px);
+  font-weight:600;
   cursor:pointer;
   backdrop-filter:blur(3px);
   box-shadow:0 2px 8px rgba(0,0,0,.28);
@@ -205,6 +224,15 @@ body.ui-hidden #choices{
   line-height:1.75;
   font-size:clamp(17px,4vw,25px);
   margin-bottom:15px;
+}
+
+#ending-grade{
+  display:inline-block;
+  margin-left:8px;
+  font-size:47px;
+  line-height:1;
+  font-weight:900;
+  vertical-align:-7px;
 }
 
 #restart{
@@ -487,6 +515,15 @@ function showDemonEmoji(value){
   },{once:true});
 }
 
+function escapeHtml(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
 function showEnding(){
   const evaluations = Array.isArray(story.ending.evaluations)
     ? story.ending.evaluations
@@ -516,9 +553,16 @@ function showEnding(){
 
   applySpeakerColor(endingSpeaker);
 
-  endingText.textContent =
-    normalizeMessageText(result["demon-message"] || "") +
-    `\n\n[Score: ${totalScore}]`;
+  const grade = String(
+    result.grade ||
+    result["evaluation-grade"] ||
+    ["A","B","C","D"][evaluations.indexOf(result)] ||
+    "D"
+  );
+
+  endingText.innerHTML =
+    `${escapeHtml(normalizeMessageText(result["demon-message"] || ""))}` +
+    `<br><br>妳的評價 <span id="ending-grade">${escapeHtml(grade)}</span>`;
 
   ending.style.display = "flex";
 }
