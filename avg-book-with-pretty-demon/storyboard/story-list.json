@@ -8,9 +8,15 @@
     },
     {
       "id": "red-studywithyou-ai",
-      "title": "紅『Study with you』AI改寫",
+      "title": "紅『Study with you』AI潤飾",
       "author": "AI Version",
       "file": "story-red-studywithyou-ai.json"
+    },
+    {
+      "id": "red-studywithyou-ai",
+      "title": "紅『Study with you』AI變奏",
+      "author": "AI Version",
+      "file": "story-red-studywithyou-ai2.json"
     }
   ]
 }
