@@ -1,0 +1,516 @@
+{
+  "flows": [
+    {
+      "flow-id": 1,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅把預約單推過來。「我要訂宴會廳。小型生日會，四到六人。」\n她看了妳的名片。「妳是負責場地的？」"
+      },
+      "choices": [
+        {
+          "player-move": "「是。放心，我們連壽星想逃跑的路線都能規劃。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😐"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "「是。請問壽星是誰？」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❓"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "「是。先說好，我們不提供抓捕壽星服務。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+    {
+      "flow-id": 2,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「壽星叫白。」\n「她不知道我要辦生日會，所以這是秘密。」紅把聲音壓低。「很普通的生日驚喜。不要把它搞成什麼奇怪的東西。」"
+      },
+      "choices": [
+        {
+          "player-move": "「了解。低調、安靜、完全不奇怪。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "「那可以安排一個『完全不奇怪』的巨大氣球拱門。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "「我先確認：她真的會來嗎？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❓"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 3,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「會。我會把她騙過來。」\n紅翻到場地平面圖。「入口不能有生日裝飾，蛋糕放這裡，燈光不要太亮。」\n「還有，絕對不要有人突然跳出來。」"
+      },
+      "choices": [
+        {
+          "player-move": "「那我安排服務生從天花板降下來。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「收到。我們正常進場，正常吃飯，正常過生日。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「如果壽星自己發現了，就不算我們洩密吧？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 4,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「很好。菜單也確認一下。」\n她拿起試飲杯。「這杯是給壽星的，妳先幫我試試。」\n「小心一點。這次真的只是水。」"
+      },
+      "choices": [
+        {
+          "player-move": "妳接過杯子，手一滑，水直接灑到紅的襯衫上。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg2_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😨"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "妳非常專業地喝了一口：「很好，完全沒有奇怪味道。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "妳端著杯子後退一步：「我覺得我們應該讓紅來試。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 5
+        }
+      ]
+    },
+    {
+      "flow-id": 5,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「……」紅低頭看著濕掉的襯衫。\n「好。」\n「妳先不用解釋。」她指向地上的文件。「把這些弄乾。那是剛印好的宴會流程。」"
+      },
+      "choices": [
+        {
+          "player-move": "妳拿紙巾站著擦，結果把整份流程表揉成一團。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😨"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "妳蹲下來一張張整理，努力假裝什麼都沒發生。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😐"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "妳跪下來把每張紙重新排好，紅走到鏡頭前，直接踩到鏡頭前方俯視妳。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg3_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😤"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 6,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「我開始懷疑，妳們飯店的『場地服務』是不是包含災害演習。」\n她拿起流程表。「白的生日會還沒開始，我已經先累了。」"
+      },
+      "choices": [
+        {
+          "player-move": "「這代表我們很重視客人的安全。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "「至少妳會永遠記得這次生日會。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "「我可以送妳一張事故紀念照。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 7,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅重新看了一遍白的需求單。\n「她寫著：不要花俏、不要大聲、不要被拍照。」\n她抬頭看妳。「妳應該做得到吧？」"
+      },
+      "choices": [
+        {
+          "player-move": "「當然。最多只放一隻很大的氣球。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「做得到。我會照需求安排。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「那我們把『不要被拍照』改成『只有壽星本人可以拍』？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 8,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「不。」\n紅直接把那行劃掉。「不要自作主張。」\n她想了一下，又補上一句：「蛋糕可以稍微大一點。」"
+      },
+      "choices": [
+        {
+          "player-move": "「多大算稍微？」妳指向宴會廳最大的尺寸。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "「好的，我會準備剛好夠大家吃的尺寸。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "「我會讓廚房自由發揮。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 9,
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅把預約單收好。「就這樣。」\n「白進門以前，所有人都要裝作只是普通晚餐。」\n她看著妳。「尤其是妳。」"
+      },
+      "choices": [
+        {
+          "player-move": "「放心，我連生日快樂都不會說。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「如果她一進門就看到蛋糕，應該算她自己發現的。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「收到。我會非常努力地表現得像一個普通的飯店業務。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": null
+        }
+      ]
+    }
+  ],
+  "ending": {
+    "demon-message": {
+      "speaker": "紅",
+      "text": "「好了，場地訂了。」\n「現在只希望白進門以前，這件事不要再出現任何意外。」"
+    },
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 9,
+        "grade": "今天別再讓妳碰水了",
+        "demon-message": "「生日會還沒開始，我已經有點想取消了。」"
+      },
+      {
+        "min-score": 10,
+        "max-score": 19,
+        "grade": "勉強可以交給妳",
+        "demon-message": "「至少場地沒有真的被妳拆掉。」"
+      },
+      {
+        "min-score": 20,
+        "max-score": 27,
+        "grade": "意外地可靠",
+        "demon-message": "「很好。這次……真的麻煩妳了。」"
+      }
+    ]
+  }
+}
