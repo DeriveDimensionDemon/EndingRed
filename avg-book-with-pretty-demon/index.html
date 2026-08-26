@@ -80,7 +80,7 @@ body{
   z-index:1;
   white-space:pre-wrap;
   line-height:2;
-  font-size:clamp(14px,3vw,18px);
+  font-size:clamp(14px,3.2vw,18px);
   font-weight:600;
   color:#575757;
 }
@@ -94,6 +94,11 @@ body{
   flex-direction:column;
   gap:9px;
   z-index:20;
+}
+
+#choices.typing-lock{
+  opacity:0;
+  pointer-events:none;
 }
 
 .choice{
@@ -177,7 +182,8 @@ body{
 }
 
 body.ui-hidden #dialogue-box,
-body.ui-hidden #choices{
+body.ui-hidden #choices,
+body.ui-hidden #ending{
   opacity:0;
   pointer-events:none;
 }
@@ -281,6 +287,9 @@ body.ui-hidden #choices{
 }
 
 .gallery-item{
+  appearance:none;
+  -webkit-appearance:none;
+  padding:0;
   position:relative;
   border:1px solid rgba(255,255,255,.28);
   border-radius:9px;
@@ -296,16 +305,6 @@ body.ui-hidden #choices{
   object-fit:cover;
 }
 
-.gallery-item span{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  padding:6px 8px;
-  background:rgba(0,0,0,.55);
-  font-size:13px;
-  text-align:center;
-}
 
 #gallery-viewer{
   position:fixed;
@@ -319,12 +318,14 @@ body.ui-hidden #choices{
 }
 
 #gallery-viewer img{
-  max-width:96vw;
-  max-height:94vh;
+  position:relative;
+  z-index:300;
+  max-width:100vw;
+  max-height:100vh;
   width:auto;
   height:auto;
   object-fit:contain;
-  border-radius:5px;
+  border-radius:0;
 }
 
 #gallery-viewer-close{
@@ -450,6 +451,7 @@ const galleryViewer = document.getElementById("gallery-viewer");
 const galleryViewerImage = document.getElementById("gallery-viewer-image");
 const galleryViewerClose = document.getElementById("gallery-viewer-close");
 const galleryDownload = document.getElementById("gallery-download");
+const uiToggle = document.getElementById("ui-toggle");
 const errorBox = document.getElementById("error");
 
 let story = null;
@@ -458,6 +460,8 @@ let currentFlowId = 1;
 let totalScore = 0;
 let currentCg = DEFAULT_CG;
 let currentSpeaker = "紅";
+let typingTimer = null;
+let typingToken = 0;
 
 function showError(text){
   scene.hidden = true;
@@ -484,22 +488,18 @@ function openGallery(){
     const img = document.createElement("img");
     img.src = `img/${filename}`;
     img.alt = `CG ${index + 1}`;
-
-    const label = document.createElement("span");
-    label.textContent = `CG ${index + 1}`;
-
-    item.appendChild(img);
-    item.appendChild(label);
     item.addEventListener("click",()=>openGalleryViewer(filename));
     galleryGrid.appendChild(item);
   });
 
   gallery.style.display = "flex";
+  uiToggle.style.display = "none";
 }
 
 function closeGallery(){
   gallery.style.display = "none";
   closeGalleryViewer();
+  uiToggle.style.display = "";
 }
 
 function openGalleryViewer(filename){
@@ -509,11 +509,17 @@ function openGalleryViewer(filename){
   galleryDownload.href = path;
   galleryDownload.download = filename;
   galleryViewer.style.display = "flex";
+  uiToggle.style.display = "none";
 }
 
 function closeGalleryViewer(){
   galleryViewer.style.display = "none";
   galleryViewerImage.src = "";
+  if(gallery.style.display !== "flex"){
+    uiToggle.style.display = "";
+  } else {
+    uiToggle.style.display = "none";
+  }
 }
 
 async function loadGame(){
@@ -579,12 +585,51 @@ function renderFlow(){
 
   const demonMessage = flow["demon-message"] || {};
   const flowSpeaker = demonMessage.speaker || "紅";
+  const text = normalizeMessageText(demonMessage.text);
 
   speaker.textContent = flowSpeaker;
-  message.textContent = normalizeMessageText(demonMessage.text);
-
   applySpeakerColor(flowSpeaker);
 
+  choicesBox.innerHTML = "";
+  choicesBox.classList.add("typing-lock");
+
+  if(typingTimer){
+    clearInterval(typingTimer);
+    typingTimer = null;
+  }
+
+  const token = ++typingToken;
+  message.textContent = "";
+
+  // 細微的 AVG 打字效果；換行照劇本立即保留。
+  let index = 0;
+  const typingSpeed = 24;
+
+  typingTimer = setInterval(()=>{
+    if(token !== typingToken){
+      clearInterval(typingTimer);
+      typingTimer = null;
+      return;
+    }
+
+    message.textContent += text[index];
+    index++;
+
+    if(index >= text.length){
+      clearInterval(typingTimer);
+      typingTimer = null;
+      buildChoices(flow);
+    }
+  }, typingSpeed);
+
+  if(text.length === 0){
+    clearInterval(typingTimer);
+    typingTimer = null;
+    buildChoices(flow);
+  }
+}
+
+function buildChoices(flow){
   choicesBox.innerHTML = "";
 
   const choices = Array.isArray(flow.choices) ? flow.choices : [];
@@ -597,6 +642,8 @@ function renderFlow(){
     button.addEventListener("click",()=>selectChoice(choice));
     choicesBox.appendChild(button);
   });
+
+  choicesBox.classList.remove("typing-lock");
 }
 
 function selectChoice(choice){
