@@ -521,16 +521,19 @@
       {
         "min-score": 0,
         "max-score": 8,
-        "demon-message": "態度惡劣。\n\n明天不用來了。"
+        "grade": "態度惡劣。",
+        "demon-message": "明天不用來了。"
       },
       {
         "min-score": 9,
         "max-score": 17,
-        "demon-message": "普普通通。\n\n不過是個隨便都能取代的小壞蛋。"
+        "grade": "普普通通。",
+        "demon-message": "嗯。\n\n不過是個隨便都能取代的小壞蛋。"
       },
       {
         "min-score": 18,
         "max-score": 27,
+        "grade": "高級小壞蛋",
         "demon-message": "妳……\n\n我們可以考慮談個長期合作？"
       }
     ]
