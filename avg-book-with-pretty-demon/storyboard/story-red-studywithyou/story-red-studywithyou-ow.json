@@ -1,0 +1,544 @@
+{
+  "flows": [
+    {
+      "flow-id": 1,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「請進...」\n「哦？妳就是今天來幫忙的小壞蛋嗎？」\n（紅上下打量著妳。）"
+      },
+
+      "choices": [
+        {
+          "player-move": "「是的，請多指教。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "「其實，我是來求偶的。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "「研究文件？我是來研究妳的。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "👿"
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+
+    {
+      "flow-id": 2,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "(對妳似乎存有戒心)「什麼可疑的傢伙？...」\n「喏！話說在前面，我可是維度惡魔，並不是什麼好惹的對象，妳還是罩子得放亮點，別混水摸魚。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「那麼，摸胸部可以嗎？」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "「我知道，推倒維度的惡魔對吧？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "👿"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "「我知道，絕對會乖乖的。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+
+    {
+      "flow-id": 3,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "（妳似乎聽到紅的喃喃自語）\n「這隻小壞蛋誰引薦的，怎麼那麼...嘖。」\n「隨便派些雜事，打發她走好了。」（雖然很小聲...但...）"
+      },
+
+      "choices": [
+        {
+          "player-move": "「我聽見了，要打發我了嗎？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🫠"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「誰引薦的？不是妳親口說好希望我來打工嗎？」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❓"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「雜事？例如說，幫您穿上高跟鞋嗎？」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "👿"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+
+    {
+      "flow-id": 4,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「妳！...」\n（她欲言又止）\n「好了好了！別在那杵著，去倒杯開水給我」\n「呼，口真渴...。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "水＂不小心＂打翻在紅身上。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg2_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🌩️"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "紅伸出手接的時候，妳故意鬆手讓水杯掉下去了。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "放在辦公桌上，但她轉身過來時剛好打翻了。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🫨"
+            }
+          ],
+          "next": 5
+        }
+      ]
+    },
+
+    {
+      "flow-id": 5,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「哎？！這簡直！快去拿東西來擦乾淨！」"
+      },
+
+      "choices": [
+        {
+          "player-move": "抹布扔到地上，腰都不彎的用腳踩著擦。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🌩️"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "拿起她桌上的文件來吸乾。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "跪在她面前，細心的擦，服務女王般的擦。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg3_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😤"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+
+    {
+      "flow-id": 6,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "（好一會後，終於整理乾淨。）\n「我看妳真的...很不擅長在這打工。」\n「乾脆中午就回去吧。」（紅露出越來越不耐煩的表情。妳甚至懷疑她頭上的角變長了一些。）"
+      },
+
+      "choices": [
+        {
+          "player-move": "認真道歉「請再給我一次機會！」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "「因為不是來打工，是來看妳的。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😒"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "「我願意無償賣命工作來換！」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😈"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+
+    {
+      "flow-id": 7,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「那張嘴簡直令人...哼！...」\n（紅心想：這小壞蛋，不僅僅是笨手笨腳的，行為談吐更是有點...難以言喻。）\n(但我還記得，她的資料介紹人不是寫著『蒼』嗎？）\n她抬起頭來問妳「對了，小壞蛋。妳認識蒼？」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「認識，以前被她拯救過。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❓"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「認識，蒼比妳還漂亮呢。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "👿"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「什麼蒼？我的心裡、眼裡只有妳。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😒"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+
+    {
+      "flow-id": 8,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「蒼...這傢伙...今晚回去我肯定找她算帳。」（紅壓低了音量，但妳還是聽見了。）\n「好了，這份出勤單填一填，妳可以準備下班了。」（她遞了一份文件過來。）"
+      },
+
+      "choices": [
+        {
+          "player-move": "在上面亂塗鴉和寫告白句子。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "非常嚴謹的每欄都好好填寫。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "「太麻煩了，妳幫我填吧？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🌩️"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+
+    {
+      "flow-id": 9,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "「...........」\n（她看了看妳填寫的資料，吁了口氣，隨意扔在一旁。）於是妳先開口了---"
+      },
+
+      "choices": [
+        {
+          "player-move": "「對我評價很高對吧？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙄"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「已經愛上我了？」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「謝謝您今天的指教！」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🥱"
+            }
+          ],
+          "next": null
+        }
+      ]
+    }
+  ],
+
+  "ending": {
+    "demon-message": {
+      "speaker": "紅",
+      "text": "「好了，我順便打好了妳的分數。」\n「只能說，我對妳的感想是---」"
+    },
+
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 9,
+        "grade": "現在可以滾了",
+        "demon-message": "「門在那邊，祝妳走時撞到玻璃上。」"
+      },
+      {
+        "min-score": 10,
+        "max-score": 19,
+        "grade": "岌岌可危",
+        "demon-message": "「我一定要回去問蒼，這是怎麼回事。...」"
+      },
+      {
+        "min-score": 20,
+        "max-score": 27,
+        "grade": "還可以吧",
+        "demon-message": "「妳...明天還考慮過來嗎？」"
+      }
+    ]
+  }
+}
