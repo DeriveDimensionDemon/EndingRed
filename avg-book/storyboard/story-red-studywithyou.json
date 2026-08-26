@@ -1,1 +1,538 @@
+{
+  "title": "study with you",
 
+  "flows": [
+    {
+      "flow-id": 1,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅從桌上的文件中抬起頭，看了妳一眼。\n\n「妳就是今天協助研究的助理小壞蛋？」\n\n她用筆輕輕敲了一下桌面。\n\n「過來。我們馬上開始。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "乖乖走到紅身邊。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😌"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "先盯著紅看兩秒。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "站在原地，等紅自己過來。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+
+    {
+      "flow-id": 2,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅把一疊研究資料放到妳面前。\n\n「今天的工作很簡單。」\n\n「把這些資料按照日期整理好。」\n\n她停了一下。\n\n「……不要問我為什麼日期會出現三種不同的格式。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "認真開始整理資料。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙂"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "偷偷把三種日期格式全部統一。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg2_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "把資料按照紙張顏色分類。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙄"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+
+    {
+      "flow-id": 3,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "過了一會兒，紅站起身，走到妳旁邊檢查整理好的資料。\n\n「嗯……」\n\n她翻了幾頁。\n\n「至少沒有全部弄亂。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「謝謝誇獎。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「妳這是在誇我嗎？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "「那我可以休息了嗎？」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+
+    {
+      "flow-id": 4,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅回到座位上。\n\n「水。」\n\n她指了指桌邊的杯子。\n\n「幫我拿過來。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "雙手把水杯遞給紅。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙂"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "把水杯放在紅的桌上。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😌"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "在紅快接到的時候故意把水杯放回去。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 5
+        }
+      ]
+    },
+
+    {
+      "flow-id": 5,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅看了一眼時間。\n\n「妳的工作效率比我想像中高。」\n\n她拿起筆，又低頭看了一眼手上的資料。\n\n「……這倒是有點出乎意料。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「因為我很認真。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😌"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "「因為紅一直盯著我。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg3_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "「其實我只是怕被妳踢。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙄"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+
+    {
+      "flow-id": 6,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅沉默了一會兒。\n\n「……妳還真敢說。」\n\n她重新翻開資料。\n\n「算了。繼續工作。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "立刻低頭工作。",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙂"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "偷偷觀察紅的表情。",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "故意把筆敲得很大聲。",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+
+    {
+      "flow-id": 7,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅忽然把一張紙推到妳面前。\n\n「這個。」\n\n「妳看得懂嗎？」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「看得懂。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😏"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「看不懂，但我可以假裝看得懂。」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "「完全看不懂。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙄"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+
+    {
+      "flow-id": 8,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "紅拿回那張紙。\n\n「算了。」\n\n她似乎想說什麼，又停了下來。\n\n最後只是輕輕嘆了一口氣。"
+      },
+
+      "choices": [
+        {
+          "player-move": "「紅是不是其實很在意我？」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "「紅是不是累了？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😌"
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "「我是不是可以下班了？」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+
+    {
+      "flow-id": 9,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": "窗外的天色已經開始變化。\n\n紅整理好桌上的文件，看向妳。\n\n「好了。」\n\n「今天就到這裡。」\n\n她停了一下。\n\n「明天……如果妳還想來，就再來吧。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "「明天見。」",
+          "score": 3,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "🙂"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「所以妳希望我明天來？」",
+          "score": 2,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😳"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "「那我真的不來了。」",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "😠"
+            }
+          ],
+          "next": null
+        }
+      ]
+    }
+  ],
+
+  "ending": {
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 8,
+        "demon-message": "態度惡劣。\n\n明天不用來了。"
+      },
+      {
+        "min-score": 9,
+        "max-score": 17,
+        "demon-message": "普普通通。\n\n不過是個隨便都能取代的小壞蛋。"
+      },
+      {
+        "min-score": 18,
+        "max-score": 27,
+        "demon-message": "妳……\n\n我們可以考慮談個長期合作？"
+      }
+    ]
+  }
+}
