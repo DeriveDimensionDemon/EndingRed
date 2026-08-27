@@ -2,6 +2,7 @@
   "flows": [
     {
       "flow-id": 1,
+      "cg": "ddd-avg-red-cg1_s.jpg",
       "demon-message": {
         "speaker": "紅",
         "text": "紅把預約單推過來。「我要訂宴會廳。小型生日會，四到六人。」\n她看了妳的名片。「妳是負責場地的？」"
