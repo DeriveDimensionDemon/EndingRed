@@ -1,0 +1,544 @@
+{
+  "flows": [
+    {
+      "flow-id": 1,
+
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+
+    {
+      "flow-id": 2,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+
+    {
+      "flow-id": 3,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+
+    {
+      "flow-id": 4,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 5
+        }
+      ]
+    },
+
+    {
+      "flow-id": 5,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+
+    {
+      "flow-id": 6,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+
+    {
+      "flow-id": 7,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+
+    {
+      "flow-id": 8,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+
+    {
+      "flow-id": 9,
+
+      "demon-message": {
+        "speaker": "紅",
+        "text": ""
+      },
+
+      "choices": [
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": ""
+            }
+          ],
+          "next": null
+        }
+      ]
+    }
+  ],
+
+  "ending": {
+    "demon-message": {
+      "speaker": "紅",
+      "text": ""
+    },
+
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      },
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      },
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      }
+    ]
+  }
+}
