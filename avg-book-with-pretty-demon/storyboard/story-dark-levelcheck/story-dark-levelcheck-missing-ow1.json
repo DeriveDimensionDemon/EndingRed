@@ -16,7 +16,7 @@
               "type": "cg",
               "image": "ddd-avg-white-cg1_s.jpg",
               "cg-animation": "shake"
-            },
+            }
           ],
           "next": 2
         }
