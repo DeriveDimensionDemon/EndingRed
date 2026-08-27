@@ -36,16 +36,17 @@
       "versions": [
         {
           "id": "ddd",
-          "title": "熟悉度測驗",
-          "description": "黑親自出的考題，想知道妳有多了解我們的IP嗎？",
+          "title": "IP熟悉度測驗",
+          "description": "黑親自出的考題，想知道妳有多了解推導維度惡魔這個IP嗎？",
           "file": "story-dark-levelcheck-ddd.json"
         },
         {
           "id": "yuri",
           "title": "百合相性測驗",
-          "description": "妳的百合不等於我的百合？真的嗎？來試試看吧。",
+          "description": "妳的百合不等於維度惡魔姊妹們的百合？真的嗎？來試試看吧。",
           "file": "story-dark-levelcheck-yuri.json"
-        },]
+        }
+      ]
     }
   ]
 }
