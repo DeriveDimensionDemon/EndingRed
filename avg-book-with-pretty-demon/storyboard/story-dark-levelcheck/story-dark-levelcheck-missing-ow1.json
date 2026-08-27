@@ -279,7 +279,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": -1,
           "events": [],
           "next": 99
         },
@@ -306,7 +306,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": -1,
           "events": [],
           "next": 99
         },
@@ -333,7 +333,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": -1,
           "events": [],
           "next": 99
         },
