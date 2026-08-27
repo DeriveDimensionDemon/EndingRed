@@ -61,7 +61,7 @@
       "flow-id": 2,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -118,7 +118,7 @@
       "flow-id": 3,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -175,7 +175,7 @@
       "flow-id": 4,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -232,7 +232,7 @@
       "flow-id": 5,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -289,7 +289,7 @@
       "flow-id": 6,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -346,7 +346,7 @@
       "flow-id": 7,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -403,7 +403,7 @@
       "flow-id": 8,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -460,7 +460,7 @@
       "flow-id": 9,
 
       "demon-message": {
-        "speaker": "紅",
+        "speaker": "黑",
         "text": ""
       },
 
@@ -516,7 +516,7 @@
 
   "ending": {
     "demon-message": {
-      "speaker": "紅",
+      "speaker": "黑",
       "text": ""
     },
 
