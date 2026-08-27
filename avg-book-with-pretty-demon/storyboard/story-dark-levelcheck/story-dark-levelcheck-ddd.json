@@ -691,21 +691,21 @@
       {
         "min-score": 0,
         "max-score": 7,
-        "cg": "ddd-avg-dark-cg2_s.jpg"
+        "cg": "ddd-avg-dark-cg2_s.jpg",
         "grade": "不及格",
         "demon-message": "「今天剛來的？」"
       },
       {
         "min-score": 8,
         "max-score": 11,
-        "cg": "ddd-avg-dark-cg3_s.jpg"
+        "cg": "ddd-avg-dark-cg3_s.jpg",
         "grade": "及格",
         "demon-message": "「妳還可以再看懂一點。」"
       },
       {
         "min-score": 12,
         "max-score": 12,
-        "cg": "ddd-avg-dark-cg4_s.jpg"
+        "cg": "ddd-avg-dark-cg4_s.jpg",
         "grade": "滿分",
         "demon-message": "「看來，妳有做功課。小壞蛋。」"
       }
