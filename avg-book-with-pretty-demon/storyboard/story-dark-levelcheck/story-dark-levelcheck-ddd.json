@@ -5,12 +5,12 @@
         "cg": "ddd-avg-dark-cg1_s.jpg",
         "demon-message": {
           "speaker": "黑",
-          "text": ""
+          "text": "「妳就是來接受測驗的？」\n「那麼...就來看看妳對我們有多了解吧。最後，我會給妳的表現評分。...」\n「首先，DDD是我們IP的簡稱，全名是？」"
         },
         "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "Derive Dimension Demon",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -18,13 +18,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 2
         },
         {
-          "player-move": "",
+          "player-move": "Don't Destroy Dessert",
           "score": 0,
           "events": [
             {
@@ -33,13 +33,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 2
         },
         {
-          "player-move": "",
+          "player-move": "Do Demon Does",
           "score": 0,
           "events": [
             {
@@ -48,7 +48,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 2
@@ -61,12 +61,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「接下來。」\n「很簡單，中文全名呢？」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "推倒維度惡魔",
           "score": 0,
           "events": [
             {
@@ -75,14 +75,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 3
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "推導維度惡魔",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -90,13 +90,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 3
         },
         {
-          "player-move": "",
+          "player-move": "衍生維度惡魔",
           "score": 0,
           "events": [
             {
@@ -105,7 +105,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 3
@@ -118,13 +118,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「那麼要增加難度了。考考妳對我們題材取向的認識。」\n「這些何者描述最精確？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "DDD是女性向的百合題材IP",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -132,13 +132,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 4
         },
         {
-          "player-move": "",
+          "player-move": "DDD目標是打入男性向後宮市場",
           "score": 0,
           "events": [
             {
@@ -147,13 +147,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 4
         },
         {
-          "player-move": "",
+          "player-move": "DDD專門鎖定男性喜好的元素",
           "score": 0,
           "events": [
             {
@@ -162,7 +162,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 4
@@ -175,12 +175,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「哼。」\n「那麼，妳推測DDD姐妹灑福利的心境最接近為？」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "為了勾引男性",
           "score": 0,
           "events": [
             {
@@ -189,13 +189,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 5
         },
         {
-          "player-move": "",
+          "player-move": "為了滿足男性",
           "score": 0,
           "events": [
             {
@@ -204,14 +204,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 5
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "女性對性感的自我展現",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -219,7 +219,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 5
@@ -232,12 +232,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳認為。」\n「DDD在任何一處，都是用『妳』而非『你』，為什麼。」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "因為黑大人是女權瘋狗",
           "score": 0,
           "events": [
             {
@@ -246,13 +246,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 6
         },
         {
-          "player-move": "",
+          "player-move": "維度惡魔催眠自己所有存在都是女性",
           "score": 0,
           "events": [
             {
@@ -261,14 +261,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 6
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "維度惡魔是預設女性觀眾為受眾的IP",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -276,7 +276,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 6
@@ -289,12 +289,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「好...接下來。」\n「維度惡魔姊妹們，常常怎樣暱稱使用者？例如妳。」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "小變態",
           "score": 0,
           "events": [
             {
@@ -303,14 +303,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 7
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "小壞蛋",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -318,13 +318,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 7
         },
         {
-          "player-move": "",
+          "player-move": "小精靈",
           "score": 0,
           "events": [
             {
@@ -333,7 +333,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 7
@@ -346,12 +346,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「那麼又如何稱呼AI或是數位服務？」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "小怪獸",
           "score": 0,
           "events": [
             {
@@ -360,13 +360,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 8
         },
         {
-          "player-move": "",
+          "player-move": "小機器人",
           "score": 0,
           "events": [
             {
@@ -375,13 +375,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 8
         },
         {
-          "player-move": "",
+          "player-move": "小精靈",
           "score": 0,
           "events": [
             {
@@ -390,7 +390,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 8
@@ -403,13 +403,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「再來就更難了，妳得對維度惡魔姐妹們有一定的了解。」\n「姊妹們的個性，妳對金的理解？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "傲嬌但有保護欲、可靠感",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -417,13 +417,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": 9
         },
         {
-          "player-move": "",
+          "player-move": "胸大無腦、春色無邊",
           "score": 0,
           "events": [
             {
@@ -432,13 +432,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 9
         },
         {
-          "player-move": "",
+          "player-move": "總是主動提及NSFW梗",
           "score": 0,
           "events": [
             {
@@ -447,7 +447,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": 9
@@ -460,12 +460,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「那麼，妳對白的理解？」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "對姊妹頤指氣使",
           "score": 0,
           "events": [
             {
@@ -474,14 +474,238 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
+            }
+          ],
+          "next": 10
+        },
+        {
+          "player-move": "優雅的領袖",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "✅"
+            }
+          ],
+          "next": 10
+        },
+        {
+          "player-move": "花瓶角色",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 10
+        }
+      ]
+    },
+
+    {
+        "flow-id": 10,
+        "demon-message": {
+          "speaker": "黑",
+          "text": "「接著，妳對蒼的理解？」"
+        },
+        "choices": [
+        {
+          "player-move": "內向怯弱",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg2_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "喜歡運動、男大姐",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg3_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "性感或擦邊話題掛在嘴邊",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "✅"
+            }
+          ],
+          "next": 11
+        }
+      ]
+    },
+
+    {
+      "flow-id": 11,
+
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「最後了。」\n「妳對紅的理解？」"
+      },
+
+      "choices": [
+        {
+          "player-move": "技術與鑽研擔當",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "✅"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "整天對姐妹告白",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "公主病，喜歡使喚金",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 12
+        }
+      ]
+    },
+
+    {
+        "flow-id": 12,
+        "demon-message": {
+          "speaker": "黑",
+          "text": "「追加題。」\n「白描述她的房間，妳認為會看到？」"
+        },
+        "choices": [
+        {
+          "player-move": "皮鞭與蠟燭",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg2_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "金的NSFW漫畫",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg3_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "雪白兔兔的抱枕",
+          "score": 1,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg4_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "✅"
+            }
+          ],
+          "next": 13
+        }
+      ]
+    },
+
+    {
+      "flow-id": 13,
+
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「好。」「把姊妹們的序位正確由第一排至第四位，我們就可以結算了。」"
+      },
+
+      "choices": [
+        {
+          "player-move": "紅→金→蒼→白",
+          "score": 0,
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg"
+            },
+            {
+              "type": "demon-emoji",
+              "value": "❌"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "白→蒼→金→紅",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -489,13 +713,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "✅"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
+          "player-move": "蒼→紅→白→金",
           "score": 0,
           "events": [
             {
@@ -504,7 +728,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "❌"
             }
           ],
           "next": null
@@ -516,7 +740,7 @@
   "ending": {
     "demon-message": {
       "speaker": "黑",
-      "text": ""
+      "text": "「．．．」"
     },
 
     "evaluations": [
