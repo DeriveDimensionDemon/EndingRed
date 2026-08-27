@@ -2,7 +2,7 @@
   "flows": [
     {
       "flow-id": 1,
-
+      "cg": "ddd-avg-red-cg1_s.jpg",
       "demon-message": {
         "speaker": "紅",
         "text": "「請進...」\n「哦？妳就是今天來幫忙的小壞蛋嗎？」\n（紅上下打量著妳。）"
