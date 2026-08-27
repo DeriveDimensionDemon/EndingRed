@@ -1332,6 +1332,13 @@ function showEnding(){
     result["demon-message"] || ""
   );
 
+  // 結算時依照評價區間指定的 CG 切換畫面。
+  // evaluation.cg 存在時，直接使用該 CG；同時也會透過 changeCg()
+  // 正常加入 CG 解鎖存檔。
+  if(result.cg){
+    changeCg(result.cg);
+  }
+
   endingText.innerHTML =
     `<span id="ending-label">妳的評價</span>` +
     `<span id="ending-grade">${escapeHtml(grade)}</span>` +
