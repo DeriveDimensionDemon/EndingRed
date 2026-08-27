@@ -5,16 +5,16 @@
       "cg": "ddd-avg-dark-cg1_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「白怎麼突然找我。」「緊急的事？」\n「...這就過去吧。」"
       },
       "choices": [
         {
-          "player-move": "查看案件資料",
+          "player-move": "傳送到白的房間",
           "score": 0,
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-dark-cg3_s.jpg"
+              "image": "ddd-avg-white-cg1_s.jpg"
               "cg-animation": "shake"
             },
           ],
@@ -25,24 +25,24 @@
     {
       "flow-id": 2,
       "demon-message": {
-        "speaker": "黑",
-        "text": ""
+        "speaker": "白",
+        "text": "「黑！」\n「...我的蕾絲胸罩不見了。」\n「妳幫我問問姐妹們誰看見了。」"
       },
       "choices": [
         {
-          "player-move": "查看嫌疑人 A",
+          "player-move": "可能是蒼。",
           "score": 0,
           "events": [],
           "next": 21
         },
         {
-          "player-move": "查看嫌疑人 B",
+          "player-move": "可能是金。",
           "score": 0,
           "events": [],
           "next": 22
         },
         {
-          "player-move": "查看嫌疑人 C",
+          "player-move": "可能是紅。",
           "score": 0,
           "events": [],
           "next": 23
@@ -51,26 +51,26 @@
     },
     {
       "flow-id": 21,
-      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "cg": "ddd-avg-cyan-cg1_s.jpg",
       "demon-message": {
-        "speaker": "黑",
-        "text": ""
+        "speaker": "蒼",
+        "text": "「白姐的小罩杯？我怎麼會看見那種東西。」"
       },
       "choices": [
         {
-          "player-move": "查看其他嫌疑人資料",
+          "player-move": "不是她。",
           "score": 0,
           "events": [],
           "next": 2
         },
         {
-          "player-move": "即使資訊不完整，直接指控 A",
+          "player-move": "只會是妳。",
           "score": 0,
           "events": [],
           "next": null
         },
         {
-          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "player-move": "看來真兇不會輕易招認...",
           "score": 0,
           "events": [],
           "next": 3
@@ -79,26 +79,26 @@
     },
     {
       "flow-id": 22,
-      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "cg": "ddd-avg-golden-cg1_s.jpg",
       "demon-message": {
-        "speaker": "黑",
-        "text": ""
+        "speaker": "金",
+        "text": "「妳說什麼？？白姐的蕾－－－－」\n（金似乎光憑自己的想像力就暈倒了）"
       },
       "choices": [
         {
-          "player-move": "查看其他嫌疑人資料",
+          "player-move": "看來暫時不會醒來。",
           "score": 0,
           "events": [],
           "next": 2
         },
         {
-          "player-move": "即使資訊不完整，直接指控 B",
+          "player-move": "就是金幹的。",
           "score": 0,
           "events": [],
           "next": null
         },
         {
-          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "player-move": "去繞繞吧...",
           "score": 0,
           "events": [],
           "next": 3
@@ -107,26 +107,26 @@
     },
     {
       "flow-id": 23,
-      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "cg": "ddd-avg-red-cg1_s.jpg",
       "demon-message": {
-        "speaker": "黑",
-        "text": ""
+        "speaker": "紅",
+        "text": "「妳在幫白姐找..（咳嗽）。」「我有什麼理由要拿那種東西？」"
       },
       "choices": [
         {
-          "player-move": "查看其他嫌疑人資料",
+          "player-move": "紅的話，沒有理由。",
           "score": 0,
           "events": [],
           "next": 2
         },
         {
-          "player-move": "即使資訊不完整，直接指控 C",
+          "player-move": "妳是不是丟進儀式法陣了？",
           "score": 0,
           "events": [],
           "next": null
         },
         {
-          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "player-move": "看來真兇不會輕易招認...",
           "score": 0,
           "events": [],
           "next": 3
@@ -137,23 +137,29 @@
       "flow-id": 3,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「為什麼白不自己去問姊妹們。」\n「真是的，自己的重要東西，這樣粗心。」\n（她走到客廳，這裡是姊妹們的起居空間）"
       },
       "choices": [
         {
-          "player-move": "調查門鎖",
+          "player-move": "調查茶几",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg3_s.jpg",
+              "cg-animation": "shake"
+            },
+          ],
           "next": 31
         },
         {
-          "player-move": "調查窗戶",
+          "player-move": "調查沙發",
           "score": 0,
           "events": [],
           "next": 32
         },
         {
-          "player-move": "調查書桌",
+          "player-move": "調查窗戶",
           "score": 0,
           "events": [],
           "next": 33
@@ -163,24 +169,25 @@
     {
       "flow-id": 31,
       "demon-message": {
-        "speaker": "黑",
+        "speaker": "（茶几上是姊妹們昨晚吃剩的洋芋片）\n（沒有什麼奇怪的地－－－等等）\n（黑從桌底抽出一本『金的NSFW寫真』\n「．．．」",
         "text": ""
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "誰召喚這種東西．．．看看別的地方吧",
           "score": 0,
-          "events": [],
+          "events": [
+          ],
           "next": 3
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去餐廳看看吧。",
           "score": 0,
           "events": [],
           "next": 4
@@ -191,7 +198,7 @@
       "flow-id": 32,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑坐到沙發上，一如往常的鬆軟舒適）\n「這是在浪費時間。」"
       },
       "choices": [
         {
@@ -201,13 +208,13 @@
           "next": 3
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去餐廳看看吧。",
           "score": 0,
           "events": [],
           "next": 4
@@ -218,23 +225,23 @@
       "flow-id": 33,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（窗外一如既往，是可變換維度的虛影空間）\n（黑輕輕彈指，外頭下起櫻花雪）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "呵呵。嗯？不是做這種事情的時候...",
           "score": 0,
           "events": [],
           "next": 3
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去餐廳看看吧。",
           "score": 0,
           "events": [],
           "next": 4
@@ -245,23 +252,23 @@
       "flow-id": 4,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑一踏進餐廳，甜膩的糕餅味撲鼻而來）\n「有誰剛剛在這做甜點？」"
       },
       "choices": [
         {
-          "player-move": "調查床單",
+          "player-move": "調查烤箱",
           "score": 0,
           "events": [],
           "next": 34
         },
         {
-          "player-move": "調查衣櫃",
+          "player-move": "調查櫥櫃",
           "score": 0,
           "events": [],
           "next": 35
         },
         {
-          "player-move": "調查床邊的地板",
+          "player-move": "調查廚餘桶",
           "score": 0,
           "events": [],
           "next": 36
@@ -272,23 +279,23 @@
       "flow-id": 34,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（烤箱裡有一個盤子，裝著燒焦物）\n（黑拿出來聞了聞，仔細端詳造型）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "這絕不是烤焦的鋼絲。",
           "score": 0,
           "events": [],
           "next": 4
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去娛樂室看看吧。",
           "score": 0,
           "events": [],
           "next": 6
@@ -299,23 +306,23 @@
       "flow-id": 35,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑打開櫥櫃，裡面是瓶瓶罐罐）\n「什麼也沒有。那種東西，當然不會藏在這。」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "關上櫥櫃。",
           "score": 0,
           "events": [],
           "next": 4
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去娛樂室看看吧。",
           "score": 0,
           "events": [],
           "next": 6
@@ -326,23 +333,23 @@
       "flow-id": 36,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑探向廚餘桶，裡面已經倒空了）\n「我因為什麼要在廚餘桶裡面找..那樣東西？」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "黑搖了搖頭。",
           "score": 0,
           "events": [],
           "next": 4
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去娛樂室看看吧。",
           "score": 0,
           "events": [],
           "next": 6
@@ -353,23 +360,23 @@
       "flow-id": 6,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（娛樂室裡，有電視遊樂器、撞球桌、和超大的卡拉ＯＫ機)\n「姊妹們的生活挺滋潤的。」\n（黑冷笑了一聲）"
       },
       "choices": [
         {
-          "player-move": "調查灰燼堆",
+          "player-move": "調查電視遊樂器",
           "score": 0,
           "events": [],
           "next": 37
         },
         {
-          "player-move": "調查桌上的紙張",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 38
         },
         {
-          "player-move": "調查櫃子",
+          "player-move": "去健身室看看吧。",
           "score": 0,
           "events": [],
           "next": 39
@@ -380,23 +387,23 @@
       "flow-id": 37,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑對著剛整理好的撞球堆，推了一竿）\n（一次全進）\n「哼。」（她將球一一從球袋拿出）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "失竊物並不在球袋裡面。",
           "score": 0,
           "events": [],
           "next": 6
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去健身室看看吧。",
           "score": 0,
           "events": [],
           "next": 7
@@ -407,23 +414,23 @@
       "flow-id": 38,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（大型卡拉OK機位於休眠狀態）\n（黑打開電源，被啟動的歡迎音效嚇了一跳）\n「嘖。」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "沒有在這裡。（她揉揉耳朵）",
           "score": 0,
           "events": [],
           "next": 6
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去健身室看看吧。",
           "score": 0,
           "events": [],
           "next": 7
