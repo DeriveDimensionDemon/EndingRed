@@ -765,8 +765,12 @@ function openGallery(){
 
     if(isCgUnlocked(filename)){
       const img = document.createElement("img");
-      img.src = `img/${filename}`;
+      // 畫廊格狀縮圖只載入 _s.jpg；點開預覽時才載入原尺寸 CG。
+      const thumbnail = filename.replace(/\.jpg$/i, "_s.jpg");
+      img.src = `img/${thumbnail}`;
       img.alt = `CG ${index + 1}`;
+      img.loading = "lazy";
+      img.decoding = "async";
       item.appendChild(img);
       item.addEventListener("click",()=>openGalleryViewer(filename));
     }else{
