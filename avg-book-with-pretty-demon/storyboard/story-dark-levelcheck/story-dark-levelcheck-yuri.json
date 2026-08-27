@@ -5,28 +5,28 @@
       "cg": "ddd-avg-dark-cg1_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「來參加『與維度惡魔間的百合相性測驗』？」\n「好吧，先說清楚了，對我們來說，百合可能和別的人類想像的不完全相同。」\n「不過，妳沒有必要接受。只是測妳和我們合不合拍。」\n「在那之前，妳對百合的了解？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "我很主動接觸百合（YURI）作品",
+          "score": 2,
           "events": [
             {
-              "type": "cg",
+              "type": "",
               "image": "ddd-avg-dark-cg1_s.jpg"
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 2
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "大概了解，但不會特別找百合作品來看",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -34,13 +34,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 2
         },
         {
-          "player-move": "",
+          "player-move": "就是女性間有肢體碰撞的同性戀作品",
           "score": 0,
           "events": [
             {
@@ -49,7 +49,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 2
@@ -62,13 +62,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳看到兩個女生手牽手，心裡首先怎麼想？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "哇，好香好甜，好浪漫",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -76,14 +76,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 3
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "女性朋友間牽手很尋常",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -91,13 +91,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 3
         },
         {
-          "player-move": "",
+          "player-move": "為什麼是女生？如果跟一個帥哥牽手更好",
           "score": 0,
           "events": [
             {
@@ -106,7 +106,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 3
@@ -119,12 +119,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「那麼，妳認為哪個場景最有可能是一對百合？」"
       },
 
       "choices": [
         {
-          "player-move": "",
+          "player-move": "兩個女孩互相為男人爭寵",
           "score": 0,
           "events": [
             {
@@ -133,14 +133,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 4
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "兩個女孩討論嚮往的異性條件",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -148,14 +148,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 4
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "兩個女孩正在共飲飲料，間接接吻？",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -163,7 +163,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 4
@@ -176,13 +176,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳覺得，百合這個詞，最接近妳的認知是？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "描繪女性之間的友誼、曖昧或過友誼關係",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -190,13 +190,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 5
         },
         {
-          "player-move": "",
+          "player-move": "兩個女性有NSFW互動，才能叫做百合",
           "score": 0,
           "events": [
             {
@@ -205,14 +205,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 5
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "是關於花科的園藝、花藝主題",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -220,7 +220,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 5
@@ -233,13 +233,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「『輕百合』最有可能出現的元素是？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "傲嬌、純愛、貼貼",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -247,14 +247,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 6
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "恐怖、驚悚獵奇、PUA",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -262,13 +262,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 6
         },
         {
-          "player-move": "",
+          "player-move": "重口味、強調露骨情節與畫面",
           "score": 0,
           "events": [
             {
@@ -277,7 +277,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 6
@@ -290,13 +290,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳認為女性向這個詞...」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "就是在說BL、耽美、YAOI 作品",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -304,14 +304,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 7
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "廣義是指以女性受眾為主要客群",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -319,13 +319,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 7
         },
         {
-          "player-move": "",
+          "player-move": "是指畫面或角色都是女性",
           "score": 0,
           "events": [
             {
@@ -334,7 +334,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 7
@@ -347,13 +347,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳認為性感或曖昧作品...」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "只有男性會製作和關注",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -361,14 +361,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 8
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "女性也可以製作和關注",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -376,13 +376,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 8
         },
         {
-          "player-move": "",
+          "player-move": "只要性感就是賣肉，只是為了市場競爭而存在",
           "score": 0,
           "events": [
             {
@@ -391,7 +391,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 8
@@ -404,13 +404,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳理想的、喜歡觀看的百合關係？」"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "輕鬆、閨密般的逗鬧與生活互動。",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -418,14 +418,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": 9
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "窒息的愛，絕不可拆散的唯一CP",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -433,13 +433,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": 9
         },
         {
-          "player-move": "",
+          "player-move": "全部都是為了給觀眾福利而存在的",
           "score": 0,
           "events": [
             {
@@ -448,7 +448,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": 9
