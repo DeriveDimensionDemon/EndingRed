@@ -523,28 +523,28 @@
     "evaluations": [
       {
         "min-score": 0,
-        "max-score": 0,
+        "max-score": 4,
         "cg": "ddd-avg-dark-cg1_s.jpg",
         "grade": "相性極低",
         "demon-message": "「我們可能不適合妳。...」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
+        "min-score": 5,
+        "max-score": 9,
         "cg": "ddd-avg-dark-cg2_s.jpg",
         "grade": "相性中等",
         "demon-message": "「我們認知的百合可能不太一樣...」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
+        "min-score": 10,
+        "max-score": 13,
         "cg": "ddd-avg-dark-cg3_s.jpg",
         "grade": "相性良好",
         "demon-message": "「還算可以吧？」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
+        "min-score": 14,
+        "max-score": 18,
         "cg": "ddd-avg-dark-cg4_s.jpg",
         "grade": "相性極高",
         "demon-message": "「也許維度惡魔姐妹們，挺適合妳了解的。」"
