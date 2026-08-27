@@ -351,7 +351,7 @@
 
       "choices": [
         {
-          "player-move": "小怪獸",
+          "player-move": "小奴隸",
           "score": 0,
           "events": [
             {
@@ -532,7 +532,7 @@
               "value": "❌"
             }
           ],
-          "next": 2
+          "next": 11
         },
         {
           "player-move": "喜歡運動、男大姐",
@@ -547,7 +547,7 @@
               "value": "❌"
             }
           ],
-          "next": 2
+          "next": 11
         },
         {
           "player-move": "性感或擦邊話題掛在嘴邊",
@@ -589,7 +589,7 @@
               "value": "✅"
             }
           ],
-          "next": 3
+          "next": 12
         },
         {
           "player-move": "整天對姐妹告白",
@@ -604,7 +604,7 @@
               "value": "❌"
             }
           ],
-          "next": 3
+          "next": 12
         },
         {
           "player-move": "公主病，喜歡使喚金",
@@ -628,7 +628,7 @@
         "flow-id": 12,
         "demon-message": {
           "speaker": "黑",
-          "text": "「追加題。」\n「白描述她的房間，妳認為會看到？」"
+          "text": "「追加題。回答完我們就可以結算了。」」\n「白描述她的房間，妳認為會看到？」"
         },
         "choices": [
         {
@@ -644,7 +644,7 @@
               "value": "❌"
             }
           ],
-          "next": 2
+          "next": null
         },
         {
           "player-move": "金的NSFW漫畫",
@@ -659,7 +659,7 @@
               "value": "❌"
             }
           ],
-          "next": 2
+          "next": null
         },
         {
           "player-move": "雪白兔兔的抱枕",
@@ -674,67 +674,11 @@
               "value": "✅"
             }
           ],
-          "next": 13
-        }
-      ]
-    },
-
-    {
-      "flow-id": 13,
-
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「好。」「把姊妹們的序位正確由第一排至第四位，我們就可以結算了。」"
-      },
-
-      "choices": [
-        {
-          "player-move": "紅→金→蒼→白",
-          "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg"
-            },
-            {
-              "type": "demon-emoji",
-              "value": "❌"
-            }
-          ],
-          "next": null
-        },
-        {
-          "player-move": "白→蒼→金→紅",
-          "score": 1,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg"
-            },
-            {
-              "type": "demon-emoji",
-              "value": "✅"
-            }
-          ],
-          "next": null
-        },
-        {
-          "player-move": "蒼→紅→白→金",
-          "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg"
-            },
-            {
-              "type": "demon-emoji",
-              "value": "❌"
-            }
-          ],
           "next": null
         }
       ]
     }
+
   ],
 
   "ending": {
@@ -746,21 +690,21 @@
     "evaluations": [
       {
         "min-score": 0,
-        "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "max-score": 7,
+        "grade": "不及格",
+        "demon-message": "「今天剛來的？」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "min-score": 8,
+        "max-score": 11,
+        "grade": "及格",
+        "demon-message": "「妳還可以再看懂一點。」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "min-score": 12,
+        "max-score": 12,
+        "grade": "滿分",
+        "demon-message": "「看來，妳有做功課。小壞蛋。」"
       }
     ]
   }
