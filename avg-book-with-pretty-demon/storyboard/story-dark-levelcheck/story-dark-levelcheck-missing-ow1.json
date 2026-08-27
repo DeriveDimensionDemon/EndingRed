@@ -883,7 +883,7 @@
     {
       "flow-id": 24,
       "demon-message": {
-        "speaker": "黑",
+        "speaker": "蒼",
         "text": "（蒼正戴著耳機，一邊輕哼著）\n「我大概知道是誰了。」黑說。\n蒼：「是誰？」"
       },
       "choices": [
@@ -904,7 +904,7 @@
     {
       "flow-id": 25,
       "demon-message": {
-        "speaker": "黑",
+        "speaker": "金",
         "text": "（走進金的房間，她正揉揉後腦杓）「黑！？知道是誰了嗎？！」"
       },
       "choices": [
@@ -925,7 +925,7 @@
     {
       "flow-id": 26,
       "demon-message": {
-        "speaker": "黑",
+        "speaker": "紅",
         "text": "（紅正在使用小型儀式法陣，沒有回頭看走進房中的黑）\n「紅。我想犯人已經呼之欲出了。」\n紅：「說？」"
       },
       "choices": [
@@ -989,7 +989,7 @@
     {
       "flow-id": 100,
       "demon-message": {
-        "speaker": "黑",
+        "speaker": "金",
         "text": "黑：「金，把白姐的..那個，妳知道我在說什麼，交出來。」\n金：「我才沒有拿？？？」\n（黑逕自打開金的衣物櫥）\n「這是什麼？」"
       },
       "choices": [
