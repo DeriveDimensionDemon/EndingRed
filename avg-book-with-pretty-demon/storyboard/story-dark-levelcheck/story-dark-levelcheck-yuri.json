@@ -2,7 +2,7 @@
   "flows": [
     {
       "flow-id": 1,
-
+      "cg": "ddd-avg-dark-cg1_s.jpg",
       "demon-message": {
         "speaker": "黑",
         "text": ""
