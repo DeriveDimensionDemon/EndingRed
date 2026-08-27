@@ -1173,10 +1173,6 @@ function changeCg(path){
     saveCgUnlock(`${match[1]}.jpg`);
   }
 
-  flash.classList.remove("cg-flash");
-  void flash.offsetWidth;
-  flash.classList.add("cg-flash");
-
   sceneImage.src = currentCg;
 
   sceneImage.onerror = ()=>{
