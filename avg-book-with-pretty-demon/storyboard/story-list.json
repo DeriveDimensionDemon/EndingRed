@@ -43,13 +43,13 @@
         {
           "id": "yuri",
           "title": "百合相性測驗",
-          "description": "妳的百合不等於維度惡魔姊妹們的百合？/n真的嗎？來測試看吧。",
+          "description": "妳的百合不等於維度惡魔姊妹們的百合？真的嗎？來測試看吧。",
           "file": "story-dark-levelcheck-yuri.json"
             },
         {
           "id": "missing",
           "title": "維度案件：未破的失竊檔案",
-          "description": "黑：「嗯？撿到一樁尚未結案的維度檔案。」/n（偵探推理型實驗劇本）",
+          "description": "黑：「嗯？撿到一樁尚未結案的維度檔案。」（偵探推理型實驗劇本）",
           "file": "story-dark-levelcheck-missing.json"
         }
           ]
