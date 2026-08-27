@@ -93,7 +93,7 @@
         },
         {
           "player-move": "只會是妳。",
-          "score": 0,
+          "score": 3,
           "events": [],
           "next": null
         },
@@ -133,7 +133,7 @@
         },
         {
           "player-move": "就是金幹的。",
-          "score": 0,
+          "score": 4,
           "events": [],
           "next": null
         },
@@ -173,7 +173,7 @@
         },
         {
           "player-move": "妳是不是丟進儀式法陣了？",
-          "score": 0,
+          "score": 5,
           "events": [],
           "next": null
         },
@@ -917,6 +917,27 @@
         "grade": "似乎忘了什麼事情",
         "cg": "ddd-avg-dark-cg2_s.jpg",
         "demon-message": "「算了。」"
+      },
+       
+      {
+        "min-score": 3,
+        "max-score": 3,
+        "grade": "搞錯了。",
+        "demon-message": "「根本沒有證據...。」"
+      },
+       
+      {
+        "min-score": 4,
+        "max-score": 4,
+        "grade": "搞錯了",
+        "demon-message": "「根本沒有證據...。」"
+      },
+       
+      {
+        "min-score": 5,
+        "max-score": 5,
+        "grade": "搞錯了",
+        "demon-message": "「根本沒有證據...。」"
       }
     ]
   }
