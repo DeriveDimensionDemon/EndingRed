@@ -43,6 +43,10 @@
             {
               "type": "cg",
               "image": "ddd-avg-cyan-cg1_s.jpg"
+            }            
+            {
+              "type": "demon-emoji",
+              "value": "😆"
             }
           ],
           "next": 21
@@ -55,6 +59,10 @@
               "type": "cg",
               "image": "ddd-avg-golden-cg1_s.jpg"
             }
+            {
+              "type": "demon-emoji",
+              "value": "🥵"
+            }
           ],
           "next": 22
         },
@@ -65,6 +73,10 @@
             {
               "type": "cg",
               "image": "ddd-avg-red-cg1_s.jpg"
+            }
+            {
+              "type": "demon-emoji",
+              "value": "❓"
             }
           ],
           "next": 23
@@ -94,7 +106,12 @@
         {
           "player-move": "只會是妳。",
           "score": 3,
-          "events": [],
+          "events": [            
+            {
+              "type": "demon-emoji",
+              "value": "💔"
+            }
+          ],
           "next": null
         },
         {
@@ -134,7 +151,12 @@
         {
           "player-move": "就是金幹的。",
           "score": 4,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "😫"
+            }
+          ],
           "next": null
         },
         {
@@ -174,7 +196,12 @@
         {
           "player-move": "妳是不是丟進儀式法陣了？",
           "score": 5,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🫥"
+            }
+          ],
           "next": null
         },
         {
@@ -206,6 +233,10 @@
               "type": "cg",
               "image": "ddd-avg-dark-cg2_s.jpg",
               "cg-animation": "shake"
+            }                      
+            {
+              "type": "demon-emoji",
+              "value": "㊙️"
             }
           ],
           "next": 31
@@ -213,13 +244,23 @@
         {
           "player-move": "沙發很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🛌"
+            }
+          ],
           "next": 32
         },
         {
           "player-move": "窗戶很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🪟"
+            }
+          ],
           "next": 33
         }
       ]
@@ -234,7 +275,8 @@
         {
           "player-move": "誰召喚這種東西．．．看看別的地方吧",
           "score": 0,
-          "events": [],
+          "events": [
+          ],
           "next": 3
         },
         {
@@ -315,19 +357,34 @@
         {
           "player-move": "烤箱很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🔥"
+            }
+          ],
           "next": 34
         },
         {
           "player-move": "櫥櫃很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🗄️"
+            }
+          ],
           "next": 35
         },
         {
           "player-move": "廚餘桶很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🦠"
+            }
+          ],
           "next": 36
         }
       ]
@@ -423,19 +480,34 @@
         {
           "player-move": "電視遊樂器很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "👾"
+            }
+          ],
           "next": 37
         },
         {
           "player-move": "撞球桌很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🎱"
+            }
+          ],
           "next": 38
         },
         {
           "player-move": "卡拉ＯＫ機很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🪩"
+            }
+          ],
           "next": 39
         }
       ]
@@ -531,19 +603,34 @@
         {
           "player-move": "電腦很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🚫"
+            }
+          ],
           "next": 40
         },
         {
           "player-move": "儀式法陣很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🕳️"
+            }
+          ],
           "next": 41
         },
         {
           "player-move": "攝影機很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "‼️"
+            }
+          ],
           "next": 42
         }
       ]
@@ -639,19 +726,34 @@
         {
           "player-move": "維度櫻花樹很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "🌸"
+            }
+          ],
           "next": 43
         },
         {
           "player-move": "維度雪很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "❄️"
+            }
+          ],
           "next": 44
         },
         {
           "player-move": "曬衣架很可疑。",
           "score": 0,
-          "events": [],
+          "events": [          
+            {
+              "type": "demon-emoji",
+              "value": "👚"
+            }
+          ],
           "next": 45
         }
       ]
