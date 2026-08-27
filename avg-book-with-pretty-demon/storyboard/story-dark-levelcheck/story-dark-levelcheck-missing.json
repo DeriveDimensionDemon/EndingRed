@@ -5,11 +5,11 @@
       "cg": "ddd-avg-dark-cg1_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": "「本座翻到一樁尚未結案的維度檔案。」"
+        "text": "「本座翻到一樁尚未結案的維度檔案。原告遺失了一件祖傳信物，案發當時宅邸內只有三名嫌疑人。」"
       },
       "choices": [
         {
-          "player-move": "查看案件概要",
+          "player-move": "查看案件資料",
           "score": 0,
           "events": [
             {
@@ -25,11 +25,11 @@
       "flow-id": 2,
       "demon-message": {
         "speaker": "黑",
-        "text": "「原告遺失了一件祖傳信物。當時在場的只有三名嫌疑人。」"
+        "text": "「先看看三名嫌疑人的資料吧。記住妳看到的內容。」"
       },
       "choices": [
         {
-          "player-move": "查看嫌疑人 A 的資料",
+          "player-move": "查看嫌疑人 A",
           "score": 0,
           "events": [
             {
@@ -40,7 +40,7 @@
           "next": 21
         },
         {
-          "player-move": "查看嫌疑人 B 的資料",
+          "player-move": "查看嫌疑人 B",
           "score": 0,
           "events": [
             {
@@ -51,7 +51,7 @@
           "next": 22
         },
         {
-          "player-move": "查看嫌疑人 C 的資料",
+          "player-move": "查看嫌疑人 C",
           "score": 0,
           "events": [
             {
@@ -64,180 +64,11 @@
       ]
     },
     {
-      "flow-id": 3,
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「失竊現場沒有明顯破壞痕跡。妳可以開始整理線索。」"
-      },
-      "choices": [
-        {
-          "player-move": "調查門鎖",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🔎 線索"
-            }
-          ],
-          "next": 4
-        },
-        {
-          "player-move": "調查窗戶",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🔎 線索"
-            }
-          ],
-          "next": 5
-        },
-        {
-          "player-move": "調查失竊物原本放置的位置",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🔎 線索"
-            }
-          ],
-          "next": 6
-        }
-      ]
-    },
-    {
-      "flow-id": 4,
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「門鎖沒有被撬過。這表示兇手可能持有鑰匙。」"
-      },
-      "choices": [
-        {
-          "player-move": "繼續調查現場",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🔎 繼續"
-            }
-          ],
-          "next": 7
-        }
-      ]
-    },
-    {
-      "flow-id": 5,
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「窗戶也沒有遭到破壞。從外部闖入的可能性很低。」"
-      },
-      "choices": [
-        {
-          "player-move": "繼續調查現場",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🔎 繼續"
-            }
-          ],
-          "next": 7
-        }
-      ]
-    },
-    {
-      "flow-id": 6,
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「原本放置信物的位置留下了一小片深藍色布屑。」"
-      },
-      "choices": [
-        {
-          "player-move": "繼續調查現場",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🧩 線索"
-            }
-          ],
-          "next": 7
-        }
-      ]
-    },
-    {
-      "flow-id": 7,
+      "flow-id": 21,
       "cg": "ddd-avg-dark-cg3_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": "「門鎖、窗戶、布屑……情報已經足夠讓本座縮小範圍。」"
-      },
-      "choices": [
-        {
-          "player-move": "重新整理嫌疑人之間的關係",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🧠 分析"
-            }
-          ],
-          "next": 8
-        }
-      ]
-    },
-    {
-      "flow-id": 8,
-      "cg": "ddd-avg-dark-cg2_s.jpg",
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「本座已經調查得差不多了。現在寫下最後的判斷。」"
-      },
-      "choices": [
-        {
-          "player-move": "指控 A",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "✉️ 指控"
-            }
-          ],
-          "next": null
-        },
-        {
-          "player-move": "指控 B",
-          "score": 0,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "✉️ 指控"
-            }
-          ],
-          "next": null
-        },
-        {
-          "player-move": "指控 C",
-          "score": 1,
-          "events": [
-            {
-              "type": "demon-emoji",
-              "value": "🎯 正確指控"
-            },
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg4_s.jpg"
-            }
-          ],
-          "next": null
-        }
-      ]
-    },
-    {
-      "flow-id": 21,
-      "demon-message": {
-        "speaker": "黑",
-        "text": "「嫌疑人 A：原告的遠親。熟悉宅邸內部，當天也確實曾持有備用鑰匙。」"
+        "text": "「A：原告的遠親。熟悉宅邸內部，持有一把備用鑰匙。案發當晚曾說自己在書房附近。」"
       },
       "choices": [
         {
@@ -277,9 +108,10 @@
     },
     {
       "flow-id": 22,
+      "cg": "ddd-avg-dark-cg3_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": "「嫌疑人 B：原告的侍從。負責整理房間，知道信物的存放位置，但沒有備用鑰匙。」"
+        "text": "「B：原告的侍從。負責整理房間，知道信物平日放在哪裡，但沒有備用鑰匙。案發當晚稱自己一直在廚房。」"
       },
       "choices": [
         {
@@ -319,9 +151,10 @@
     },
     {
       "flow-id": 23,
+      "cg": "ddd-avg-dark-cg3_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": "「嫌疑人 C：原告的客人。聲稱自己當天一直待在會客室附近，衣著是一件深藍色外套。」"
+        "text": "「C：原告的客人。聲稱案發當晚一直待在會客室附近，穿著一件深藍色外套。沒有宅邸鑰匙。」"
       },
       "choices": [
         {
@@ -362,6 +195,1029 @@
           "next": 3
         }
       ]
+    },
+    {
+      "flow-id": 3,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「來到失竊現場。先看看這個房間裡有什麼不自然的地方。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查門鎖",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 A"
+            }
+          ],
+          "next": 31
+        },
+        {
+          "player-move": "調查窗戶",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 B"
+            }
+          ],
+          "next": 32
+        },
+        {
+          "player-move": "調查書桌",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 C"
+            }
+          ],
+          "next": 33
+        }
+      ]
+    },
+    {
+      "flow-id": 31,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「門鎖沒有被撬過。若從正門進出，兇手很可能有鑰匙。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 32,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「窗戶沒有破壞痕跡，從外部闖入的可能性很低。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 33,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「書桌邊緣有一小片深藍色布屑，看起來像是衣物留下的。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 4,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「下一個房間是臥室。也許還有東西能與剛才的線索對上。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查床單",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 D"
+            }
+          ],
+          "next": 34
+        },
+        {
+          "player-move": "調查衣櫃",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 E"
+            }
+          ],
+          "next": 35
+        },
+        {
+          "player-move": "調查床邊的地板",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 F"
+            }
+          ],
+          "next": 36
+        }
+      ]
+    },
+    {
+      "flow-id": 34,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「床單下壓著一張被揉皺的會客室便條，似乎有人曾急著把它藏起來。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 35,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「衣櫃裡沒有缺少任何外套，但其中一件衣物上沾著同樣的深藍色纖維。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 36,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「床邊地板留有一枚淡淡的泥印，鞋底紋路與一般宅邸侍從穿的鞋並不相同。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 6,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「再往裡面走。這裡像是平時不太有人使用的儲物房。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查灰燼堆",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 G"
+            }
+          ],
+          "next": 37
+        },
+        {
+          "player-move": "調查桌上的紙張",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 H"
+            }
+          ],
+          "next": 38
+        },
+        {
+          "player-move": "調查櫃子",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 I"
+            }
+          ],
+          "next": 39
+        }
+      ]
+    },
+    {
+      "flow-id": 37,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「灰燼裡有一小截藍色線頭，與失竊現場的布屑相似。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 38,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「桌上的紙張記著昨晚的來客紀錄，其中有一筆時間與 C 的說法對不上。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 39,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「櫃子後方有一道很新的擦痕，像是有人搬動過東西後匆忙恢復原位。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 7,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「看來有人確實在這裡動過手腳。再往下查。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查牆上的掛鉤",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 J"
+            }
+          ],
+          "next": 40
+        },
+        {
+          "player-move": "調查地毯",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 K"
+            }
+          ],
+          "next": 41
+        },
+        {
+          "player-move": "調查門邊",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 L"
+            }
+          ],
+          "next": 42
+        }
+      ]
+    },
+    {
+      "flow-id": 40,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「掛鉤上卡著一根深藍色纖維，而且位置很高，不像是侍從日常工作會留下的。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 41,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「地毯邊緣藏著半枚泥印，方向從會客室一側一路延伸進來。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 42,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「門邊沒有撬痕，但門框上有新留下的深色擦痕。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 8,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「本座已經大致掌握了案件的輪廓。最後再確認幾個地方。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查窗邊的灰塵",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 M"
+            }
+          ],
+          "next": 43
+        },
+        {
+          "player-move": "調查桌腳附近",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 N"
+            }
+          ],
+          "next": 44
+        },
+        {
+          "player-move": "調查最後一份訪客紀錄",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 疑點 O"
+            }
+          ],
+          "next": 45
+        }
+      ]
+    },
+    {
+      "flow-id": 43,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「窗邊灰塵完整，沒有近期翻越的痕跡。兇手並非從窗戶離開。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 44,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「桌腳附近找到一小塊深藍布料，與 C 的外套材質相符。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 45,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「最後一份訪客紀錄顯示 C 曾短暫離開會客室，時間正好落在信物失竊前後。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續調查"
+            }
+          ],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 提前指控"
+            }
+          ],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "➡️ 下一階段"
+            }
+          ],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 9,
+      "cg": "ddd-avg-dark-cg2_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「沒有別的房間了，回去吧。保險起見，回顧一下嫌犯檔案，然後寫下最後的判斷。」"
+      },
+      "choices": [
+        {
+          "player-move": "回顧嫌犯 A 的檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 回顧"
+            }
+          ],
+          "next": 24
+        },
+        {
+          "player-move": "回顧嫌犯 B 的檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 回顧"
+            }
+          ],
+          "next": 25
+        },
+        {
+          "player-move": "回顧嫌犯 C 的檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 回顧"
+            }
+          ],
+          "next": 26
+        }
+      ]
+    },
+    {
+      "flow-id": 24,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「A：原告的遠親。熟悉宅邸內部，持有備用鑰匙，案發當晚聲稱自己在書房附近。」"
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 回顧"
+            }
+          ],
+          "next": 25
+        },
+        {
+          "player-move": "指控 A",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 最終指控"
+            }
+          ],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 25,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「B：原告的侍從。知道信物位置，但沒有備用鑰匙，案發當晚稱自己一直在廚房。」"
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 回顧"
+            }
+          ],
+          "next": 26
+        },
+        {
+          "player-move": "指控 B",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 最終指控"
+            }
+          ],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 26,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「C：原告的客人。深藍色外套，聲稱一直待在會客室附近，沒有宅邸鑰匙。」"
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 回顧"
+            }
+          ],
+          "next": 24
+        },
+        {
+          "player-move": "指控 C",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "⚠️ 最終指控"
+            }
+          ],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 99,
+      "cg": "ddd-avg-dark-cg2_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「最後一次確認。妳認為真正的兇手是誰？」"
+      },
+      "choices": [
+        {
+          "player-move": "指控 A",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "❌ 推理失誤"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "指控 B",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "❌ 推理失誤"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "指控 C",
+          "score": 1,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🎯 指控成功"
+            },
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg4_s.jpg"
+            }
+          ],
+          "next": null
+        }
+      ]
     }
   ],
   "ending": {
@@ -373,8 +1229,8 @@
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "推理失誤",
-        "demon-message": "「……好像搞錯了。」"
+        "grade": "推理失敗",
+        "demon-message": "「……好像搞錯了。算了。」"
       },
       {
         "min-score": 1,
