@@ -31,9 +31,21 @@
       ]
     },
     {
-      "id": "",
-      "title": "",
-      "versions": []
+      "id": "dark-levelcheck",
+      "title": "黑『推導維度惡魔 Level Check』",
+      "versions": [
+        {
+          "id": "ddd",
+          "title": "熟悉度測驗",
+          "description": "黑親自出的考題，想知道妳有多了解我們的IP嗎？",
+          "file": "story-dark-levelcheck-ddd.json"
+        },
+        {
+          "id": "yuri",
+          "title": "百合相性測驗",
+          "description": "妳的百合不等於我的百合？真的嗎？來試試看吧。",
+          "file": "story-dark-levelcheck-yuri.json"
+        },]
     }
   ]
 }
