@@ -1,0 +1,387 @@
+{
+  "flows": [
+    {
+      "flow-id": 1,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「本座翻到一樁尚未結案的維度檔案。」"
+      },
+      "choices": [
+        {
+          "player-move": "查看案件概要",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 案件開始"
+            }
+          ],
+          "next": 2
+        }
+      ]
+    },
+    {
+      "flow-id": 2,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「原告遺失了一件祖傳信物。當時在場的只有三名嫌疑人。」"
+      },
+      "choices": [
+        {
+          "player-move": "查看嫌疑人 A 的資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 調查"
+            }
+          ],
+          "next": 21
+        },
+        {
+          "player-move": "查看嫌疑人 B 的資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 調查"
+            }
+          ],
+          "next": 22
+        },
+        {
+          "player-move": "查看嫌疑人 C 的資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📄 調查"
+            }
+          ],
+          "next": 23
+        }
+      ]
+    },
+    {
+      "flow-id": 3,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「失竊現場沒有明顯破壞痕跡。妳可以開始整理線索。」"
+      },
+      "choices": [
+        {
+          "player-move": "調查門鎖",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 線索"
+            }
+          ],
+          "next": 4
+        },
+        {
+          "player-move": "調查窗戶",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 線索"
+            }
+          ],
+          "next": 5
+        },
+        {
+          "player-move": "調查失竊物原本放置的位置",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 線索"
+            }
+          ],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 4,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「門鎖沒有被撬過。這表示兇手可能持有鑰匙。」"
+      },
+      "choices": [
+        {
+          "player-move": "繼續調查現場",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 5,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「窗戶也沒有遭到破壞。從外部闖入的可能性很低。」"
+      },
+      "choices": [
+        {
+          "player-move": "繼續調查現場",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 繼續"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 6,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「原本放置信物的位置留下了一小片深藍色布屑。」"
+      },
+      "choices": [
+        {
+          "player-move": "繼續調查現場",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🧩 線索"
+            }
+          ],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 7,
+      "cg": "ddd-avg-dark-cg3_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「門鎖、窗戶、布屑……情報已經足夠讓本座縮小範圍。」"
+      },
+      "choices": [
+        {
+          "player-move": "重新整理嫌疑人之間的關係",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🧠 分析"
+            }
+          ],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 8,
+      "cg": "ddd-avg-dark-cg2_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「本座已經調查得差不多了。現在寫下最後的判斷。」"
+      },
+      "choices": [
+        {
+          "player-move": "指控 A",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "✉️ 指控"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "指控 B",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "✉️ 指控"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "指控 C",
+          "score": 1,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🎯 正確指控"
+            },
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg4_s.jpg"
+            }
+          ],
+          "next": null
+        }
+      ]
+    },
+    {
+      "flow-id": 21,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「嫌疑人 A：原告的遠親。熟悉宅邸內部，當天也確實曾持有備用鑰匙。」"
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 返回檔案"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 A",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "❌ 資訊不足"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 開始調查"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 22,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「嫌疑人 B：原告的侍從。負責整理房間，知道信物的存放位置，但沒有備用鑰匙。」"
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 返回檔案"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 B",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "❌ 資訊不足"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 開始調查"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 23,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "「嫌疑人 C：原告的客人。聲稱自己當天一直待在會客室附近，衣著是一件深藍色外套。」"
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "📂 返回檔案"
+            }
+          ],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 C",
+          "score": 1,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🎯 正確指控"
+            },
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg4_s.jpg"
+            }
+          ],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [
+            {
+              "type": "demon-emoji",
+              "value": "🔎 開始調查"
+            }
+          ],
+          "next": 3
+        }
+      ]
+    }
+  ],
+  "ending": {
+    "demon-message": {
+      "speaker": "黑",
+      "text": "「委託方的回信到了。」"
+    },
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "推理失誤",
+        "demon-message": "「……好像搞錯了。」"
+      },
+      {
+        "min-score": 1,
+        "max-score": 1,
+        "grade": "定罪成功",
+        "demon-message": "「哼。小意思。」"
+      }
+    ]
+  }
+}
