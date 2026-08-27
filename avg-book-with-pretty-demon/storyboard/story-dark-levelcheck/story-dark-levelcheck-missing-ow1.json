@@ -1,0 +1,810 @@
+{
+  "flows": [
+    {
+      "flow-id": 1,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "查看案件資料",
+          "score": 0,
+          "events": [],
+          "next": 2
+        }
+      ]
+    },
+    {
+      "flow-id": 2,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "查看嫌疑人 A",
+          "score": 0,
+          "events": [],
+          "next": 21
+        },
+        {
+          "player-move": "查看嫌疑人 B",
+          "score": 0,
+          "events": [],
+          "next": 22
+        },
+        {
+          "player-move": "查看嫌疑人 C",
+          "score": 0,
+          "events": [],
+          "next": 23
+        }
+      ]
+    },
+    {
+      "flow-id": 21,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 A",
+          "score": 0,
+          "events": [],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 22,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 B",
+          "score": 0,
+          "events": [],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 23,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "查看其他嫌疑人資料",
+          "score": 0,
+          "events": [],
+          "next": 2
+        },
+        {
+          "player-move": "即使資訊不完整，直接指控 C",
+          "score": 0,
+          "events": [],
+          "next": null
+        },
+        {
+          "player-move": "關閉檔案報告，去失竊現場繞繞",
+          "score": 0,
+          "events": [],
+          "next": 3
+        }
+      ]
+    },
+    {
+      "flow-id": 3,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查門鎖",
+          "score": 0,
+          "events": [],
+          "next": 31
+        },
+        {
+          "player-move": "調查窗戶",
+          "score": 0,
+          "events": [],
+          "next": 32
+        },
+        {
+          "player-move": "調查書桌",
+          "score": 0,
+          "events": [],
+          "next": 33
+        }
+      ]
+    },
+    {
+      "flow-id": 31,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 32,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 33,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 3
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 4
+        }
+      ]
+    },
+    {
+      "flow-id": 4,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查床單",
+          "score": 0,
+          "events": [],
+          "next": 34
+        },
+        {
+          "player-move": "調查衣櫃",
+          "score": 0,
+          "events": [],
+          "next": 35
+        },
+        {
+          "player-move": "調查床邊的地板",
+          "score": 0,
+          "events": [],
+          "next": 36
+        }
+      ]
+    },
+    {
+      "flow-id": 34,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 35,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 36,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 4
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 6
+        }
+      ]
+    },
+    {
+      "flow-id": 6,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查灰燼堆",
+          "score": 0,
+          "events": [],
+          "next": 37
+        },
+        {
+          "player-move": "調查桌上的紙張",
+          "score": 0,
+          "events": [],
+          "next": 38
+        },
+        {
+          "player-move": "調查櫃子",
+          "score": 0,
+          "events": [],
+          "next": 39
+        }
+      ]
+    },
+    {
+      "flow-id": 37,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 38,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 39,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 6
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 7,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查牆上的掛鉤",
+          "score": 0,
+          "events": [],
+          "next": 40
+        },
+        {
+          "player-move": "調查地毯",
+          "score": 0,
+          "events": [],
+          "next": 41
+        },
+        {
+          "player-move": "調查門邊",
+          "score": 0,
+          "events": [],
+          "next": 42
+        }
+      ]
+    },
+    {
+      "flow-id": 40,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 41,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 42,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 7
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 8
+        }
+      ]
+    },
+    {
+      "flow-id": 8,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查窗邊的灰塵",
+          "score": 0,
+          "events": [],
+          "next": 43
+        },
+        {
+          "player-move": "調查桌腳附近",
+          "score": 0,
+          "events": [],
+          "next": 44
+        },
+        {
+          "player-move": "調查最後一份訪客紀錄",
+          "score": 0,
+          "events": [],
+          "next": 45
+        }
+      ]
+    },
+    {
+      "flow-id": 43,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 44,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 45,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "調查別的可疑之處",
+          "score": 0,
+          "events": [],
+          "next": 8
+        },
+        {
+          "player-move": "指控真兇",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "看夠了，去下一個房間吧",
+          "score": 0,
+          "events": [],
+          "next": 9
+        }
+      ]
+    },
+    {
+      "flow-id": 9,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "回顧嫌犯 A 的檔案",
+          "score": 0,
+          "events": [],
+          "next": 24
+        },
+        {
+          "player-move": "回顧嫌犯 B 的檔案",
+          "score": 0,
+          "events": [],
+          "next": 25
+        },
+        {
+          "player-move": "回顧嫌犯 C 的檔案",
+          "score": 0,
+          "events": [],
+          "next": 26
+        }
+      ]
+    },
+    {
+      "flow-id": 24,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [],
+          "next": 25
+        },
+        {
+          "player-move": "指控 A",
+          "score": 0,
+          "events": [],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 25,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [],
+          "next": 26
+        },
+        {
+          "player-move": "指控 B",
+          "score": 0,
+          "events": [],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 26,
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "看別的嫌犯檔案",
+          "score": 0,
+          "events": [],
+          "next": 24
+        },
+        {
+          "player-move": "指控 C",
+          "score": 0,
+          "events": [],
+          "next": 99
+        }
+      ]
+    },
+    {
+      "flow-id": 99,
+      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "demon-message": {
+        "speaker": "黑",
+        "text": ""
+      },
+      "choices": [
+        {
+          "player-move": "指控 A",
+          "score": 0,
+          "events": [],
+          "next": null
+        },
+        {
+          "player-move": "指控 B",
+          "score": 0,
+          "events": [],
+          "next": null
+        },
+        {
+          "player-move": "指控 C",
+          "score": 0,
+          "events": [],
+          "next": null
+        }
+      ]
+    }
+  ],
+  "ending": {
+    "demon-message": {
+      "speaker": "黑",
+      "text": ""
+    },
+    "evaluations": [
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      },
+      {
+        "min-score": 0,
+        "max-score": 0,
+        "grade": "",
+        "demon-message": ""
+      }
+    ]
+  }
+}
