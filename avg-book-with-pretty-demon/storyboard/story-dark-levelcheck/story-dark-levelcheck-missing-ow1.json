@@ -14,7 +14,7 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-white-cg1_s.jpg"
+              "image": "ddd-avg-white-cg1_s.jpg",
               "cg-animation": "shake"
             },
           ],
@@ -787,7 +787,7 @@
         },
         {
           "player-move": "就是金。",
-          "score": 1,
+          "score": 0,
           "events": [],
           "next": 100
         },
@@ -820,7 +820,7 @@
       ]
     },
         {
-      "flow-id": 100,
+      "flow-id": 101,
       "demon-message": {
         "speaker": "金",
         "text": "黑：「...」\n「妳是不是收衣服時，把白姐的一起收進去了。」\n金：「啊！！我昨天幫白姐洗衣服，一起...拿回來了。」"
