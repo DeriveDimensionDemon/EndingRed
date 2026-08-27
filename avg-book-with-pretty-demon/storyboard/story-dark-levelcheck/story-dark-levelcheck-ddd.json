@@ -382,7 +382,7 @@
         },
         {
           "player-move": "小精靈",
-          "score": 0,
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -481,7 +481,7 @@
         },
         {
           "player-move": "優雅的領袖",
-          "score": 0,
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -521,7 +521,7 @@
         "choices": [
         {
           "player-move": "內向怯弱",
-          "score": 1,
+          "score": 0,
           "events": [
             {
               "type": "cg",
@@ -551,7 +551,7 @@
         },
         {
           "player-move": "性感或擦邊話題掛在嘴邊",
-          "score": 0,
+          "score": 1,
           "events": [
             {
               "type": "cg",
