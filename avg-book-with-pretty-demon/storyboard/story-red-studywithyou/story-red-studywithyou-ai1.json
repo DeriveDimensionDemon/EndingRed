@@ -2,6 +2,7 @@
   "flows": [
     {
       "flow-id": 1,
+      "cg": "ddd-avg-red-cg1_s.jpg",
       "demon-message": {
         "speaker": "紅",
         "text": "「是GPT小精靈嗎？請進……」\n「哦？妳就是今天來幫忙的小精靈？」\n（紅放下手中的筆，從頭到腳打量了妳一遍。）\n「蒼到底跟妳說了什麼？」"
