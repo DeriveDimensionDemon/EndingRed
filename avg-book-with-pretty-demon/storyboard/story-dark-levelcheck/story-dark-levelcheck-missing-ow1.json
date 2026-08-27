@@ -82,7 +82,13 @@
         {
           "player-move": "不是她。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-white-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 2
         },
         {
@@ -94,7 +100,13 @@
         {
           "player-move": "看來真兇不會輕易招認...",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 3
         }
       ]
@@ -110,7 +122,13 @@
         {
           "player-move": "看來暫時不會醒來。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-white-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 2
         },
         {
@@ -122,7 +140,13 @@
         {
           "player-move": "去繞繞吧...",
           "score": 0,
-          "events": [],
+          "events": [            
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 3
         }
       ]
@@ -138,7 +162,13 @@
         {
           "player-move": "紅的話，沒有理由。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-white-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 2
         },
         {
@@ -150,7 +180,13 @@
         {
           "player-move": "看來真兇不會輕易招認...",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg1_s.jpg",
+              "cg-animation": "shake"
+            }
+          ],
           "next": 3
         }
       ]
