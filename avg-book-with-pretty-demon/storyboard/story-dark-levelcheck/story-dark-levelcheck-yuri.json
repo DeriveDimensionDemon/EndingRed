@@ -10,7 +10,7 @@
 
       "choices": [
         {
-          "player-move": "我很主動接觸百合（YURI）作品",
+          "player-move": "我很主動接觸百合（YURI）作品。",
           "score": 2,
           "events": [
             {
@@ -25,7 +25,7 @@
           "next": 2
         },
         {
-          "player-move": "大概了解，但不會特別找百合作品來看",
+          "player-move": "大概了解，但不會特別找百合作品來看。",
           "score": 1,
           "events": [
             {
@@ -40,7 +40,7 @@
           "next": 2
         },
         {
-          "player-move": "就是女性間有肢體碰撞的同性戀作品",
+          "player-move": "就是女性間有發生關係的同性戀作品。",
           "score": 0,
           "events": [
             {
@@ -67,7 +67,7 @@
 
       "choices": [
         {
-          "player-move": "哇，好香好甜，好浪漫",
+          "player-move": "哇，好香好甜，好浪漫。",
           "score": 2,
           "events": [
             {
@@ -82,7 +82,7 @@
           "next": 3
         },
         {
-          "player-move": "女性朋友間牽手很尋常",
+          "player-move": "女性朋友間牽手很尋常。",
           "score": 1,
           "events": [
             {
@@ -97,7 +97,7 @@
           "next": 3
         },
         {
-          "player-move": "為什麼是女生？如果跟一個帥哥牽手更好",
+          "player-move": "為什麼是女生？如果跟一個帥哥牽手更好。",
           "score": 0,
           "events": [
             {
@@ -124,7 +124,7 @@
 
       "choices": [
         {
-          "player-move": "兩個女孩互相為男人爭寵",
+          "player-move": "兩個女孩互相為男人爭寵。",
           "score": 0,
           "events": [
             {
@@ -181,7 +181,7 @@
 
       "choices": [
         {
-          "player-move": "描繪女性之間的友誼、曖昧或過友誼關係",
+          "player-move": "描繪女性之間的友誼、曖昧或過友誼關係。",
           "score": 2,
           "events": [
             {
@@ -196,7 +196,7 @@
           "next": 5
         },
         {
-          "player-move": "兩個女性有NSFW互動，才能叫做百合",
+          "player-move": "兩個女性有NSFW互動，才能叫做百合。",
           "score": 0,
           "events": [
             {
@@ -211,7 +211,7 @@
           "next": 5
         },
         {
-          "player-move": "是關於花科的園藝、花藝主題",
+          "player-move": "是關於花科的園藝、花藝主題。",
           "score": 1,
           "events": [
             {
@@ -238,7 +238,7 @@
 
       "choices": [
         {
-          "player-move": "傲嬌、曖昧、貼貼",
+          "player-move": "傲嬌、曖昧、貼貼。",
           "score": 2,
           "events": [
             {
@@ -253,7 +253,7 @@
           "next": 6
         },
         {
-          "player-move": "恐怖、驚悚獵奇、PUA",
+          "player-move": "恐怖、驚悚獵奇、PUA。",
           "score": 1,
           "events": [
             {
@@ -268,7 +268,7 @@
           "next": 6
         },
         {
-          "player-move": "重口味、強調露骨情節與畫面",
+          "player-move": "重口味、強調露骨情節與畫面。",
           "score": 0,
           "events": [
             {
@@ -295,7 +295,7 @@
 
       "choices": [
         {
-          "player-move": "就是在說BL、耽美、YAOI 作品",
+          "player-move": "就是在說BL、耽美、YAOI 作品。",
           "score": 1,
           "events": [
             {
@@ -310,7 +310,7 @@
           "next": 7
         },
         {
-          "player-move": "廣義是指以女性受眾為主要客群",
+          "player-move": "廣義是指以女性受眾為主要客群。",
           "score": 2,
           "events": [
             {
@@ -325,7 +325,7 @@
           "next": 7
         },
         {
-          "player-move": "是指畫面或角色都是女性",
+          "player-move": "是指畫面或角色都是女性。",
           "score": 0,
           "events": [
             {
@@ -352,7 +352,7 @@
 
       "choices": [
         {
-          "player-move": "只有男性會製作和關注",
+          "player-move": "只有男性會製作和關注。",
           "score": 1,
           "events": [
             {
@@ -367,7 +367,7 @@
           "next": 8
         },
         {
-          "player-move": "女性也可以製作和關注",
+          "player-move": "女性也可以製作和關注。",
           "score": 2,
           "events": [
             {
@@ -382,7 +382,7 @@
           "next": 8
         },
         {
-          "player-move": "只要性感就是賣肉，只是為了市場競爭而存在",
+          "player-move": "只要性感就是賣肉，只是為了市場競爭而存在。",
           "score": 0,
           "events": [
             {
@@ -424,7 +424,7 @@
           "next": 9
         },
         {
-          "player-move": "窒息的愛，絕不可拆散的唯一CP",
+          "player-move": "窒息而依附的愛、絕不可拆散的唯一配對。",
           "score": 1,
           "events": [
             {
@@ -439,7 +439,7 @@
           "next": 9
         },
         {
-          "player-move": "全部都是為了給觀眾福利而存在的",
+          "player-move": "全部都只是為了給觀眾福利而存在的。",
           "score": 0,
           "events": [
             {
@@ -461,12 +461,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": "「妳認為女性創作者或團隊進行性感描繪時"
+        "text": "「妳認為女性創作者或團隊進行性感、曖昧或較大尺度的描繪時？」"
       },
 
       "choices": [
         {
-          "player-move": "都是為了市場生存和吸睛",
+          "player-move": "主要為了市場生存和吸睛。",
           "score": 1,
           "events": [
             {
@@ -481,7 +481,7 @@
           "next": null
         },
         {
-          "player-move": "創作者本身喜歡與可接受的情境、尺度",
+          "player-move": "創作者本身喜歡與可接受的情境、尺度。",
           "score": 2,
           "events": [
             {
@@ -496,7 +496,7 @@
           "next": null
         },
         {
-          "player-move": "為了製作給男性觀賞和滿足慾望",
+          "player-move": "為了製作給男性觀賞和滿足慾望。",
           "score": 0,
           "events": [
             {
