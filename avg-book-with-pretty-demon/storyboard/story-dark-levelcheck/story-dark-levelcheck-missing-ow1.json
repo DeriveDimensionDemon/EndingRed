@@ -37,19 +37,19 @@
       },
       "choices": [
         {
-          "player-move": "可能是蒼。",
+          "player-move": "所以是蒼？",
           "score": 0,
           "events": [],
           "next": 21
         },
         {
-          "player-move": "可能是金。",
+          "player-move": "所以是金？",
           "score": 0,
           "events": [],
           "next": 22
         },
         {
-          "player-move": "可能是紅。",
+          "player-move": "所以是紅？",
           "score": 0,
           "events": [],
           "next": 23
