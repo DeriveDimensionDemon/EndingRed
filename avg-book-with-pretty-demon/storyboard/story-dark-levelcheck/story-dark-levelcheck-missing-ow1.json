@@ -148,7 +148,7 @@
               "type": "cg",
               "image": "ddd-avg-dark-cg3_s.jpg",
               "cg-animation": "shake"
-            },
+            }
           ],
           "next": 31
         },
@@ -176,8 +176,7 @@
         {
           "player-move": "誰召喚這種東西．．．看看別的地方吧",
           "score": 0,
-          "events": [
-          ],
+          "events": [],
           "next": 3
         },
         {
@@ -798,7 +797,7 @@
           "next": null
         }
       ]
-    },    
+    },
     {
       "flow-id": 100,
       "demon-message": {
@@ -809,17 +808,18 @@
         {
           "player-move": "金瞪大眼睛：怎麼會在我這？！",
           "score": 0,
-          "events": [            {
+          "events": [
+            {
               "type": "cg",
               "image": "ddd-avg-golden-cg2_s.jpg",
               "cg-animation": "shake"
-            },
+            }
           ],
           "next": 101
         }
       ]
     },
-        {
+    {
       "flow-id": 101,
       "demon-message": {
         "speaker": "金",
@@ -833,7 +833,7 @@
           "next": null
         }
       ]
-    },
+    }
   ],
   "ending": {
     "demon-message": {
