@@ -1305,12 +1305,22 @@ function showEnding(){
     result = evaluations[evaluations.length - 1] || {"demon-message":""};
   }
 
+  // 結算畫面的主對話框也要切換到 ending.demon-message，
+  // 不應繼續殘留最後一個 Flow 的對話。
+  const endingDemonMessage = story.ending["demon-message"] || {};
   const endingSpeaker =
+    endingDemonMessage.speaker ||
     result.speaker ||
-    (result["demon-message-speaker"]) ||
+    result["demon-message-speaker"] ||
     currentSpeaker ||
     "紅";
 
+  const endingDialogueText = normalizeMessageText(
+    endingDemonMessage.text || endingDemonMessage || ""
+  );
+
+  speaker.textContent = endingSpeaker;
+  message.textContent = endingDialogueText;
   applySpeakerColor(endingSpeaker);
 
   const grade = String(
