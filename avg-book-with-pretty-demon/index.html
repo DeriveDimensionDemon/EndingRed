@@ -764,7 +764,7 @@ function getGalleryImages(){
     filename = filename.replace(/^img\//, "");
     filename = filename.replace(/_s\.jpg$/i, ".jpg");
 
-    if(!/\\.jpg$/i.test(filename)) return;
+    if(!/\.jpg$/i.test(filename)) return;
     if(seen.has(filename)) return;
 
     seen.add(filename);
@@ -1247,7 +1247,7 @@ function changeCg(path){
   currentCg = nextPath;
 
   const filename = nextPath.replace(/^img\//, "").replace(/_s\.jpg$/i, ".jpg");
-  if(/\\.jpg$/i.test(filename)){
+  if(/\.jpg$/i.test(filename)){
     saveCgUnlock(filename);
   }
 
