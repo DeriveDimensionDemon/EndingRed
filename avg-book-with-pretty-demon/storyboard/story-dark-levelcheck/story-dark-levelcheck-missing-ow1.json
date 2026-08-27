@@ -143,7 +143,7 @@
           "events": [            
             {
               "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg",
+              "image": "ddd-avg-dark-cg2_s.jpg",
               "cg-animation": "shake"
             }
           ],
@@ -165,7 +165,7 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-white-cg1_s.jpg",
+              "image": "ddd-avg-white-cg2_s.jpg",
               "cg-animation": "shake"
             }
           ],
@@ -183,7 +183,7 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg",
+              "image": "ddd-avg-dark-cg2_s.jpg",
               "cg-animation": "shake"
             }
           ],
@@ -204,7 +204,7 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-dark-cg1_s.jpg",
+              "image": "ddd-avg-dark-cg2_s.jpg",
               "cg-animation": "shake"
             }
           ],
