@@ -141,7 +141,7 @@
       },
       "choices": [
         {
-          "player-move": "調查茶几",
+          "player-move": "茶几很可疑。",
           "score": 0,
           "events": [
             {
@@ -153,13 +153,13 @@
           "next": 31
         },
         {
-          "player-move": "調查沙發",
+          "player-move": "沙發很可疑。",
           "score": 0,
           "events": [],
           "next": 32
         },
         {
-          "player-move": "調查窗戶",
+          "player-move": "窗戶很可疑。",
           "score": 0,
           "events": [],
           "next": 33
@@ -256,19 +256,19 @@
       },
       "choices": [
         {
-          "player-move": "調查烤箱",
+          "player-move": "烤箱很可疑。",
           "score": 0,
           "events": [],
           "next": 34
         },
         {
-          "player-move": "調查櫥櫃",
+          "player-move": "櫥櫃很可疑。",
           "score": 0,
           "events": [],
           "next": 35
         },
         {
-          "player-move": "調查廚餘桶",
+          "player-move": "廚餘桶很可疑。",
           "score": 0,
           "events": [],
           "next": 36
@@ -364,19 +364,19 @@
       },
       "choices": [
         {
-          "player-move": "調查電視遊樂器",
+          "player-move": "電視遊樂器很可疑。",
           "score": 0,
           "events": [],
           "next": 37
         },
         {
-          "player-move": "我知道犯人是誰了。",
+          "player-move": "撞球桌很可疑。",
           "score": 0,
           "events": [],
           "next": 38
         },
         {
-          "player-move": "去健身室看看吧。",
+          "player-move": "卡拉ＯＫ機很可疑。",
           "score": 0,
           "events": [],
           "next": 39
@@ -385,6 +385,33 @@
     },
     {
       "flow-id": 37,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "（黑走到電視遊樂器前，上頭插著彈幕遊戲的卡帶。）\n「前一個玩家是蒼吧？她似乎對彈幕情有獨鍾...」"
+      },
+      "choices": [
+        {
+          "player-move": "但這跟我要找的東西無關。",
+          "score": 0,
+          "events": [],
+          "next": 6
+        },
+        {
+          "player-move": "我知道犯人是誰了。",
+          "score": 0,
+          "events": [],
+          "next": 99
+        },
+        {
+          "player-move": "去工作室看看吧。",
+          "score": 0,
+          "events": [],
+          "next": 7
+        }
+      ]
+    },
+    {
+      "flow-id": 38,
       "demon-message": {
         "speaker": "黑",
         "text": "（黑對著剛整理好的撞球堆，推了一竿）\n（一次全進）\n「哼。」（她將球一一從球袋拿出）"
@@ -403,7 +430,7 @@
           "next": 99
         },
         {
-          "player-move": "去健身室看看吧。",
+          "player-move": "去工作室看看吧。",
           "score": 0,
           "events": [],
           "next": 7
@@ -411,7 +438,7 @@
       ]
     },
     {
-      "flow-id": 38,
+      "flow-id": 39,
       "demon-message": {
         "speaker": "黑",
         "text": "（大型卡拉OK機位於休眠狀態）\n（黑打開電源，被啟動的歡迎音效嚇了一跳）\n「嘖。」"
@@ -430,34 +457,7 @@
           "next": 99
         },
         {
-          "player-move": "去健身室看看吧。",
-          "score": 0,
-          "events": [],
-          "next": 7
-        }
-      ]
-    },
-    {
-      "flow-id": 39,
-      "demon-message": {
-        "speaker": "黑",
-        "text": ""
-      },
-      "choices": [
-        {
-          "player-move": "調查別的可疑之處",
-          "score": 0,
-          "events": [],
-          "next": 6
-        },
-        {
-          "player-move": "指控真兇",
-          "score": 0,
-          "events": [],
-          "next": 99
-        },
-        {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去工作室看看吧。",
           "score": 0,
           "events": [],
           "next": 7
@@ -468,23 +468,23 @@
       "flow-id": 7,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑走進工作室，這裡是姊妹們剪輯、做各種企劃的地方）\n「有模有樣。」"
       },
       "choices": [
         {
-          "player-move": "調查牆上的掛鉤",
+          "player-move": "電腦很可疑。",
           "score": 0,
           "events": [],
           "next": 40
         },
         {
-          "player-move": "調查地毯",
+          "player-move": "儀式法陣很可疑。",
           "score": 0,
           "events": [],
           "next": 41
         },
         {
-          "player-move": "調查門邊",
+          "player-move": "攝影機很可疑。",
           "score": 0,
           "events": [],
           "next": 42
@@ -495,23 +495,23 @@
       "flow-id": 40,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑打開電腦）\n（密碼輸入錯誤）\n「唔！....我不知道密碼？...」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "算了。",
           "score": 0,
           "events": [],
           "next": 7
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去庭院看看吧。",
           "score": 0,
           "events": [],
           "next": 8
@@ -522,23 +522,23 @@
       "flow-id": 41,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑繞了一圈法陣）\n「前一個使用的符文是傳送術式。」「會不會犯人把..白的..那個，傳送去哪了？」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "那麼會是誰做的？",
           "score": 0,
           "events": [],
           "next": 7
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去庭院看看吧。",
           "score": 0,
           "events": [],
           "next": 8
@@ -549,23 +549,23 @@
       "flow-id": 42,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑打開攝影機電源，查看最近錄到的檔案）\n「唔！這！...」（她默默關掉攝影機。）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "真希望消除自己的記憶。",
           "score": 0,
           "events": [],
           "next": 7
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "去庭院看看吧。",
           "score": 0,
           "events": [],
           "next": 8
@@ -576,23 +576,23 @@
       "flow-id": 8,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑走到庭院，正下著櫻花雪。）\n「這裡是最後一處了，但，這裡也不過是虛幻空間。」"
       },
       "choices": [
         {
-          "player-move": "調查窗邊的灰塵",
+          "player-move": "維度櫻花樹很可疑。",
           "score": 0,
           "events": [],
           "next": 43
         },
         {
-          "player-move": "調查桌腳附近",
+          "player-move": "維度雪很可疑。",
           "score": 0,
           "events": [],
           "next": 44
         },
         {
-          "player-move": "調查最後一份訪客紀錄",
+          "player-move": "曬衣架很可疑。",
           "score": 0,
           "events": [],
           "next": 45
@@ -603,23 +603,23 @@
       "flow-id": 43,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（維度櫻花樹彷彿記錄著姊妹們來這裡乘涼的記憶）\n「真不錯。」"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "黑看了幾眼櫻花樹。這裡沒什麼奇怪的。",
           "score": 0,
           "events": [],
           "next": 8
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "都看完了，再問問姊妹們吧。",
           "score": 0,
           "events": [],
           "next": 9
@@ -630,23 +630,23 @@
       "flow-id": 44,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑走到雪地上，輕輕施展維度力量）\n（雪優美的往上升起，露出底下的草皮）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "沒有藏在雪裡。",
           "score": 0,
           "events": [],
           "next": 8
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "都看完了，再問問姊妹們吧。",
           "score": 0,
           "events": [],
           "next": 9
@@ -657,23 +657,23 @@
       "flow-id": 45,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（黑瞇著眼，注視著曬衣架，上頭現在掛著蒼的衣物）\n（等等，那是...）\n（黑找到一搓金色跟白色交纏在一起的頭髮。）"
       },
       "choices": [
         {
-          "player-move": "調查別的可疑之處",
+          "player-move": "．．．．．．．．哦。",
           "score": 0,
           "events": [],
           "next": 8
         },
         {
-          "player-move": "指控真兇",
+          "player-move": "我知道犯人是誰了。",
           "score": 0,
           "events": [],
           "next": 99
         },
         {
-          "player-move": "看夠了，去下一個房間吧",
+          "player-move": "都看完了，再問問姊妹們吧。",
           "score": 0,
           "events": [],
           "next": 9
@@ -682,26 +682,26 @@
     },
     {
       "flow-id": 9,
-      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "cg": "ddd-avg-dark-cg4_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「哼。看來...」"
       },
       "choices": [
         {
-          "player-move": "回顧嫌犯 A 的檔案",
+          "player-move": "去找蒼攀談。",
           "score": 0,
           "events": [],
           "next": 24
         },
         {
-          "player-move": "回顧嫌犯 B 的檔案",
+          "player-move": "去找金攀談。",
           "score": 0,
           "events": [],
           "next": 25
         },
         {
-          "player-move": "回顧嫌犯 C 的檔案",
+          "player-move": "去找紅攀談。",
           "score": 0,
           "events": [],
           "next": 26
@@ -712,17 +712,17 @@
       "flow-id": 24,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（蒼正戴著耳機，一邊輕哼著）\n「我大概知道是誰了。」黑說。\n蒼：「是誰？」"
       },
       "choices": [
         {
-          "player-move": "看別的嫌犯檔案",
+          "player-move": "沉默，逕自離開房間。",
           "score": 0,
           "events": [],
           "next": 25
         },
         {
-          "player-move": "指控 A",
+          "player-move": "是妳。",
           "score": 0,
           "events": [],
           "next": 99
@@ -733,17 +733,17 @@
       "flow-id": 25,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（走進金的房間，她正揉揉後腦杓）「黑！？知道是誰了嗎？！」"
       },
       "choices": [
         {
-          "player-move": "看別的嫌犯檔案",
+          "player-move": "沉默，逕自離開房間。",
           "score": 0,
           "events": [],
           "next": 26
         },
         {
-          "player-move": "指控 B",
+          "player-move": "別裝了，金，就是妳。",
           "score": 0,
           "events": [],
           "next": 99
@@ -754,17 +754,17 @@
       "flow-id": 26,
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（紅正在使用小型儀式法陣，沒有回頭看走進房中的黑）\n「紅。我想犯人已經呼之欲出了。」\n紅：「說？」"
       },
       "choices": [
         {
-          "player-move": "看別的嫌犯檔案",
+          "player-move": "沉默，逕自走出房間",
           "score": 0,
           "events": [],
           "next": 24
         },
         {
-          "player-move": "指控 C",
+          "player-move": "是妳傳送走的吧？交出來。",
           "score": 0,
           "events": [],
           "next": 99
@@ -773,50 +773,85 @@
     },
     {
       "flow-id": 99,
-      "cg": "ddd-avg-dark-cg1_s.jpg",
+      "cg": "ddd-avg-dark-cg4_s.jpg",
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "（不能後悔了）\n（真的要這麼做嗎？）"
       },
       "choices": [
         {
-          "player-move": "指控 A",
+          "player-move": "就是蒼。",
           "score": 0,
           "events": [],
           "next": null
         },
         {
-          "player-move": "指控 B",
-          "score": 0,
+          "player-move": "就是金。",
+          "score": 1,
           "events": [],
-          "next": null
+          "next": 100
         },
         {
-          "player-move": "指控 C",
+          "player-move": "就是紅。",
           "score": 0,
           "events": [],
           "next": null
         }
       ]
-    }
+    },    
+    {
+      "flow-id": 100,
+      "demon-message": {
+        "speaker": "黑",
+        "text": "黑：「金，把白姐的..那個，妳知道我在說什麼，交出來。」\n金：「我才沒有拿？？？」\n（黑逕自打開金的衣物櫥）\n「這是什麼？」"
+      },
+      "choices": [
+        {
+          "player-move": "金瞪大眼睛：怎麼會在我這？！",
+          "score": 0,
+          "events": [            {
+              "type": "cg",
+              "image": "ddd-avg-golden-cg2_s.jpg",
+              "cg-animation": "shake"
+            },
+          ],
+          "next": 101
+        }
+      ]
+    },
+        {
+      "flow-id": 100,
+      "demon-message": {
+        "speaker": "金",
+        "text": "黑：「...」\n「妳是不是收衣服時，把白姐的一起收進去了。」\n金：「啊！！我昨天幫白姐洗衣服，一起...拿回來了。」"
+      },
+      "choices": [
+        {
+          "player-move": "妳自己去跟白姐道歉，就這樣。",
+          "score": 1,
+          "events": [],
+          "next": null
+        }
+      ]
+    },
   ],
   "ending": {
     "demon-message": {
       "speaker": "黑",
-      "text": ""
+      "text": "．．．鬧劇。"
     },
     "evaluations": [
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "grade": "搞錯了",
+        "demon-message": "「誤會大了。...」"
       },
       {
-        "min-score": 0,
-        "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "min-score": 1,
+        "max-score": 1,
+        "grade": "不出所料",
+        "demon-message": "「就是那個最可能的人。」"
       }
     ]
   }
