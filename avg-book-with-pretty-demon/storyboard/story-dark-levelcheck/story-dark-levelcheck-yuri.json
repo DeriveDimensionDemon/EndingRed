@@ -517,27 +517,30 @@
   "ending": {
     "demon-message": {
       "speaker": "黑",
-      "text": ""
+      "text": "「妳與我們的相性...」"
     },
 
     "evaluations": [
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "cg": "ddd-avg-dark-cg2_s.jpg",
+        "grade": "低",
+        "demon-message": "「我們認知的百合可能不太一樣...」"
       },
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "cg": "ddd-avg-dark-cg3_s.jpg",
+        "grade": "中",
+        "demon-message": "「還算可以吧？」"
       },
       {
         "min-score": 0,
         "max-score": 0,
-        "grade": "",
-        "demon-message": ""
+        "cg": "ddd-avg-dark-cg4_s.jpg",
+        "grade": "高",
+        "demon-message": "「也許維度惡魔姐妹們，挺適合妳了解的。」"
       }
     ]
   }
