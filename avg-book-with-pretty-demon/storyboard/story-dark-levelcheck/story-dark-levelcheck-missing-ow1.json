@@ -11,8 +11,13 @@
         {
           "player-move": "查看案件資料",
           "score": 0,
-          "cg-animation": "shake"
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-dark-cg3_s.jpg"
+              "cg-animation": "shake"
+            },
+          ],
           "next": 2
         }
       ]
