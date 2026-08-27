@@ -9,7 +9,7 @@
       },
       "choices": [
         {
-          "player-move": "傳送到白的房間。",
+          "player-move": "傳送到白的房間",
           "score": 0,
           "events": [
             {
@@ -19,13 +19,6 @@
             }
           ],
           "next": 2
-        },        
-        {
-          "player-move": "不過去了。",
-          "score": 2,
-          "events": [
-          ],
-          "next": null
         }
       ]
     },
@@ -37,48 +30,21 @@
       },
       "choices": [
         {
-          "player-move": "所以是蒼？",
+          "player-move": "可能是蒼。",
           "score": 0,
-          "events": [            
-            {
-              "type": "cg",
-              "image": "ddd-avg-cyan-cg1_s.jpg"
-            }            
-            {
-              "type": "demon-emoji",
-              "value": "😆"
-            }
-          ],
+          "events": [],
           "next": 21
         },
         {
-          "player-move": "所以是金？",
+          "player-move": "可能是金。",
           "score": 0,
-          "events": [            
-            {
-              "type": "cg",
-              "image": "ddd-avg-golden-cg1_s.jpg"
-            }
-            {
-              "type": "demon-emoji",
-              "value": "🥵"
-            }
-          ],
+          "events": [],
           "next": 22
         },
         {
-          "player-move": "所以是紅？",
+          "player-move": "可能是紅。",
           "score": 0,
-          "events": [            
-            {
-              "type": "cg",
-              "image": "ddd-avg-red-cg1_s.jpg"
-            }
-            {
-              "type": "demon-emoji",
-              "value": "❓"
-            }
-          ],
+          "events": [],
           "next": 23
         }
       ]
@@ -94,36 +60,19 @@
         {
           "player-move": "不是她。",
           "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-white-cg1_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 2
         },
         {
           "player-move": "只會是妳。",
-          "score": 3,
-          "events": [            
-            {
-              "type": "demon-emoji",
-              "value": "💔"
-            }
-          ],
+          "score": 0,
+          "events": [],
           "next": null
         },
         {
           "player-move": "看來真兇不會輕易招認...",
           "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg2_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 3
         }
       ]
@@ -139,36 +88,19 @@
         {
           "player-move": "看來暫時不會醒來。",
           "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-white-cg1_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 2
         },
         {
           "player-move": "就是金幹的。",
-          "score": 4,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "😫"
-            }
-          ],
+          "score": 0,
+          "events": [],
           "next": null
         },
         {
           "player-move": "去繞繞吧...",
           "score": 0,
-          "events": [            
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg2_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 3
         }
       ]
@@ -184,36 +116,19 @@
         {
           "player-move": "紅的話，沒有理由。",
           "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-white-cg2_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 2
         },
         {
           "player-move": "妳是不是丟進儀式法陣了？",
-          "score": 5,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🫥"
-            }
-          ],
+          "score": 0,
+          "events": [],
           "next": null
         },
         {
           "player-move": "看來真兇不會輕易招認...",
           "score": 0,
-          "events": [
-            {
-              "type": "cg",
-              "image": "ddd-avg-dark-cg2_s.jpg",
-              "cg-animation": "shake"
-            }
-          ],
+          "events": [],
           "next": 3
         }
       ]
@@ -231,12 +146,8 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-dark-cg2_s.jpg",
+              "image": "ddd-avg-dark-cg3_s.jpg",
               "cg-animation": "shake"
-            }                      
-            {
-              "type": "demon-emoji",
-              "value": "㊙️"
             }
           ],
           "next": 31
@@ -244,23 +155,13 @@
         {
           "player-move": "沙發很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🛌"
-            }
-          ],
+          "events": [],
           "next": 32
         },
         {
           "player-move": "窗戶很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🪟"
-            }
-          ],
+          "events": [],
           "next": 33
         }
       ]
@@ -268,15 +169,14 @@
     {
       "flow-id": 31,
       "demon-message": {
-        "speaker": "黑",
-        "text": "（茶几上是姊妹們昨晚吃剩的洋芋片）\n（沒有什麼奇怪的地－－－等等）\n（黑從桌底抽出一本『金的NSFW寫真』\n「．．．」"
+        "speaker": "（茶几上是姊妹們昨晚吃剩的洋芋片）\n（沒有什麼奇怪的地－－－等等）\n（黑從桌底抽出一本『金的NSFW寫真』\n「．．．」",
+        "text": ""
       },
       "choices": [
         {
           "player-move": "誰召喚這種東西．．．看看別的地方吧",
           "score": 0,
-          "events": [
-          ],
+          "events": [],
           "next": 3
         },
         {
@@ -357,34 +257,19 @@
         {
           "player-move": "烤箱很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🔥"
-            }
-          ],
+          "events": [],
           "next": 34
         },
         {
           "player-move": "櫥櫃很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🗄️"
-            }
-          ],
+          "events": [],
           "next": 35
         },
         {
           "player-move": "廚餘桶很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🦠"
-            }
-          ],
+          "events": [],
           "next": 36
         }
       ]
@@ -480,34 +365,19 @@
         {
           "player-move": "電視遊樂器很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "👾"
-            }
-          ],
+          "events": [],
           "next": 37
         },
         {
           "player-move": "撞球桌很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🎱"
-            }
-          ],
+          "events": [],
           "next": 38
         },
         {
           "player-move": "卡拉ＯＫ機很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🪩"
-            }
-          ],
+          "events": [],
           "next": 39
         }
       ]
@@ -603,34 +473,19 @@
         {
           "player-move": "電腦很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🚫"
-            }
-          ],
+          "events": [],
           "next": 40
         },
         {
           "player-move": "儀式法陣很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🕳️"
-            }
-          ],
+          "events": [],
           "next": 41
         },
         {
           "player-move": "攝影機很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "‼️"
-            }
-          ],
+          "events": [],
           "next": 42
         }
       ]
@@ -726,34 +581,19 @@
         {
           "player-move": "維度櫻花樹很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "🌸"
-            }
-          ],
+          "events": [],
           "next": 43
         },
         {
           "player-move": "維度雪很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "❄️"
-            }
-          ],
+          "events": [],
           "next": 44
         },
         {
           "player-move": "曬衣架很可疑。",
           "score": 0,
-          "events": [          
-            {
-              "type": "demon-emoji",
-              "value": "👚"
-            }
-          ],
+          "events": [],
           "next": 45
         }
       ]
@@ -1012,34 +852,6 @@
         "max-score": 1,
         "grade": "不出所料",
         "demon-message": "「就是那個最可能的人。」"
-      },      
-      {
-        "min-score": 2,
-        "max-score": 2,
-        "grade": "似乎忘了什麼事情",
-        "cg": "ddd-avg-dark-cg2_s.jpg",
-        "demon-message": "「算了。」"
-      },
-       
-      {
-        "min-score": 3,
-        "max-score": 3,
-        "grade": "搞錯了",
-        "demon-message": "「根本沒有證據...。」"
-      },
-       
-      {
-        "min-score": 4,
-        "max-score": 4,
-        "grade": "搞錯了",
-        "demon-message": "「根本沒有證據...。」"
-      },
-       
-      {
-        "min-score": 5,
-        "max-score": 5,
-        "grade": "搞錯了",
-        "demon-message": "「根本沒有證據...。」"
       }
     ]
   }
