@@ -39,13 +39,13 @@
           "id": "missing",
           "title": "「黑，我找妳。」白的私密物失竊危機！",
           "description": "黑：「嗯？白找我？」（純手工 偵探推理型實驗劇本）",
-          "file": "story-dark-levelcheck-missing.json"
+          "file": "story-dark-levelcheck-missing-ow1.json"
         },
         {
           "id": "missing",
           "title": "維度案件：未破的失竊檔案",
           "description": "黑：「嗯？撿到一樁尚未結案的維度檔案。」（AI生成 偵探推理型實驗劇本）",
-          "file": "story-dark-levelcheck-missing.json"
+          "file": "story-dark-levelcheck-missing-ai1.json"
         },
         {
           "id": "ddd",
