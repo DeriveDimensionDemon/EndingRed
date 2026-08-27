@@ -186,7 +186,8 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-red-cg2_s.jpg"
+              "image": "ddd-avg-red-cg2_s.jpg",
+              "cg-animation": "shake"
             },
             {
               "type": "demon-emoji",
