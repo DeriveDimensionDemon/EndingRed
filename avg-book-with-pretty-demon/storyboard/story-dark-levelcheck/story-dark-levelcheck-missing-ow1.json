@@ -848,19 +848,34 @@
         {
           "player-move": "去找蒼攀談。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-cyan-cg1_s.jpg"
+            }
+          ],
           "next": 24
         },
         {
           "player-move": "去找金攀談。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-golden-cg1_s.jpg"
+            }
+          ],
           "next": 25
         },
         {
           "player-move": "去找紅攀談。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            }
+          ],
           "next": 26
         }
       ]
