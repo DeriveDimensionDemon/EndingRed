@@ -279,7 +279,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": -1,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -306,7 +306,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": -1,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -333,7 +333,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": -1,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -402,7 +402,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -429,7 +429,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -456,7 +456,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -525,7 +525,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -552,7 +552,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -579,7 +579,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -648,7 +648,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -675,7 +675,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -702,7 +702,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -771,7 +771,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -798,7 +798,7 @@
         },
         {
           "player-move": "我知道犯人是誰了。",
-          "score": 0,
+          "score": 6,
           "events": [],
           "next": 99
         },
@@ -1035,6 +1035,12 @@
         "max-score": 5,
         "grade": "搞錯了",
         "demon-message": "「根本沒有證據...。」"
+      },
+      {
+        "min-score": 6,
+        "max-score": 6,
+        "grade": "雖然是找到了",
+        "demon-message": "「總覺得...以前也發生過。」"
       }
     ]
   }
