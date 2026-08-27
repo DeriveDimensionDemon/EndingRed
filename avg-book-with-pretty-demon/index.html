@@ -36,7 +36,20 @@ body{
   align-items:center;
   min-height:100dvh;
 }
+  
+@keyframes cg-shake {
+  0%, 100% { transform: translateX(0) scale(1); }
+  20% { transform: translateX(-8px) scale(1.04); }
+  40% { transform: translateX(8px) scale(1.06); }
+  60% { transform: translateX(-6px) scale(1.04); }
+  80% { transform: translateX(6px) scale(1.02); }
+}
 
+.cg-shake {
+  animation: cg-shake 0.45s ease-in-out;
+}
+
+  
 #game{
   position:relative;
   width:min(100vw,450px,calc(100dvh * 9 / 16));
@@ -1111,6 +1124,13 @@ function renderFlow(){
   // 這會在進入該頁時立即套用，因此不必等玩家按選項才換圖。
   if(flow.cg){
     changeCg(flow.cg);
+  }
+  
+  sceneImage.classList.remove("cg-shake");
+  
+  if(flow["cg-animation"] === "shake"){
+    void sceneImage.offsetWidth;
+    sceneImage.classList.add("cg-shake");
   }
 
   const demonMessage = flow["demon-message"] || {};
