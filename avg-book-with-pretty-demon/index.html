@@ -1246,6 +1246,14 @@ function runEvents(events,done){
 
     if(event.type === "cg"){
       changeCg(event.image || "ddd-avg-red-cg1_s.jpg");
+    
+      sceneImage.classList.remove("cg-shake");
+    
+      if(event["cg-animation"] === "shake"){
+        void sceneImage.offsetWidth;
+        sceneImage.classList.add("cg-shake");
+      }
+    
       finishOne();
       return;
     }
