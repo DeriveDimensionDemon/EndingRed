@@ -946,11 +946,20 @@ async function startSelectedStory(storyEntry, versionEntry){
     currentCg = DEFAULT_CG;
     currentSpeaker = "紅";
 
+    // 若劇本第一個 Flow 有指定 CG，進場時就直接使用它，
+    // 避免黑劇本先短暫顯示預設的紅 CG。
+    const firstFlow = getFlow(1);
+    if(firstFlow && firstFlow.cg){
+      currentCg = firstFlow.cg.startsWith("img/")
+        ? firstFlow.cg
+        : `img/${firstFlow.cg}`;
+    }
+
     ending.style.display = "none";
     storyMenu.hidden = true;
     document.body.classList.remove("ui-hidden");
     document.body.classList.remove("story-menu-open");
-    sceneImage.src = DEFAULT_CG;
+    sceneImage.src = currentCg;
 
     sessionStorage.setItem("avgBookSelectedStory", JSON.stringify({
       storyId:storyEntry.id,
@@ -1036,6 +1045,12 @@ function renderFlow(){
   if(!flow){
     showError(`找不到 Flow ${currentFlowId}。`);
     return;
+  }
+
+  // Flow 本身可以指定初始 CG。
+  // 這會在進入該頁時立即套用，因此不必等玩家按選項才換圖。
+  if(flow.cg){
+    changeCg(flow.cg);
   }
 
   const demonMessage = flow["demon-message"] || {};
