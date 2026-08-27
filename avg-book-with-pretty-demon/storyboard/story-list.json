@@ -45,14 +45,14 @@
           "title": "百合相性測驗",
           "description": "妳的百合不等於維度惡魔姊妹們的百合？真的嗎？來測試看吧。",
           "file": "story-dark-levelcheck-yuri.json"
-        },
+            },
         {
-          "id": "cyan",
-          "title": "蒼的巫妖地牢試作品",
-          "description": "蒼：「黑～借我放一下。」黑：「...」",
-          "file": "story-dark-levelcheck-cyan.json"
+          "id": "missing",
+          "title": "維度案件：未破的失竊檔案",
+          "description": "黑：「嗯？撿到一樁尚未結案的維度檔案。」",
+          "file": "story-dark-levelcheck-missing.json"
         }
-      ]
+          ]
     }
   ]
 }
