@@ -461,13 +461,13 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": ""
+        "text": "「妳認為女性創作者或團隊進行性感描繪時"
       },
 
       "choices": [
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "都是為了市場生存和吸睛",
+          "score": 1,
           "events": [
             {
               "type": "cg",
@@ -475,14 +475,14 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💭"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
-          "score": 0,
+          "player-move": "創作者本身喜歡與可接受的情境、尺度",
+          "score": 2,
           "events": [
             {
               "type": "cg",
@@ -490,13 +490,13 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "🩷"
             }
           ],
           "next": null
         },
         {
-          "player-move": "",
+          "player-move": "為了製作給男性觀賞和滿足慾望",
           "score": 0,
           "events": [
             {
@@ -505,7 +505,7 @@
             },
             {
               "type": "demon-emoji",
-              "value": ""
+              "value": "💥"
             }
           ],
           "next": null
