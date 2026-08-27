@@ -233,12 +233,12 @@
 
       "demon-message": {
         "speaker": "黑",
-        "text": "「『輕百合』最有可能出現的元素是？」"
+        "text": "「『輕百合』最有可能出現的女性間互動元素是？」"
       },
 
       "choices": [
         {
-          "player-move": "傲嬌、純愛、貼貼",
+          "player-move": "傲嬌、曖昧、貼貼",
           "score": 2,
           "events": [
             {
