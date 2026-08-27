@@ -637,7 +637,7 @@ const DEFAULT_CG = "img/ddd-avg-red-cg1_s.jpg";
 const DEFAULT_COLOR = "rgb(182 37 14 / 18%)";
 const SAVE_KEY = "ddd-avg-book-with-pretty-demon-save-v1";
 
-const GALLERY_IMAGES = [
+const DEFAULT_GALLERY_IMAGES = [
   "ddd-avg-red-cg1.jpg",
   "ddd-avg-red-cg2.jpg",
   "ddd-avg-red-cg3.jpg",
@@ -749,21 +749,80 @@ function resetCgProgress(){
   openGallery();
 }
 
-function isCgUnlocked(filename){
+function getGalleryImages(){
+  // 畫廊只顯示「目前劇本」實際使用到的 CG。
+  // 由劇本資料自動收集，不再把紅的 CG 寫死在 HTML。
+  if(!story) return [...DEFAULT_GALLERY_IMAGES];
+
+  const images = [];
+  const seen = new Set();
+
+  const addImage = (value)=>{
+    if(typeof value !== "string" || !value.trim()) return;
+
+    let filename = value.trim();
+    filename = filename.replace(/^img\//, "");
+    filename = filename.replace(/_s\.jpg$/i, ".jpg");
+
+    if(!/\\.jpg$/i.test(filename)) return;
+    if(seen.has(filename)) return;
+
+    seen.add(filename);
+    images.push(filename);
+  };
+
+  const walk = (value)=>{
+    if(Array.isArray(value)){
+      value.forEach(walk);
+      return;
+    }
+
+    if(!value || typeof value !== "object") return;
+
+    if(value.type === "cg"){
+      addImage(value.image);
+    }
+
+    // Flow 可直接指定進場/頁面 CG。
+    if(Object.prototype.hasOwnProperty.call(value, "cg")){
+      addImage(value.cg);
+    }
+
+    Object.keys(value).forEach(key=>{
+      if(key !== "type" && key !== "cg"){
+        walk(value[key]);
+      }
+    });
+  };
+
+  walk(story);
+
+  return images.length ? images : [...DEFAULT_GALLERY_IMAGES];
+}
+
+function isCgUnlocked(filename, galleryImages){
   const save = loadSave();
-  return filename === "ddd-avg-red-cg1.jpg" || save.unlockedCgs.includes(filename);
+
+  // 每一本劇本的第一張 CG 都視為初始 CG。
+  const firstCg = galleryImages && galleryImages.length
+    ? galleryImages[0]
+    : DEFAULT_GALLERY_IMAGES[0];
+
+  return filename === firstCg || save.unlockedCgs.includes(filename);
 }
 
 function openGallery(){
   galleryGrid.innerHTML = "";
 
-  GALLERY_IMAGES.forEach((filename,index)=>{
+  const galleryImages = getGalleryImages();
+
+  galleryImages.forEach((filename,index)=>{
     const item = document.createElement("button");
     item.type = "button";
     item.className = "gallery-item";
     item.setAttribute("aria-label",`CG ${index + 1}`);
 
-    if(isCgUnlocked(filename)){
+    if(isCgUnlocked(filename, galleryImages)){
       const img = document.createElement("img");
       // 畫廊格狀縮圖只載入 _s.jpg；點開預覽時才載入原尺寸 CG。
       const thumbnail = filename.replace(/\.jpg$/i, "_s.jpg");
@@ -1187,9 +1246,9 @@ function changeCg(path){
 
   currentCg = nextPath;
 
-  const match = nextPath.match(/(ddd-avg-red-cg[2-4])(?:_s)?\.jpg$/);
-  if(match){
-    saveCgUnlock(`${match[1]}.jpg`);
+  const filename = nextPath.replace(/^img\//, "").replace(/_s\.jpg$/i, ".jpg");
+  if(/\\.jpg$/i.test(filename)){
+    saveCgUnlock(filename);
   }
 
   sceneImage.src = currentCg;
