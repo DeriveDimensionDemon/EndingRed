@@ -43,7 +43,7 @@
             {
               "type": "cg",
               "image": "ddd-avg-cyan-cg1_s.jpg"
-            },
+            }
           ],
           "next": 21
         },
@@ -65,7 +65,7 @@
             {
               "type": "cg",
               "image": "ddd-avg-red-cg1_s.jpg"
-            },
+            }
           ],
           "next": 23
         }
