@@ -186,7 +186,7 @@
           "events": [
             {
               "type": "cg",
-              "image": "ddd-avg-white-cg2_s.jpg",
+              "image": "ddd-avg-white-cg1_s.jpg",
               "cg-animation": "shake"
             }
           ],
@@ -954,19 +954,34 @@
         {
           "player-move": "就是蒼。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-cyan-cg1_s.jpg"
+            }
+          ],
           "next": null
         },
         {
           "player-move": "就是金。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-golden-cg1_s.jpg"
+            }
+          ],
           "next": 100
         },
         {
           "player-move": "就是紅。",
           "score": 0,
-          "events": [],
+          "events": [
+            {
+              "type": "cg",
+              "image": "ddd-avg-red-cg1_s.jpg"
+            }
+          ],
           "next": null
         }
       ]
