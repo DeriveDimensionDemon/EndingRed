@@ -9,7 +9,7 @@
       },
       "choices": [
         {
-          "player-move": "傳送到白的房間",
+          "player-move": "傳送到白的房間。",
           "score": 0,
           "events": [
             {
@@ -19,6 +19,13 @@
             }
           ],
           "next": 2
+        },        
+        {
+          "player-move": "不過去了。",
+          "score": 2,
+          "events": [
+          ],
+          "next": null
         }
       ]
     },
@@ -852,6 +859,12 @@
         "max-score": 1,
         "grade": "不出所料",
         "demon-message": "「就是那個最可能的人。」"
+      },      
+      {
+        "min-score": 2,
+        "max-score": 2,
+        "grade": "似乎忘了什麼事情",
+        "demon-message": "「算了。」"
       }
     ]
   }
