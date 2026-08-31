@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PonyhairPonyRed — Observation Box v2</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#15131c;color:#eee;font-family:system-ui,"Microsoft JhengHei",sans-serif}
+body{display:flex;justify-content:center;padding:24px}
+.wrap{width:min(1100px,96vw)}
+h1{margin:0 0 4px;font-size:28px}
+.sub{opacity:.75;margin-bottom:16px}
+.stage{
+  position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
+  border:2px solid #45415a;background:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    #30323b;
+  background-size:48px 48px;
+}
+.wall{position:absolute;background:#171923;border:2px solid #555a70}
+.actor{
+  position:absolute;width:58px;height:58px;object-fit:contain;
+  transform:translate(-50%,-92%);
+  pointer-events:none;z-index:4;
+  filter:drop-shadow(0 3px 2px rgba(0,0,0,.45));
+}
+#red{z-index:5}
+.bubble{
+  position:absolute;width:38px;height:38px;object-fit:contain;
+  transform:translate(-50%,-155%);pointer-events:none;display:none;z-index:7
+}
+.shadow{
+  position:absolute;width:32px;height:10px;border-radius:50%;
+  background:rgba(0,0,0,.34);transform:translate(-50%,0);z-index:2;
+}
+.trail{
+  position:absolute;width:12px;height:12px;border-radius:50%;
+  background:rgba(255,70,100,.28);transform:translate(-50%,-50%);
+  pointer-events:none;z-index:1;
+}
+.hud{
+  margin-top:12px;padding:12px 14px;border:1px solid #45415a;background:#201e28;
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center
+}
+.badge{padding:5px 9px;border:1px solid #666;border-radius:7px}
+#state{font-weight:700}
+.help{opacity:.75;font-size:14px;margin-top:9px;line-height:1.55}
+button{font:inherit;background:#2b2935;color:#eee;border:1px solid #666;border-radius:6px;padding:6px 10px;cursor:pointer}
+button:hover{background:#353240}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PonyhairPonyRed</h1>
+  <div class="sub">Observation Box v2 ／ 紅的自動追逐實驗</div>
+
+  <div id="stage" class="stage">
+    <!-- 保留原本最小 Demo 的三塊障礙 -->
+    <div class="wall" data-x="3" data-y="2" data-w="4" data-h="2"></div>
+    <div class="wall" data-x="12" data-y="7" data-w="5" data-h="2"></div>
+    <div class="wall" data-x="9" data-y="3" data-w="2" data-h="6"></div>
+
+    <div id="goldShadow" class="shadow"></div>
+    <div id="redShadow" class="shadow"></div>
+    <div id="golden" class="actor"></div>
+    <div id="red" class="actor"></div>
+    <img id="bubble" class="bubble" src="assets/question.png" alt="">
+  </div>
+
+  <div class="hud">
+    <span class="badge">方向鍵：移動金</span>
+    <span class="badge">紅：AI 自動追蹤</span>
+    <span class="badge">無 GAME OVER</span>
+    <span id="state">狀態：觀察中</span>
+    <button id="reset">RESET</button>
+  </div>
+  <div class="help">
+    這一版不再有 WIN / GAME OVER。金可以一直跑，紅會持續尋路追蹤金；
+    紅抓到金後短暫停頓，再讓金重新出現，繼續觀察兩人的「追來追去」。
+  </div>
+</div>
+
+<script>
+const stage=document.querySelector('#stage');
+const G=document.querySelector('#golden');
+const R=document.querySelector('#red');
+const GB=document.querySelector('#goldShadow');
+const RB=document.querySelector('#redShadow');
+const B=document.querySelector('#bubble');
+const stateEl=document.querySelector('#state');
+const walls=[...document.querySelectorAll('.wall')];
+
+const tile=48;
+const cols=20, rows=12;
+let golden={x:4,y:8};
+let red={x:15,y:4};
+let mode='chase';
+let caughtUntil=0;
+let anim=0;
+let redClock=null, animClock=null;
+let trails=[];
+
+const imgs={
+  golden:['assets/golden_s1.png','assets/golden_s2.png'],
+  red:['assets/red_s1.png','assets/red_s2.png']
+};
+
+function resizeStage(){
+  // 固定以 48px 邏輯格呈現；stage 本身依寬度縮放。
+  stage.style.backgroundSize = `${tile}px ${tile}px`;
+  walls.forEach(w=>{
+    w.style.left=(+w.dataset.x*tile)+'px';
+    w.style.top=(+w.dataset.y*tile)+'px';
+    w.style.width=(+w.dataset.w*tile)+'px';
+    w.style.height=(+w.dataset.h*tile)+'px';
+  });
+  render();
+}
+window.addEventListener('resize',resizeStage);
+
+function blocked(x,y){
+  if(x<0||y<0||x>=cols||y>=rows) return true;
+  return walls.some(w=>{
+    const wx=+w.dataset.x, wy=+w.dataset.y;
+    const ww=+w.dataset.w, wh=+w.dataset.h;
+    return x>=wx && x<wx+ww && y>=wy && y<wy+wh;
+  });
+}
+
+function key(x,y){return `${x},${y}`}
+
+function nextStep(start,target){
+  if(start.x===target.x && start.y===target.y) return start;
+
+  const q=[{x:start.x,y:start.y}];
+  const prev=new Map([[key(start.x,start.y),null]]);
+  const dirs=[[1,0],[-1,0],[0,1],[0,-1]];
+
+  while(q.length){
+    const cur=q.shift();
+    for(const [dx,dy] of dirs){
+      const nx=cur.x+dx, ny=cur.y+dy, k=key(nx,ny);
+      if(blocked(nx,ny) || prev.has(k)) continue;
+      prev.set(k,cur);
+      if(nx===target.x && ny===target.y){
+        let p={x:nx,y:ny};
+        while(prev.get(key(p.x,p.y)) &&
+              !(prev.get(key(p.x,p.y)).x===start.x &&
+                prev.get(key(p.x,p.y)).y===start.y)){
+          p=prev.get(key(p.x,p.y));
+        }
+        return p;
+      }
+      q.push({x:nx,y:ny});
+    }
+  }
+  return start;
+}
+
+function render(){
+  G.src=imgs.golden[anim];
+  R.src=imgs.red[anim];
+
+  G.style.left=(golden.x*tile+tile/2)+'px';
+  G.style.top=(golden.y*tile+tile)+'px';
+  R.style.left=(red.x*tile+tile/2)+'px';
+  R.style.top=(red.y*tile+tile)+'px';
+
+  GB.style.left=(golden.x*tile+tile/2)+'px';
+  GB.style.top=(golden.y*tile+tile-3)+'px';
+  RB.style.left=(red.x*tile+tile/2)+'px';
+  RB.style.top=(red.y*tile+tile-3)+'px';
+
+  B.style.left=(red.x*tile+tile/2)+'px';
+  B.style.top=(red.y*tile+tile)+'px';
+
+  if(mode==='caught'){
+    B.src='assets/heart.png';
+    B.style.display='block';
+    stateEl.textContent='狀態：❤️ 抓到了，重置中…';
+  }else{
+    B.src='assets/question.png';
+    B.style.display='block';
+    stateEl.textContent='狀態：紅正在追金';
+  }
+
+  trails.forEach(t=>{
+    t.el.style.left=(t.x*tile+tile/2)+'px';
+    t.el.style.top=(t.y*tile+tile/2)+'px';
+  });
+}
+
+function addTrail(){
+  const el=document.createElement('div');
+  el.className='trail';
+  stage.appendChild(el);
+  trails.push({el,x:red.x,y:red.y});
+  if(trails.length>6) trails.shift().el.remove();
+}
+
+function moveGolden(dx,dy){
+  if(mode==='caught') return;
+  const nx=golden.x+dx, ny=golden.y+dy;
+  if(blocked(nx,ny)) return;
+  golden.x=nx; golden.y=ny;
+  render();
+}
+
+function randomSafePosition(avoid){
+  const candidates=[];
+  for(let y=0;y<rows;y++){
+    for(let x=0;x<cols;x++){
+      if(blocked(x,y)) continue;
+      if(Math.abs(x-avoid.x)+Math.abs(y-avoid.y)<7) continue;
+      candidates.push({x,y});
+    }
+  }
+  return candidates[Math.floor(Math.random()*candidates.length)] || {x:2,y:9};
+}
+
+function chase(){
+  if(mode==='caught') return;
+
+  const step=nextStep(red,golden);
+  if(step.x!==red.x || step.y!==red.y){
+    addTrail();
+    red=step;
+  }
+
+  if(red.x===golden.x && red.y===golden.y){
+    mode='caught';
+    caughtUntil=performance.now()+650;
+    render();
+
+    setTimeout(()=>{
+      if(mode!=='caught') return;
+      golden=randomSafePosition(red);
+      mode='chase';
+      // 紅也偶爾重新放置，避免卡在角落形成無聊循環。
+      if(Math.random()<0.35) red=randomSafePosition(golden);
+      trails.forEach(t=>t.el.remove());
+      trails=[];
+      render();
+    },650);
+  }else{
+    render();
+  }
+}
+
+document.addEventListener('keydown',e=>{
+  const m={
+    ArrowUp:[0,-1],ArrowDown:[0,1],
+    ArrowLeft:[-1,0],ArrowRight:[1,0]
+  }[e.key];
+  if(m){e.preventDefault();moveGolden(...m)}
+  if(e.code==='Space'){e.preventDefault();reset()}
+});
+
+function reset(){
+  if(redClock) clearInterval(redClock);
+  if(animClock) clearInterval(animClock);
+  golden={x:4,y:8};
+  red={x:15,y:4};
+  mode='chase';
+  trails.forEach(t=>t.el.remove());
+  trails=[];
+  redClock=setInterval(chase,120);
+  animClock=setInterval(()=>{anim^=1;render()},260);
+  render();
+}
+
+document.querySelector('#reset').onclick=reset;
+resizeStage();
+reset();
+</script>
+</body>
+</html>
