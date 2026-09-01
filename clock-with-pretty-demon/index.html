@@ -6,118 +6,61 @@
 <title>Golden Clock｜金的工作陪伴</title>
 <style>
 *{box-sizing:border-box}
-:root{--bg:#17131b;--panel:#17131b;--gold:#c69224;--gold2:#e0ad3c;--text:#f4e7bd;--muted:#aaa1ad;--green:#8ff0b1;--danger:#d9d2dc}
-body{margin:0;background:#17131b;color:#eee;font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;display:flex;justify-content:center;min-height:100vh}
+:root{--bg:#17131b;--gold:#c69224;--text:#f4e7bd;--muted:#aaa1ad;--green:#8ff0b1}
+body{margin:0;background:var(--bg);color:#eee;font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;display:flex;justify-content:center;min-height:100vh}
 .app{width:min(100%,620px);padding:14px 18px 28px}
 .hero{position:relative;width:100%;aspect-ratio:1230/1278;margin:0 auto 4px;overflow:visible}
 .golden-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:2;pointer-events:none}
-.clock-face{position:absolute;z-index:1;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px rgba(0,0,0,.08);width:48.8%;aspect-ratio:1;left:45.6%;top:57.6%;transform:translate(-50%,-50%)}
+.clock-face{position:absolute;z-index:1;border-radius:50%;background:#fff;width:48.8%;aspect-ratio:1;left:45.6%;top:57.6%;transform:translate(-50%,-50%);box-shadow:inset 0 0 0 2px rgba(0,0,0,.08)}
 .clock-face::after{content:"";position:absolute;inset:5.5%;border-radius:50%;border:1px solid rgba(120,100,70,.16)}
-.hands{position:absolute;z-index:3;left:38.3%;top:50.7%;width:37.35%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
-.hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:999px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.22));}
-.hour{width:4.4%;height:24%;background:#4b3b28}
-.minute{width:3.0%;height:34%;background:#5a4630}
-.second{width:1.25%;height:39%;background:#d45b45}
+.hands{position:absolute;z-index:3;left:45.6%;top:57.6%;width:48.8%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:999px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.22))}
+.hour{width:4.4%;height:24%;background:#4b3b28}.minute{width:3%;height:34%;background:#5a4630}.second{width:1.25%;height:39%;background:#d45b45}
 .second::after{content:"";position:absolute;width:280%;height:280%;left:50%;top:100%;transform:translate(-50%,-50%);border-radius:50%;background:#d45b45}
 .center-dot{position:absolute;left:50%;top:50%;width:4.2%;aspect-ratio:1;border-radius:50%;background:#7d5c2e;border:2px solid #fff;transform:translate(-50%,-50%);z-index:4}
 .dialog-slot{height:76px;margin:2px 0 12px;display:flex;align-items:center;justify-content:center}
-.dialog{width:100%;padding:15px 18px;border:2px solid var(--gold);border-radius:20px;background:#fff;color:#c27d16;font-size:18px;line-height:1.45;text-align:center;transition:opacity .25s,transform .25s}
+.dialog{width:100%;padding:15px 18px;border:2px solid var(--gold);border-radius:20px;background:#fff;color:#c27d16;font-size:18px;line-height:1.45;text-align:center;transition:opacity .25s,transform .25s;min-height:58px}
 .dialog.hidden{opacity:0;transform:translateY(-4px);visibility:hidden}
 .controls{border:1px solid #4b3b20;border-radius:22px;padding:20px 20px 18px;background:rgba(0,0,0,.08)}
 .row{display:flex;align-items:center;gap:12px;font-size:18px;color:#ddd}
 input{width:138px;background:#171717;color:#fff;border:1px solid var(--gold);border-radius:17px;padding:14px 12px;text-align:center;font-size:20px;outline:none}
-button{border:0;border-radius:15px;padding:14px 16px;font-weight:700;font-size:17px;cursor:pointer;color:#fff}
-button:active{transform:translateY(1px)}
-.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.start{background:#c08a22;color:#15100a}.stop{background:#4a4650}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.stat{border:1px solid #4b3b20;border-radius:22px;padding:15px;text-align:center;min-height:94px;display:flex;flex-direction:column;justify-content:center;gap:5px;color:#aaa1ad;font-size:16px}
-.value{font-size:28px;color:#fff;font-variant-numeric:tabular-nums}.state{color:var(--green)}
+button{border:0;border-radius:15px;padding:14px 16px;font-weight:700;font-size:17px;cursor:pointer;color:#fff}button:active{transform:translateY(1px)}
+.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.start{background:#c08a22;color:#15100a}.stop{background:#4a4650}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.stat{border:1px solid #4b3b20;border-radius:22px;padding:15px;text-align:center;min-height:94px;display:flex;flex-direction:column;justify-content:center;gap:5px;color:#aaa1ad;font-size:16px}.value{font-size:28px;color:#fff;font-variant-numeric:tabular-nums}.state{color:var(--green)}
 .note{font-size:12px;color:#8e8791;text-align:center;margin-top:14px}
 @media(max-width:420px){.app{padding:10px 12px 24px}.dialog-slot{height:70px}.dialog{font-size:16px}.controls{padding:16px}.row{font-size:16px}input{width:110px}.btn-row{gap:10px}.stats{gap:10px}.value{font-size:24px}}
 </style>
 </head>
 <body>
 <main class="app">
-  <section class="hero" aria-label="金與時鐘">
-    <div class="clock-face" aria-hidden="true"></div>
-    <div class="hands" aria-hidden="true">
-      <div class="hand hour" id="hourHand"></div>
-      <div class="hand minute" id="minuteHand"></div>
-      <div class="hand second" id="secondHand"></div>
-      <div class="center-dot"></div>
-    </div>
-    <img class="golden-art" src="assets/golden_clock.png" alt="金抱著圓形時鐘">
-  </section>
-
-  <div class="dialog-slot"><div class="dialog hidden" id="dialog">嗯……（偷瞄）</div></div>
-
-  <section class="controls">
-    <div class="row"><span>工作</span><input id="minutes" type="number" min="1" max="240" value="25"><span>分鐘後提醒</span></div>
-    <div class="btn-row"><button class="start" id="startBtn">開工囉！</button><button class="stop" id="stopBtn">提前停工</button></div>
-  </section>
-
-  <section class="stats">
-    <div class="stat"><div>工作經過時間</div><div class="value" id="elapsed">00:00</div></div>
-    <div class="stat"><div>狀態</div><div class="value state" id="status">待機中</div></div>
-  </section>
-  <div class="note">時鐘使用裝置目前時間；工作計時與休息提醒只在本頁開啟期間運作。</div>
+<section class="hero" aria-label="金與時鐘">
+<div class="clock-face" aria-hidden="true"></div>
+<div class="hands" aria-hidden="true"><div class="hand hour" id="hourHand"></div><div class="hand minute" id="minuteHand"></div><div class="hand second" id="secondHand"></div><div class="center-dot"></div></div>
+<img class="golden-art" src="golden/golden-clock.png" alt="金抱著圓形時鐘">
+</section>
+<div class="dialog-slot"><div class="dialog hidden" id="dialog"></div></div>
+<section class="controls">
+<div class="row"><span>工作</span><input id="minutes" type="number" min="1" max="240" value="25"><span>分鐘後提醒</span></div>
+<div class="btn-row"><button class="start" id="startBtn">開工囉！</button><button class="stop" id="stopBtn">提前停工</button></div>
+</section>
+<section class="stats"><div class="stat"><div>工作經過時間</div><div class="value" id="elapsed">00:00</div></div><div class="stat"><div>狀態</div><div class="value state" id="status">待機中</div></div></section>
+<div class="note">時鐘使用裝置目前時間；工作計時與休息提醒只在本頁開啟期間運作。</div>
 </main>
 <script>
-const hourHand=document.getElementById('hourHand');
-const minuteHand=document.getElementById('minuteHand');
-const secondHand=document.getElementById('secondHand');
-const dialog=document.getElementById('dialog');
-const elapsedEl=document.getElementById('elapsed');
-const statusEl=document.getElementById('status');
-const minutesEl=document.getElementById('minutes');
-let timerId=null, startAt=null, endAt=null, dialogTimer=null;
-
-function tickClock(){
-  const now=new Date();
-  const s=now.getSeconds()+now.getMilliseconds()/1000;
-  const m=now.getMinutes()+s/60;
-  const h=(now.getHours()%12)+m/60;
-  hourHand.style.transform=`translateX(-50%) rotate(${h*30}deg)`;
-  minuteHand.style.transform=`translateX(-50%) rotate(${m*6}deg)`;
-  secondHand.style.transform=`translateX(-50%) rotate(${s*6}deg)`;
-}
+const hourHand=document.getElementById('hourHand'),minuteHand=document.getElementById('minuteHand'),secondHand=document.getElementById('secondHand');
+const dialog=document.getElementById('dialog'),elapsedEl=document.getElementById('elapsed'),statusEl=document.getElementById('status'),minutesEl=document.getElementById('minutes');
+const timeupSound=new Audio('golden/timeup.mp3');
+let timerId=null,startAt=null,endAt=null,dialogTimer=null,lines={golden:[],work_start:[],time_up:[]};
+async function loadTalking(){try{const r=await fetch('golden/talking.json');lines=await r.json()}catch(e){lines={golden:['妳還在忙對不對？','嗯……（偷瞄）'],work_start:['開工囉！'],time_up:['已經忙一陣子了，先休息一下。']}}}
+function tickClock(){const now=new Date(),s=now.getSeconds()+now.getMilliseconds()/1000,m=now.getMinutes()+s/60,h=(now.getHours()%12)+m/60;hourHand.style.transform=`translateX(-50%) rotate(${h*30}deg)`;minuteHand.style.transform=`translateX(-50%) rotate(${m*6}deg)`;secondHand.style.transform=`translateX(-50%) rotate(${s*6}deg)`}
 function fmt(sec){sec=Math.max(0,Math.floor(sec));const h=Math.floor(sec/3600),m=Math.floor(sec%3600/60),s=sec%60;return h?`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`:`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
-function showDialog(text){
-  dialog.textContent=text; dialog.classList.remove('hidden');
-  clearTimeout(dialogTimer); dialogTimer=setTimeout(()=>dialog.classList.add('hidden'),5000);
-}
-const lines=['妳還在忙對不對？','嗯……（偷瞄）','還沒休息嗎？','今天也辛苦了。','金也在這裡喔。','……再一下下？'];
-function randomLine(){showDialog(lines[Math.floor(Math.random()*lines.length)])}
-function updateElapsed(){
-  if(!startAt)return;
-  const now=Date.now();
-  const elapsed=Math.max(0,Math.floor((now-startAt)/1000));
-  elapsedEl.textContent=fmt(elapsed);
-  if(endAt && now>=endAt){
-    clearInterval(timerId);timerId=null;endAt=null;
-    statusEl.textContent='休息時間';
-    showDialog('已經忙一陣子了，先休息一下。');
-    try{navigator.vibrate?.([120,80,120])}catch(e){}
-  }
-}
-function startWork(){
-  clearInterval(timerId);
-  const mins=Math.min(240,Math.max(1,Number(minutesEl.value)||25));
-  minutesEl.value=mins;startAt=Date.now();endAt=startAt+mins*60000;
-  statusEl.textContent='工作中';elapsedEl.textContent='00:00';
-  showDialog('開工囉！');
-  timerId=setInterval(updateElapsed,250);updateElapsed();
-}
-function stopWork(){
-  clearInterval(timerId);timerId=null;startAt=null;endAt=null;
-  elapsedEl.textContent='00:00';statusEl.textContent='待機中';
-  clearTimeout(dialogTimer);dialog.classList.add('hidden');
-}
-document.getElementById('startBtn').addEventListener('click',startWork);
-document.getElementById('stopBtn').addEventListener('click',stopWork);
-setInterval(tickClock,200);tickClock();
-setInterval(()=>{if(!dialog.classList.contains('hidden')||!startAt)return;if(Math.random()<0.045)randomLine()},1000);
+function showDialog(text){dialog.textContent=text;dialog.classList.remove('hidden');clearTimeout(dialogTimer);dialogTimer=setTimeout(()=>dialog.classList.add('hidden'),5000)}
+function randomLine(type='golden'){const a=lines[type]||[];if(a.length)showDialog(a[Math.floor(Math.random()*a.length)])}
+function updateElapsed(){if(!startAt)return;const now=Date.now();elapsedEl.textContent=fmt((now-startAt)/1000);if(endAt&&now>=endAt){clearInterval(timerId);timerId=null;endAt=null;statusEl.textContent='休息時間';randomLine('time_up');timeupSound.currentTime=0;timeupSound.play().catch(()=>{});try{navigator.vibrate?.([120,80,120])}catch(e){}}}
+function startWork(){clearInterval(timerId);const mins=Math.min(240,Math.max(1,Number(minutesEl.value)||25));minutesEl.value=mins;startAt=Date.now();endAt=startAt+mins*60000;statusEl.textContent='工作中';elapsedEl.textContent='00:00';randomLine('work_start');timerId=setInterval(updateElapsed,250);updateElapsed()}
+function stopWork(){clearInterval(timerId);timerId=null;startAt=null;endAt=null;elapsedEl.textContent='00:00';statusEl.textContent='待機中';clearTimeout(dialogTimer);dialog.classList.add('hidden')}
+document.getElementById('startBtn').addEventListener('click',startWork);document.getElementById('stopBtn').addEventListener('click',stopWork);setInterval(tickClock,200);tickClock();
+setInterval(()=>{if(!dialog.classList.contains('hidden')||!startAt)return;if(Math.random()<0.045)randomLine('golden')},1000);loadTalking();
 </script>
 </body>
 </html>
